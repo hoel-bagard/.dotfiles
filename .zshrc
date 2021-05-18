@@ -84,6 +84,10 @@ plugins=(
     rsync
     archlinux
     colorize
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    command-not-found
+    bgnotify
 )
 
 source $ZSH/oh-my-zsh.sh

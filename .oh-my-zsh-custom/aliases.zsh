@@ -1,4 +1,4 @@
-# Custom mount
+# Mount office
 alias mount-sweet="sshfs xc-sweet:/home/hoel ~/mount/sweet -o dcache_timeout=3"
 alias unmount-sweet="sudo umount ~/mount/sweet"
 alias mount-cacao="sshfs xc-cacao:/home/hoel ~/mount/cacao -o dcache_timeout=3"
@@ -15,6 +15,11 @@ alias mount-nas-rnd="sudo mount -t cifs //192.168.2.129/research/ ~/mount/resear
 alias unmount-nas-rnd="sudo umount ~/mount/research_NAS/"
 alias mount-nas-epson="sudo mount -t cifs //192.168.2.129/epson/ ~/mount/epson_NAS/ -o username=hoel,uid=$(id -u),gid=$(id -g)"
 alias unmount-nas-epson="sudo umount ~/mount/epson_NAS/"
+
+# Mount home
+alias mount-office="sshfs hoel@113.43.242.146:/home/hoel/mount/ ~/mount/xc -oport=9923 -o dcache_timeout=3"
+alias unmount-office="sudo umount ~/mount/xc"
+alias ssh-office="ssh hoel@113.43.242.146 -p 9923 -t zsh"
 
 alias ll="exa -lahFG"
 alias ls='ls --color=auto'
