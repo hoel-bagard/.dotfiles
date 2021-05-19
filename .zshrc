@@ -11,7 +11,7 @@ fi
 HISTSIZE=10000
 SAVEHIST=10000
 HIST_STAMPS="dd/mm/yyyy"
-HISTFILE=~/.cache/zsh/history
+# HISTFILE=~/.cache/zsh/history
 
 ZSH_THEME="robbyrussell"
 # Path to your oh-my-zsh installation.
