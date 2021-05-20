@@ -17,8 +17,12 @@
 [commit]
 	gpgsign = true
 
+[init]
+        defaultBranch = master
+
 [format]
 	pretty = lf
+
 
 [pretty]
 	lo  = tformat:%C(auto)%h%C(reset)%C(auto)%d%C(reset) %s %C(italic blue)%ad%C(reset) %C(241)%aN%C(reset)
