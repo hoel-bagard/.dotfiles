@@ -22,7 +22,7 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 # Zsh options
 setopt HIST_IGNORE_DUPS  # TODO: Check if that's not the default
 
-# Spelling correction
+# Spelling correction   ("correctall" corrects commands and all arguments, "correct" corrects only commands)
 setopt correctall
 
 # Uncomment the following line to enable command auto-correction.
