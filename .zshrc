@@ -10,22 +10,19 @@ fi
 
 HISTSIZE=10000
 SAVEHIST=10000
-HIST_STAMPS="dd/mm/yyyy"
+HIST_STAMPS="%y/%m/%d %T"
 # HISTFILE=~/.cache/zsh/history
 
 ZSH_THEME="robbyrussell"
-# Path to your oh-my-zsh installation.
-export ZSH="/home/hoel/.oh-my-zsh"
-# Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
+export ZSH="/home/hoel/.oh-my-zsh"  # Path to your oh-my-zsh installation.
+ZSH_CUSTOM=$HOME/.oh-my-zsh-custom  # Would you like to use another custom folder than $ZSH/custom?
 
 # Zsh options
 setopt HIST_IGNORE_DUPS  # TODO: Check if that's not the default
+setopt sharehistory   # It's the default, but just in case
 
 # Spelling correction   ("correctall" corrects commands and all arguments, "correct" corrects only commands)
 setopt correctall
-
-# Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
 # Basic autocompletion   # TODO: See if usefull  (probably not)
@@ -36,11 +33,8 @@ setopt correctall
 # compinit
 # _comp_options+=(globdots)  # Include hidden files
 
-
-# Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
     ripgrep
@@ -51,6 +45,9 @@ plugins=(
     zsh-autosuggestions
     command-not-found
     # bgnotify
+    # colored-man-pages
+    # virtualenv
+    # autojump    # https://github.com/wting/autojump
 )
 
 
