@@ -21,6 +21,9 @@ alias mount-office="sshfs hoel@113.43.242.146:/home/hoel/mount/ ~/mount/xc -opor
 alias unmount-office="sudo umount ~/mount/xc"
 alias ssh-office="ssh hoel@113.43.242.146 -p 9923 -t zsh"
 
+# Refresh the timeout every time sudo is used (to avoid having to retype the password)
+alias sudo='sudo -v; sudo '
+
 alias ll="exa -lahFG"
 alias ls='ls --color=auto'
 alias arch-update="sudo pacman -Syu"
