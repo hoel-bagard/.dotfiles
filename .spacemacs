@@ -40,7 +40,10 @@ This function should only modify configuration layer settings."
      markdown
      git
      python
-     (c-c++ :variables c-c++-backend 'lsp-clangd)
+     ;; (c-c++ :variables c-c++-backend 'lsp-clangd)
+     (c-c++ :variables
+            c-c++-backend 'lsp-ccls
+            c-c++-default-mode-for-headers 'c++-mode)
      ivy
      auto-completion
      better-defaults
@@ -508,6 +511,15 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (global-undo-tree-mode)
   (evil-set-undo-system 'undo-tree)
+
+  ;; web development
+  (setq javascript-indent-level 2) ; javascript-mode
+  (setq js-indent-level 2) ; js-mode
+  (setq js2-basic-offset 2) ; js2-mode, in latest js2-mode, it's alias of js-indent-level
+  (setq web-mode-markup-indent-offset 2) ; web-mode, html tag in html file
+  (setq web-mode-css-indent-offset 2) ; web-mode, css in html file
+  (setq web-mode-code-indent-offset 2) ; web-mode, js code in html file
+  (setq css-indent-offset 2) ; css-mode
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -537,7 +549,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
-   '(treemacs-magit smeargle magit-svn magit-gitflow magit-popup lsp-ui lsp-python-ms lsp-pyright lsp-origami origami lsp-ivy gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link forge magit ghub closql emacsql-sqlite emacsql treepy magit-section git-commit with-editor transient dap-mode lsp-treemacs bui ccls lsp-mode yasnippet-snippets yaml-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode haml-mode emmet-mode company-web web-completion-data web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc coffee-mode csv-mode mmm-mode markdown-toc markdown-mode gh-md wgrep smex ivy-hydra counsel-projectile counsel swiper ivy unfill mwim helm-company helm-c-yasnippet fuzzy flycheck-pos-tip pos-tip flycheck company-statistics company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
+   '(lsp-ui lsp-python-ms lsp-pyright lsp-origami origami lsp-ivy dap-mode lsp-treemacs bui ccls lsp-mode yasnippet-snippets yaml-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode haml-mode emmet-mode company-web web-completion-data web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc coffee-mode csv-mode mmm-mode markdown-toc markdown-mode gh-md wgrep smex ivy-hydra counsel-projectile counsel swiper ivy unfill mwim helm-company helm-c-yasnippet fuzzy flycheck-pos-tip pos-tip flycheck company-statistics company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
