@@ -23,15 +23,23 @@ alias mount-office="sshfs hoel@113.43.242.146:/home/hoel/mount/ ~/mount/xc -opor
 alias unmount-office="sudo umount ~/mount/xc"
 alias ssh-office="ssh hoel@113.43.242.146 -p 9923 -t zsh"
 
-# Refresh the timeout every time sudo is used (to avoid having to retype the password)
-alias sudo='sudo -v; sudo '
 
+# Everyday commands
 alias ll="exa -lahFG"
 alias ls='ls --color=auto'
+alias sudo='sudo -v; sudo '  # Refresh the timeout every time sudo is used (to avoid having to retype the password)
+alias duc="du -hcxd1 | sort -hr"
+# alias cpr="rsync -pogbr -hhh --backup-dir=/tmp/rsync -e /dev/null --progress"  # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp for details
+alias cpr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1"  # From https://wiki.archlinux.org/title/rsync
+alias mvr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "
+
+# Maintenance
 alias arch-update="sudo pacman -Syu"
-# alias duc="du -shcx /home/* | sort -hr"
-alias duc="du -hd1 | sort -h"
-alias journal-errors="sudo journalctl -b -p err..alert"
-alias job-done="kdialog --passivepopup 'Job finished' --title 'Console'"
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+alias journal-errors="sudo journalctl -b -p err..alert"
+
+# Dotfiles management
 alias git-config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+# Misc
+# alias job-done="kdialog --passivepopup 'Job finished' --title 'Console'"
