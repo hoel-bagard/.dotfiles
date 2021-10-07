@@ -11,7 +11,7 @@ alias mount-nas-project="sudo mount -t cifs //192.168.100.95/pub/ ~/mount/projec
 alias unmount-nas-project="sudo umount ~/mount/project_NAS"
 
 # Mount home NAS
-alias mount-home-public="sudo mount - cifs //192.168.11.7/PublicNAS /mnt/nas_public -o uid=$(id -u),gid=$(id -g)"
+alias mount-home-public="sudo mount -t cifs //192.168.11.7/PublicNAS /mnt/nas_public -o uid=$(id -u),gid=$(id -g)"
 alias unmount-home-public="sudo umount /mnt/nas_public"
 alias mount-home-private="sudo mount -t cifs //192.168.11.7/PrivateNAS /mnt/nas_private -o username=hoel,uid=$(id -u),gid=$(id -g)"
 alias unmount-home-private="sudo umount /mnt/nas_private"
