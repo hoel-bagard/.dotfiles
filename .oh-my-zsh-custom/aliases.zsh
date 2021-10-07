@@ -10,9 +10,16 @@ alias unmount-censei="sudo umount ~/mount/censei"
 alias mount-nas-project="sudo mount -t cifs //192.168.100.95/pub/ ~/mount/project_NAS/ -o username=guest01,uid=$(id -u),gid=$(id -g),password=Ilovecurry1"
 alias unmount-nas-project="sudo umount ~/mount/project_NAS"
 
+# Mount home NAS
+alias mount-home-public="sudo mount - cifs //192.168.11.7/PublicNAS /mnt/nas_public -o uid=$(id -u),gid=$(id -g)"
+alias unmount-home-public="sudo umount /mnt/nas_public"
+alias mount-home-private="sudo mount -t cifs //192.168.11.7/PrivateNAS /mnt/nas_private -o username=hoel,uid=$(id -u),gid=$(id -g)"
+alias unmount-home-private="sudo umount /mnt/nas_private"
+
 # Everyday commands
 alias ll="exa -lahFG"
 alias ls='ls --color=auto'
+alias cat="bat"
 alias sudo='sudo -v; sudo '  # Refresh the timeout every time sudo is used (to avoid having to retype the password)
 alias duc="du -hcxd1 | sort -hr"
 # alias cpr="rsync -pogbr -hhh --backup-dir=/tmp/rsync -e /dev/null --progress"  # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp for details
