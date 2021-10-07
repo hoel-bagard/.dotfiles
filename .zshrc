@@ -79,7 +79,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source /home/hoel/.zprofile
+# source /home/hoel/.zprofile
+
+# To sign commits with git(hub)
+export GPG_TTY=$(tty)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
