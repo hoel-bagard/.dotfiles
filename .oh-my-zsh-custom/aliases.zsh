@@ -1,8 +1,4 @@
 # Mount office
-alias mount-sweet="sshfs xc-sweet:/home/hoel ~/mount/sweet -o dcache_timeout=3"
-alias unmount-sweet="sudo umount ~/mount/sweet"
-alias mount-cacao="sshfs xc-cacao:/home/hoel ~/mount/cacao -o dcache_timeout=3"
-alias unmount-cacao="sudo umount ~/mount/cacao"
 alias mount-bitter="sshfs bitter.xc:/home/hoel ~/mount/bitter -o dcache_timeout=3"
 alias unmount-bitter="sudo umount ~/mount/bitter"
 alias mount-black="sshfs black.xc:/home/hoel ~/mount/black -o dcache_timeout=3"
@@ -13,16 +9,6 @@ alias mount-censei="sshfs censei.xc:/home/hoel ~/mount/censei -o dcache_timeout=
 alias unmount-censei="sudo umount ~/mount/censei"
 alias mount-nas-project="sudo mount -t cifs //192.168.100.95/pub/ ~/mount/project_NAS/ -o username=guest01,uid=$(id -u),gid=$(id -g),password=Ilovecurry1"
 alias unmount-nas-project="sudo umount ~/mount/project_NAS"
-alias mount-nas-rnd="sudo mount -t cifs //192.168.2.129/research/ ~/mount/research_NAS/ -o username=hoel,uid=$(id -u),gid=$(id -g)"
-alias unmount-nas-rnd="sudo umount ~/mount/research_NAS/"
-alias mount-nas-epson="sudo mount -t cifs //192.168.2.129/epson/ ~/mount/epson_NAS/ -o username=hoel,uid=$(id -u),gid=$(id -g)"
-alias unmount-nas-epson="sudo umount ~/mount/epson_NAS/"
-
-# Mount home
-alias mount-office="sshfs hoel@113.43.242.146:/home/hoel/mount/ ~/mount/xc -oport=9923 -o dcache_timeout=3"
-alias unmount-office="sudo umount ~/mount/xc"
-alias ssh-office="ssh hoel@113.43.242.146 -p 9923 -t zsh"
-
 
 # Everyday commands
 alias ll="exa -lahFG"
