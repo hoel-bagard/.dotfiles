@@ -19,7 +19,11 @@ alias unmount-home-private="sudo umount /mnt/nas_private"
 # Everyday commands
 alias ll="exa -lahFG"
 alias ls='ls --color=auto'
-alias cat="bat"
+alias mkdir="mkdir -p"  # Create missing folders if needed
+alias .1="cd .."
+alias .2="cd ../.."
+alias .3="cd ../../.."
+# alias cat="bat"
 alias sudo='sudo -v; sudo '  # Refresh the timeout every time sudo is used (to avoid having to retype the password)
 alias duc="du -hcxd1 | sort -hr"
 # alias cpr="rsync -pogbr -hhh --backup-dir=/tmp/rsync -e /dev/null --progress"  # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp for details
