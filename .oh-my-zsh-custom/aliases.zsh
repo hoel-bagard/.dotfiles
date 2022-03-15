@@ -3,6 +3,8 @@ alias mount-bitter="sshfs bitter.xc:/home/hoel ~/mount/bitter -o dcache_timeout=
 alias unmount-bitter="sudo umount ~/mount/bitter"
 alias mount-black="sshfs black.xc:/home/hoel ~/mount/black -o dcache_timeout=3"
 alias unmount-black="sudo umount ~/mount/black"
+alias mount-3090="sshfs 3090.xc:/home/hoel ~/mount/3090 -o dcache_timeout=3"
+alias unmount-3090="sudo umount ~/mount/3090"
 alias mount-dgx="sshfs dgx.xc:/home/hoel ~/mount/dgx -o dcache_timeout=3"
 alias unmount-dgx="sudo umount ~/mount/dgx"
 alias mount-censei="sshfs censei.xc:/home/hoel ~/mount/censei -o dcache_timeout=3"
