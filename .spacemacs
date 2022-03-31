@@ -536,11 +536,14 @@ before packages are loaded."
   ;; Use the two lines bellow to use flake8 instead of lsp
   ;; (setq lsp-diagnostics-provider :none)
   ;; (setq flycheck-checker 'python-flake8)
-  ;; Line bellow to activate pylint
-  ;; (add-hook 'python-mode-hook
-  ;;           (lambda ()
-  ;;             (setq lsp-pylsp-plugins-pylint-enabled t)
-  ;;             ))
+  (add-hook 'python-mode-hook
+            (lambda ()
+              ;; (setq flycheck-flake8-maximum-line-length 120)
+              ;; (display-fill-column-indicator-mode t)
+              ;; (setq lsp-pylsp-plugins-pylint-enabled t)
+              (setq lsp-pylsp-plugins-jedi-completion-include-params nil)
+              (setq lsp-pylsp-plugins-jedi-completion-include-class-objects nil)
+              ))
 
   ;; web development
   (setq javascript-indent-level 2) ; javascript-mode
