@@ -14,11 +14,15 @@
 [pull]
 	rebase = false
 
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushdefault
+[push]
+	default = current
+
 [commit]
 	gpgsign = true
 
 [init]
-        defaultBranch = master
+	defaultBranch = master
 
 [format]
 	pretty = lf
@@ -190,7 +194,6 @@
 
   # hard reset and clean (unrecoverable)
 	nuke = "!git reset --hard HEAD && git clean -fd"
-
 
 
 [url "git@github.com:"]
