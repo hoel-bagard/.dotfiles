@@ -65,6 +65,9 @@
 	ec = "!f() { [ -f \"${XDG_CONFIG_HOME:-$HOME/.config}\"/dotfiles.conf ] && . \"${XDG_CONFIG_HOME:-$HOME/.config}\"/dotfiles.conf; git --git-dir=\"$dotfiles_dir\" config --global --edit; }; f"
 	ecl = config --edit
 
+	ck = checkout
+	ckb = checkout -b
+
 	# log, current branch
 	l  = log --pretty=lc --graph
 	lo = log --pretty=lo --graph --date=human
