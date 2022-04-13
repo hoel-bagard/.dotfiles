@@ -3,7 +3,7 @@
 [user]
 	email = hoel.bagard@gmail.com
 	name = Hoel Bagard
-	signingkey = 7182AC568D3A6DEF
+	signingkey = 9A6B2CE5975D31C9
 
 [core]
 	editor = vim
@@ -127,7 +127,7 @@
 	an = add --intent-to-add
 
 	# commit
-	c = commit --verbose
+	c = commit --verbose -am
 	cs = commit --verbose --squash
 	ca = commit --verbose --amend
 	can = commit --verbose --amend --no-edit
