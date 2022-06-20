@@ -529,6 +529,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (global-undo-tree-mode)
   (evil-set-undo-system 'undo-tree)
+  (setq undo-tree-auto-save-history nil)
 
   ;; python
   ;; (require 'flycheck-mypy)

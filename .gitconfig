@@ -128,6 +128,7 @@
 
 	# commit
 	c = commit --verbose -am
+	cm = commit --verbose -m
 	cs = commit --verbose --squash
 	ca = commit --verbose --amend
 	can = commit --verbose --amend --no-edit
