@@ -27,10 +27,11 @@ alias .2="cd ../.."
 alias .3="cd ../../.."
 # alias cat="bat"
 alias sudo='sudo -v; sudo '  # Refresh the timeout every time sudo is used (to avoid having to retype the password)
-alias duc="du -hcxd1 | sort -hr"
+alias duc="du -hcxd1 | sort -hr"  # du -shcx /home/* | sort -hr
 # alias cpr="rsync -pogbr -hhh --backup-dir=/tmp/rsync -e /dev/null --progress"  # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp for details
 alias cpr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1"  # From https://wiki.archlinux.org/title/rsync
 alias mvr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "
+alias tb="tensorboard --logdir . --samples_per_plugin 'scalars=500,images=500'"
 
 # Maintenance
 alias arch-update="sudo pacman -Syu"
