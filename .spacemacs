@@ -47,12 +47,11 @@ This function should only modify configuration layer settings."
      (rust :variables
            rust-format-on-save t)
      csv
-     markdown
+     (markdown :variables markdown-live-preview-engine 'vmd)
      git
      (python :variables
              python-backend 'lsp
-             python-lsp-server 'pylsp
-             ;; python-backend 'anaconda
+             python-lsp-server 'pyright
              )
      ;; (c-c++ :variables c-c++-backend 'lsp-clangd)
      ;; (c-c++ :variables
