@@ -19,7 +19,7 @@
 	default = current
 
 [commit]
-	gpgsign = true
+	gpgsign = false
 
 [init]
 	defaultBranch = master

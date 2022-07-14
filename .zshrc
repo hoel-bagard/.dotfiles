@@ -13,7 +13,7 @@ SAVEHIST=10000
 HIST_STAMPS="%y/%m/%d %T"
 # HISTFILE=~/.cache/zsh/history
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH="/home/hoel/.oh-my-zsh"  # Path to your oh-my-zsh installation.
 ZSH_CUSTOM=$HOME/.oh-my-zsh-custom  # Would you like to use another custom folder than $ZSH/custom?
 
@@ -78,7 +78,8 @@ plugins=(
 # For a full list of active aliases, run `alias`.
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# source /usr/share/zsh-theme-powerlevel10k/powrlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 # source /home/hoel/.zprofile
 
 # To sign commits with git(hub)
