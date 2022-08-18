@@ -43,6 +43,7 @@ This function should only modify configuration layer settings."
           lsp-ui-sideline-show-hover nil
           lsp-rust-server 'rust-analyzer
           lsp-rust-analyzer-server-display-inlay-hints t
+          lsp-disabled-clients '(pyright)
           )
      (rust :variables
            rust-format-on-save t)
@@ -51,7 +52,8 @@ This function should only modify configuration layer settings."
      git
      (python :variables
              python-backend 'lsp
-             python-lsp-server 'pyright
+             python-lsp-server 'pylsp
+             ;; python-lsp-server 'pyright   ;; :add-on?    https://emacs-lsp.github.io/lsp-mode/page/faq/
              )
      ;; (c-c++ :variables c-c++-backend 'lsp-clangd)
      ;; (c-c++ :variables
