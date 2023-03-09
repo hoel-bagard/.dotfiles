@@ -36,14 +36,15 @@ This function should only modify configuration layer settings."
      typescript
      yaml
      html
-     javascript
+     (javascript :variables
+                 javascript-backend 'lsp)
      (lsp :variables
           lsp-ui-doc-enable nil
           lsp-ui-sideline-code-actions-prefix " "
           lsp-ui-sideline-show-hover nil
           lsp-rust-server 'rust-analyzer
-          lsp-rust-analyzer-server-display-inlay-hints t
-          lsp-disabled-clients '(pyright)
+          cargo-process-reload-on-modify t
+          ;; lsp-disabled-clients '(pyright)
           )
      (rust :variables
            rust-format-on-save t)
@@ -84,6 +85,7 @@ This function should only modify configuration layer settings."
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
+
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages
    '(
@@ -213,6 +215,14 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
+
+   ;; if non-nil, *scratch* buffer will be persistent. things you write down in
+   ;; *scratch* buffer will be saved and restored automatically.
+   dotspacemacs-scratch-buffer-persistent t
+
+   ;; if non-nil, `kill-buffer' on *scratch* buffer
+   ;; will bury it instead of killing.
+   dotspacemacs-scratch-buffer-unkillable nil
 
    ;; Initial message in the scratch buffer, such as "Welcome to Spacemacs!"
    ;; (default nil)
@@ -394,7 +404,8 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers `t
+   ;; dotspacemacs-line-numbers `t
+   dotspacemacs-line-numbers `visual
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
@@ -512,6 +523,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;;                 ;; (python :variables python-backend 'anaconda)
   ;;                 ))
   (setq-default tab-width 4)
+  ;; (define-key evil-insert-state-map (kbd "C-d") (kbd "<C-d>zz"))
+  ;; (define-key evil-normal-state-map (kbd "<C-d>") (kbd "<C-d>zz"))
   )
 
 
@@ -555,6 +568,13 @@ before packages are loaded."
   (setq web-mode-css-indent-offset 2) ; web-mode, css in html file
   (setq web-mode-code-indent-offset 2) ; web-mode, js code in html file
   (setq css-indent-offset 2) ; css-mode
+
+  ; Rust
+  (setq lsp-rust-analyzer-server-display-inlay-hints t)
+  (setq lsp-rust-analyzer-display-chaining-hints t)
+  (setq lsp-rust-analyzer-display-parameter-hints t)
+  (setq lsp-rust-analyzer-proc-macro-enable t)
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -583,6 +603,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
+ '(flycheck-checker-error-threshold 1000)
  '(flycheck-checkers
    '(emacs-lisp-elsa ada-gnat asciidoctor asciidoc awk-gawk bazel-buildifier c/c++-clang c/c++-gcc c/c++-cppcheck cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint css-stylelint cuda-nvcc cwl d-dmd dockerfile-hadolint elixir-credo emacs-lisp emacs-lisp-checkdoc ember-template erlang-rebar3 erlang eruby-erubis eruby-ruumba fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck go-unconvert go-staticcheck groovy haml handlebars haskell-stack-ghc haskell-ghc haskell-hlint html-tidy javascript-eslint javascript-jshint javascript-standard json-jsonlint json-python-json json-jq jsonnet less less-stylelint llvm-llc lua-luacheck lua markdown-markdownlint-cli markdown-mdl nix nix-linter opam perl perl-perlcritic php php-phpmd php-phpcs processing proselint protobuf-protoc protobuf-prototool pug puppet-parser puppet-lint python-flake8 python-pylint python-pycompile python-pyright python-mypy r-lintr racket rpm-rpmlint rst-sphinx rst ruby-rubocop ruby-standard ruby-reek ruby-rubylint ruby ruby-jruby rust-cargo rust rust-clippy scala scala-scalastyle scheme-chicken scss-lint scss-stylelint sass/scss-sass-lint sass scss sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim slim-lint sql-sqlint systemd-analyze tcl-nagelfar terraform terraform-tflint tex-chktex tex-lacheck texinfo textlint typescript-tslint verilog-verilator vhdl-ghdl xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby yaml-yamllint emacs-lisp-package))
  '(package-selected-packages
