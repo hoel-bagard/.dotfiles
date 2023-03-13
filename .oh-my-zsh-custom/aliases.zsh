@@ -40,7 +40,10 @@ alias sv="source venv/bin/activate"
 alias gc="git c"
 alias gcm="git cm"
 alias gp="git p"
-alias ct="cargo test"
+# Cargo
+alias cart="cargo test"
+alias carc="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A clippy::module_name_repetitions -A dead_code"
+alias carc-fix="cargo clippy --allow-dirty --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A clippy::module_name_repetitions -A dead_code"
 
 # Maintenance
 alias arch-update="sudo pacman -Syu"
