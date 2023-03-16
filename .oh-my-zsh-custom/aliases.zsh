@@ -29,6 +29,7 @@ alias mkdir="mkdir -p"  # Create missing folders if needed
 alias .1="cd .."
 alias .2="cd ../.."
 alias .3="cd ../../.."
+alias vim="nvim"
 # alias cat="bat"
 alias sudo='sudo -v; sudo '  # Refresh the timeout every time sudo is used (to avoid having to retype the password)
 alias duc="du -hcxd1 | sort -hr"  # du -shcx /home/* | sort -hr
@@ -37,6 +38,8 @@ alias cpr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window
 alias mvr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "
 alias tb="tensorboard --logdir . --samples_per_plugin 'scalars=500,images=500'"
 alias sv="source venv/bin/activate"
+alias create-venv-sys="virtualenv --system-site-packages venv; source venv/bin/activate"
+alias create-venv="virtualenv venv; source venv/bin/activate"
 alias gc="git c"
 alias gcm="git cm"
 alias gp="git p"
