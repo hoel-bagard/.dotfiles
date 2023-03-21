@@ -45,6 +45,7 @@ alias gcm="git cm"
 alias gp="git p"
 # Cargo
 alias cart="cargo test"
+alias carb="cargo build"
 alias carc="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A clippy::module_name_repetitions -A dead_code"
 alias carc-fix="cargo clippy --allow-dirty --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A clippy::module_name_repetitions -A dead_code"
 
