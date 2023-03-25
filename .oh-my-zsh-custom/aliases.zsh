@@ -44,10 +44,12 @@ alias gc="git c"
 alias gcm="git cm"
 alias gp="git p"
 # Cargo
-alias cart="cargo test"
+alias card="cargo doc"
+alias cardo="cargo doc --open"
 alias carb="cargo build"
 alias carc="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A clippy::module_name_repetitions -A dead_code"
 alias carc-fix="cargo clippy --allow-dirty --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A clippy::module_name_repetitions -A dead_code"
+alias cart="cargo test"
 
 # Maintenance
 alias arch-update="sudo pacman -Syu"
