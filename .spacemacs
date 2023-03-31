@@ -544,6 +544,7 @@ before packages are loaded."
   (global-undo-tree-mode)
   (evil-set-undo-system 'undo-tree)
   (setq undo-tree-auto-save-history nil)
+  (setq lsp-headerline-breadcrumb-enable nil)
 
   ;; python
   ;; (require 'flycheck-mypy)
