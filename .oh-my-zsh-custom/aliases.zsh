@@ -55,6 +55,8 @@ alias cart="cargo test"
 alias arch-update="sudo pacman -Syu"
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias journal-errors="sudo journalctl -b -p err..alert"
+alias disable-boost="sudo sh -c \"echo 0 >> /sys/devices/system/cpu/cpufreq/boost\""
+alias enable-boost="sudo sh -c \"echo 1 >> /sys/devices/system/cpu/cpufreq/boost\""
 
 # Dotfiles management
 alias git-config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
