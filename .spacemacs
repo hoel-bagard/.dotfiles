@@ -43,6 +43,7 @@ This function should only modify configuration layer settings."
           lsp-ui-sideline-code-actions-prefix " "
           lsp-ui-sideline-show-hover nil
           lsp-rust-server 'rust-analyzer
+          lsp-rust-analyzer-server-display-inlay-hints t
           cargo-process-reload-on-modify t
           ;; lsp-disabled-clients '(pyright)
           )
@@ -56,23 +57,25 @@ This function should only modify configuration layer settings."
              python-lsp-server 'pylsp
              ;; python-lsp-server 'pyright   ;; :add-on?    https://emacs-lsp.github.io/lsp-mode/page/faq/
              )
-     ;; (c-c++ :variables c-c++-backend 'lsp-clangd)
-     ;; (c-c++ :variables
-     ;;        c-c++-backend 'lsp-ccls
-     ;;        c-c++-default-mode-for-headers 'c++-mode)
+     (c-c++ :variables
+            ;; c-c++-backend 'lsp-clangd
+            c-c++-backend 'lsp-ccls
+            c-c++-enable-organize-includes-on-save t
+            c-c++-enable-clang-format-on-save t
+            c-c++-default-mode-for-headers 'c++-mode)
      ivy
      auto-completion
      better-defaults
      emacs-lisp
+     syntax-checking
+     treemacs
+     multiple-cursors
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     syntax-checking
      ;; version-control
-     treemacs
-     multiple-cursors
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
