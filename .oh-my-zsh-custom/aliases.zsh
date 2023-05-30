@@ -30,7 +30,7 @@ alias .1="cd .."
 alias .2="cd ../.."
 alias .3="cd ../../.."
 alias vim="nvim"
-# alias cat="bat"
+alias bat="bat --paging=never"
 alias sudo='sudo -v; sudo '  # Refresh the timeout every time sudo is used (to avoid having to retype the password)
 alias duc="du -hcxd1 | sort -hr"  # du -shcx /home/* | sort -hr
 # alias cpr="rsync -pogbr -hhh --backup-dir=/tmp/rsync -e /dev/null --progress"  # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp for details
