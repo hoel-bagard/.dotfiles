@@ -548,6 +548,7 @@ before packages are loaded."
   (evil-set-undo-system 'undo-tree)
   (setq undo-tree-auto-save-history nil)
   (setq lsp-headerline-breadcrumb-enable nil)
+  (setq lsp-file-watch-threshold 5000)
 
   ;; python
   ;; (require 'flycheck-mypy)
