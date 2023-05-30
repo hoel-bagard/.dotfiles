@@ -95,3 +95,6 @@ export XMODIFIERS=@im=fcitx
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 neofetch
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
