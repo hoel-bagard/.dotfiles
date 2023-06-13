@@ -563,6 +563,8 @@ before packages are loaded."
               ;; (setq lsp-pylsp-plugins-pylint-enabled t)
               (setq lsp-pylsp-plugins-jedi-completion-include-params nil)
               (setq lsp-pylsp-plugins-jedi-completion-include-class-objects nil)
+
+              (setq python-indent-def-block-scale 1)
               ))
 
   ;; web development
