@@ -43,7 +43,11 @@
 [interactive]
 	diffFilter = delta --color-only --features=interactive
 
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
 [delta]
+	features = decorations
 	side-by-side = true
 	navigate = true
 	syntax-theme = Coldark-Dark
