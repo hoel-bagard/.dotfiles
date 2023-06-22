@@ -21,6 +21,7 @@
 
 [commit]
 	gpgsign = true
+	verbose = true
 
 [init]
 	defaultBranch = master
