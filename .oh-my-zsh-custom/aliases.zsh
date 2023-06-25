@@ -36,10 +36,8 @@ alias duc="du -hcxd1 | sort -hr"  # du -shcx /home/* | sort -hr
 # alias cpr="rsync -pogbr -hhh --backup-dir=/tmp/rsync -e /dev/null --progress"  # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp for details
 alias cpr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1"  # From https://wiki.archlinux.org/title/rsync
 alias mvr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "
-alias tb="tensorboard --logdir . --samples_per_plugin 'scalars=500,images=500'"
-alias sv="source venv/bin/activate"
-alias create-venv-sys="virtualenv --system-site-packages venv; source venv/bin/activate"
-alias create-venv="virtualenv venv; source venv/bin/activate"
+alias librecalc="libreoffice --calc --safe-mode"
+# Git
 alias gc="git c"
 alias gcm="git cm"
 alias gp="git p"
@@ -50,6 +48,12 @@ alias carb="cargo build"
 alias carc="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A dead_code"
 alias carc-fix="cargo clippy --allow-dirty --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A dead_code"
 alias cart="cargo test"
+# Python
+alias psh="poetry shell"
+alias tb="tensorboard --logdir . --samples_per_plugin 'scalars=500,images=500'"
+alias sv="source venv/bin/activate"
+alias create-venv-sys="virtualenv --system-site-packages venv; source venv/bin/activate"
+alias create-venv="virtualenv venv; source venv/bin/activate"
 
 # Maintenance
 alias arch-update="sudo pacman -Syu"
