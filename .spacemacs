@@ -48,7 +48,7 @@ This function should only modify configuration layer settings."
           ;; lsp-disabled-clients '(pyright)
           )
      (rust :variables
-           rust-format-on-save t)
+           rustic-format-on-save t)
      csv
      (markdown :variables markdown-live-preview-engine 'vmd)
      git
@@ -83,6 +83,7 @@ This function should only modify configuration layer settings."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(
+     evil-easymotion
      ;; flycheck-mypy
      yasnippet-snippets
      )
