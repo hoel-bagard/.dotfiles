@@ -3,7 +3,7 @@
 [user]
 	email = hoel.bagard@gmail.com
 	name = Hoel Bagard
-	signingkey = 9A6B2CE5975D31C9
+	signingkey = SomeValue
 
 [core]
 	editor = nvim
@@ -211,3 +211,10 @@
 
 [url "git@gitlab.com:"]
 	insteadOf = @gl:
+[merge]
+	tool = vimdiff
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
