@@ -9,14 +9,13 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 
 -- Settings
 config.font = wezterm.font("MesloLGS NF", {weight="Regular", italic=false})
--- config.color_scheme = "Breeze"
 config.color_scheme = "Breeze (Gogh)"
 config.tab_bar_at_bottom = true
 config.default_cwd = "~"
 config.window_background_opacity = 1
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
-config.skip_close_confirmation_for_processes_named = {}
+-- config.skip_close_confirmation_for_processes_named = {}
 config.scrollback_lines = 3500
 config.default_workspace = "main"
 
