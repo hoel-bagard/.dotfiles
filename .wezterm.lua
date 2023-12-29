@@ -107,6 +107,7 @@ for i = 1, 9 do
   })
 end
 
+-- Set bottom right
 wezterm.on('update-right-status', function(window, pane)
   -- Each element holds the text for a cell in a "powerline" style << fade
   local cells = {}
@@ -205,8 +206,16 @@ wezterm.on('update-right-status', function(window, pane)
 end)
 
 wezterm.on("gui-startup", function(cmd)
-  local tab, pane, window = mux.spawn_window(cmd or {})
+  local tab, ide_pane, window = mux.spawn_window(cmd or {})
   window:gui_window():maximize()
+
+  local work_dir = wezterm.home_dir .. '/work'
+  local terminal_pane = ide_pane:split {
+    size = 0.2,
+    cwd = work_dir,
+  }
+  ide_pane:send_text "helix\n"
+
 end)
 
 return config
