@@ -1,3 +1,4 @@
+-- Mostly taken from https://github.com/theopn/dotfiles/tree/main  (and from the docs)
 local wezterm = require "wezterm"
 local act = wezterm.action
 local mux = wezterm.mux
@@ -78,6 +79,24 @@ config.keys = {
   { key = "w", mods = "LEADER",       action = act.ShowLauncherArgs { flags = "FUZZY|WORKSPACES" } },
 }
 
+config.key_tables = {
+  resize_pane = {
+    { key = "h",      action = act.AdjustPaneSize { "Left", 1 } },
+    { key = "j",      action = act.AdjustPaneSize { "Down", 1 } },
+    { key = "k",      action = act.AdjustPaneSize { "Up", 1 } },
+    { key = "l",      action = act.AdjustPaneSize { "Right", 1 } },
+    { key = "Escape", action = "PopKeyTable" },
+    { key = "Enter",  action = "PopKeyTable" },
+  },
+  move_tab = {
+    { key = "h",      action = act.MoveTabRelative(-1) },
+    { key = "j",      action = act.MoveTabRelative(-1) },
+    { key = "k",      action = act.MoveTabRelative(1) },
+    { key = "l",      action = act.MoveTabRelative(1) },
+    { key = "Escape", action = "PopKeyTable" },
+    { key = "Enter",  action = "PopKeyTable" },
+  }
+}
 
 -- Allow navigating the tabs with ALT+index.
 for i = 1, 9 do
