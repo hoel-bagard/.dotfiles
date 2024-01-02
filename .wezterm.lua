@@ -11,6 +11,9 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 -- Settings
 config.font = wezterm.font("MesloLGS NF", {weight="Regular", italic=false})
 config.color_scheme = "Breeze (Gogh)"
+config.colors = {
+  cursor_fg = 'black',
+}
 config.tab_bar_at_bottom = true
 config.default_cwd = "~"
 config.window_background_opacity = 1
