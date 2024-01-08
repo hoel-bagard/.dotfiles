@@ -17,10 +17,12 @@ alias duc="du -hcxd1 | sort -hr"  # du -shcx /home/* | sort -hr
 # alias cpr="rsync -pogbr -hhh --backup-dir=/tmp/rsync -e /dev/null --progress"  # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp for details
 alias cpr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1"  # From https://wiki.archlinux.org/title/rsync
 alias mvr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "
+
 # Git
 alias gc="git c"
 alias gcm="git cm"
 alias gp="git p"
+
 # Cargo
 alias card="cargo doc"
 alias cardo="cargo doc --open"
@@ -28,6 +30,7 @@ alias carb="cargo build"
 alias carc="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A dead_code"
 alias carc-fix="cargo clippy --allow-dirty --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A dead_code"
 alias cart="cargo test"
+
 # Python
 alias psh="poetry shell"
 alias tb="tensorboard --logdir . --samples_per_plugin 'scalars=500,images=500'"
@@ -44,6 +47,10 @@ alias enable-boost="sudo sh -c \"echo 1 >> /sys/devices/system/cpu/cpufreq/boost
 
 # Dotfiles management
 alias git-config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+# Work
+alias xc-start="count-hours log start ~/work/xc/.count-hours.csv"
+alias xc-end="count-hours log end ~/work/xc/.count-hours.csv"
 
 # Misc
 # alias job-done="kdialog --passivepopup 'Job finished' --title 'Console'"
