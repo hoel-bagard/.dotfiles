@@ -1,12 +1,17 @@
-personal_ws-1.1 en 15 
+personal_ws-1.1 en 22 
 Args
 CSV
 DVC
 NAS
+README
 Uncomment
+codespell
 config
+dev
 embeddings
+fi
 gitignored
+md
 metafile
 nonincremental
 normalsize
@@ -14,3 +19,5 @@ palletizing
 pandoc
 pastable
 repo
+ripgrep
+src
