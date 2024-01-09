@@ -110,6 +110,15 @@ for i = 1, 9 do
   })
 end
 
+-- Does not work, at least on WSL, see https://wezfurlong.org/wezterm/config/lua/keyassignment/SelectTextAtMouseCursor.html
+config.mouse_bindings = {
+  {
+    event = { Down = { streak = 3, button = 'Left' } },
+    action = wezterm.action.SelectTextAtMouseCursor 'SemanticZone',
+    mods = 'NONE',
+  },
+}
+
 -- Set bottom right
 wezterm.on('update-right-status', function(window, pane)
   -- Each element holds the text for a cell in a "powerline" style << fade
