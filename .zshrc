@@ -82,9 +82,6 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # source /home/hoel/.zprofile
 
-# To sign commits with git(hub)
-export GPG_TTY=$(tty)
-
 # Japanese inputs
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -93,8 +90,12 @@ export XMODIFIERS=@im=fcitx
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-neofetch
+# To sign commits with git(hub)
+export GPG_TTY=$TTY
+
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+neofetch
