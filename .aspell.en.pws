@@ -1,4 +1,4 @@
-personal_ws-1.1 en 22 
+personal_ws-1.1 en 24 
 Args
 CSV
 DVC
@@ -8,6 +8,7 @@ Uncomment
 codespell
 config
 dev
+docstring
 embeddings
 fi
 gitignored
@@ -15,6 +16,7 @@ md
 metafile
 nonincremental
 normalsize
+palletize
 palletizing
 pandoc
 pastable
