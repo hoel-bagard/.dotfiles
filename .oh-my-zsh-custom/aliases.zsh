@@ -52,6 +52,7 @@ alias git-config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # Work
 alias xc-start="count-hours log start ~/work/xc/.count-hours.csv"
 alias xc-end="count-hours log end ~/work/xc/.count-hours.csv"
+alias xc-source="source $HOME/work/xc/xc-aliases/xc-aliases.zsh"
 
 # Misc
 # alias job-done="kdialog --passivepopup 'Job finished' --title 'Console'"
