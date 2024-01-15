@@ -3,7 +3,7 @@
 [user]
 	email = hoel.bagard@gmail.com
 	name = Hoel Bagard
-	signingkey = F55A678935732665
+	signingkey = 4F2E04C61B7ED6D3
 
 [core]
 	editor = nvim
