@@ -5,7 +5,7 @@ alias mount-home-private="sudo mount -t cifs //192.168.0.245/PrivateNAS /mnt/nas
 alias unmount-home-private="sudo umount /mnt/nas_private; ssh -t hoel@192.168.0.245 'sudo hdparm -y /dev/sdb'"
 
 # Everyday commands
-alias ll="exa -lahFG"
+alias ll="eza -lahFG"
 alias ls='ls --color=auto'
 alias mkdir="mkdir -p"  # Create missing folders if needed
 alias .1="cd .."
