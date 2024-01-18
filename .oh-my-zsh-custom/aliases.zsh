@@ -23,6 +23,7 @@ alias vim="nvim"
 alias gc="git c"
 alias gcm="git cm"
 alias gp="git p"
+alias gu="git add . && git commit --amend --no-edit && git push --force-with-lease"
 
 # Cargo
 alias card="cargo doc"
