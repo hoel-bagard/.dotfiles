@@ -79,7 +79,12 @@ plugins=(
 # For a full list of active aliases, run `alias`.
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+if [ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]; then
+    source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+else
+    source ~/powerlevel10k/powerlevel10k.zsh-theme
+fi
 # source /home/hoel/.zprofile
 
 # Japanese inputs

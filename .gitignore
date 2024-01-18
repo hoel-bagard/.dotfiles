@@ -49,3 +49,5 @@ go/
 Downloads/
 work/
 .password-store/
+.keras/
+mount
