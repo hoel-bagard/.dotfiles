@@ -44,6 +44,7 @@ plugins=(
     zsh-syntax-highlighting
     zsh-autosuggestions
     command-not-found
+    docker
     # rust
     # bgnotify
     # colored-man-pages
