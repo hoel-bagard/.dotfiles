@@ -1,4 +1,4 @@
-personal_ws-1.1 en 27 
+personal_ws-1.1 en 30 
 Args
 CSV
 DVC
@@ -21,7 +21,10 @@ palletize
 palletizing
 pandoc
 pastable
+pyright
 repo
+reportGeneralTypeIssues
+reportUnknownVariableType
 ripgrep
 src
 utf
