@@ -1,4 +1,5 @@
-personal_ws-1.1 en 30 
+personal_ws-1.1 en 35
+Activations
 Args
 CSV
 DVC
@@ -11,6 +12,7 @@ dev
 docstring
 embeddings
 fi
+formatter
 gitignored
 md
 metafile
@@ -22,10 +24,12 @@ palletizing
 pandoc
 pastable
 pyright
+preprocessing
 repo
 reportGeneralTypeIssues
 reportUnknownVariableType
 ripgrep
+springer
 src
 utf
 utils
