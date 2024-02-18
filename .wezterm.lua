@@ -217,17 +217,17 @@ wezterm.on('update-right-status', function(window, pane)
   window:set_right_status(wezterm.format(elements))
 end)
 
-wezterm.on("gui-startup", function(cmd)
-  local tab, ide_pane, window = mux.spawn_window(cmd or {})
-  window:gui_window():maximize()
+-- wezterm.on("gui-startup", function(cmd)
+--   local tab, ide_pane, window = mux.spawn_window(cmd or {})
+--   window:gui_window():maximize()
 
-  local work_dir = wezterm.home_dir .. '/work'
-  local terminal_pane = ide_pane:split {
-    size = 0.2,
-    cwd = work_dir,
-  }
-  ide_pane:send_text "helix\n"
+--   local work_dir = wezterm.home_dir .. '/work'
+--   local terminal_pane = ide_pane:split {
+--     size = 0.2,
+--     cwd = work_dir,
+--   }
+--   ide_pane:send_text "helix\n"
 
-end)
+-- end)
 
 return config
