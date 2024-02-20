@@ -43,6 +43,10 @@ This function should only modify configuration layer settings."
      typescript
      yaml
      html
+     (shell-scripts :variables
+                    shell-scripts-format-on-save t
+                    shell-scripts-backend 'lsp
+                    )
      (javascript :variables
                  javascript-backend 'lsp)
      (lsp :variables
