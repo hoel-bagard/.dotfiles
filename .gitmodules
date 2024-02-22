@@ -6,3 +6,6 @@
 	path = .oh-my-zsh-custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 
+[submodule "hitachi-dotfiles"]
+	path = hitachi-dotfiles
+	url = git@github.com:hoel-bagard-hy/hitachi-dotfiles.git
