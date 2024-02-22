@@ -1,0 +1,6 @@
+# Based on darcula and inspired by the Spacemacs dark theme.
+
+inherits = "darcula"
+
+"keyword" = { fg = "blue", modifiers = ["bold"] }
+
