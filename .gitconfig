@@ -5,6 +5,9 @@
 	name = Hoel Bagard
 	signingkey = 4F2E04C61B7ED6D3
 
+[includeIf "gitdir:~/work-hitachi/"]
+path = "~/hitachi-dotfiles/.gitconfig"
+
 [core]
 	editor = nvim
 
@@ -211,8 +214,10 @@
 
 [url "git@gitlab.com:"]
 	insteadOf = @gl:
+
 [merge]
 	tool = vimdiff
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
