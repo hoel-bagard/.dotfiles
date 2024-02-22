@@ -35,6 +35,8 @@ path = "~/hitachi-dotfiles/.gitconfig"
 # https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---color-movedltmodegt
 [diff]
 	colorMoved = default
+	algorithm = histogram
+	submodule = log
 
 # Delta begin https://github.com/dandavison/delta
 [pager]
@@ -94,7 +96,7 @@ path = "~/hitachi-dotfiles/.gitconfig"
 	lap = log --pretty=lf --graph --cc --patch                          --all
 
 	# log, all branches+tags on remotes 'origin' and 'upstream'
-	lg  = log --pretty=lc --graph                                       --branches=* --tags=* --remotes=origin --remotes=upstream
+	lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 15
 	lgo = log --pretty=lo --graph --date=human                          --branches=* --tags=* --remotes=origin --remotes=upstream
 	lgs = log --pretty=lo --graph --date=human --simplify-by-decoration --branches=* --tags=* --remotes=origin --remotes=upstream
 	lgf = log --pretty=lf --graph                                       --branches=* --tags=* --remotes=origin --remotes=upstream
@@ -210,16 +212,37 @@ path = "~/hitachi-dotfiles/.gitconfig"
 
 
 [url "git@github.com:"]
-	insteadOf = @gh:
+	insteadOf = gh:
+
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
 
 [url "git@gitlab.com:"]
-	insteadOf = @gl:
+	insteadOf = gl:
 
 [merge]
-	tool = vimdiff
+	tool = zdiff3  # vimdiff
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[rebase]
+	autosquash = true
+	autostash = true
+
+[help]
+	autocorrect = 10
+
+[transfer]
+	fsckobjects = true
+[fetch]
+	fsckobjects = true
+[receive]
+	fsckObjects = true
+[status]
+	submoduleSummary = true
+[submodule]
+	recurse = true
