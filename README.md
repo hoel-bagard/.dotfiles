@@ -22,7 +22,7 @@ yay -S --noconfirm zsh-theme-powerlevel10k-git
 ```
 
 ### User install
-If packages cannot be install globally, do:
+If packages cannot be installed globally, do:
 ```console
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 ~/powerlevel10k/gitstatus/install
