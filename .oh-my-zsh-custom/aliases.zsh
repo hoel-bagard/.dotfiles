@@ -5,17 +5,23 @@ alias mount-home-private="sudo mount -t cifs //192.168.0.245/PrivateNAS /mnt/nas
 alias unmount-home-private="sudo umount /mnt/nas_private; ssh -t hoel@192.168.0.245 'sudo hdparm -y /dev/sdb'"
 
 # Everyday commands
-alias ll="eza -lahFG"
+if (($ + commands[eza])); then
+	alias ll="eza -lahG"
+elif (($ + commands[exa])); then
+	alias ll="exa -lahFG"
+else
+	alias ll="ls -lah"
+fi
 alias ls='ls --color=auto'
-alias mkdir="mkdir -p"  # Create missing folders if needed
+alias mkdir="mkdir -p" # Create missing folders if needed
 alias .1="cd .."
 alias .2="cd ../.."
 alias .3="cd ../../.."
 alias bat="bat --paging=never"
-alias sudo='sudo -v; sudo '  # Refresh the timeout every time sudo is used (to avoid having to retype the password)
-alias duc="du -hcxd1 | sort -hr"  # du -shcx /home/* | sort -hr
+alias sudo='sudo -v; sudo '      # Refresh the timeout every time sudo is used (to avoid having to retype the password)
+alias duc="du -hcxd1 | sort -hr" # du -shcx /home/* | sort -hr
 # alias cpr="rsync -pogbr -hhh --backup-dir=/tmp/rsync -e /dev/null --progress"  # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp for details
-alias cpr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1"  # From https://wiki.archlinux.org/title/rsync
+alias cpr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1" # From https://wiki.archlinux.org/title/rsync
 alias mvr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "
 
 # Git
