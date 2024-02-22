@@ -113,5 +113,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# Below is used (among other things) if poetry is installed for the user only.
+export PATH="$HOME/.local/bin:$PATH"
+
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 neofetch
