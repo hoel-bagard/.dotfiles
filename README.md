@@ -11,3 +11,19 @@ git-config submodule update --init --recursive
 
 https://wiki.archlinux.org/title/Dotfiles#User_repositories \
 https://news.ycombinator.com/item?id=11071754
+
+## Dependency install
+### Arch
+See [arch install](https://github.com/hoel-bagard/arch-cheatsheet/blob/master/4-shell.md).
+
+```console
+sudo pacman -S zsh neofetch
+yay -S --noconfirm zsh-theme-powerlevel10k-git
+```
+
+### User install
+If packages cannot be install globally, do:
+```console
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+~/powerlevel10k/gitstatus/install
+```
