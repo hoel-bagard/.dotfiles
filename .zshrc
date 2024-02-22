@@ -86,7 +86,11 @@ if [ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]; then
 else
     source ~/powerlevel10k/powerlevel10k.zsh-theme
 fi
-# source /home/hoel/.zprofile
+
+# Source hitachi dotfiles if on work PC.
+if [ -f $HOME/hitachi-dotfiles/proxy-commands.zsh ]; then
+    source $HOME/hitachi-dotfiles/proxy-commands.zsh
+fi
 
 # Japanese inputs
 export GTK_IM_MODULE=fcitx
