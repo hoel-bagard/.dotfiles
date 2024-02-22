@@ -91,6 +91,9 @@ fi
 if [ -f $HOME/hitachi-dotfiles/proxy-commands.zsh ]; then
     source $HOME/hitachi-dotfiles/proxy-commands.zsh
 fi
+if [ -f $HOME/hitachi-dotfiles/wsl.zsh ]; then
+    source $HOME/hitachi-dotfiles/wsl.zsh
+fi
 
 # Japanese inputs
 export GTK_IM_MODULE=fcitx
