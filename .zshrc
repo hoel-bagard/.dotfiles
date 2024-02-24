@@ -116,8 +116,8 @@ eval "$(pyenv init -)"
 # Below is used (among other things) if poetry is installed for the user only.
 export PATH="$HOME/.local/bin:$PATH"
 
-# Disable zsh auto-correct for the following words | regex.
-CORRECT_IGNORE_FILE=".git" # ".*"
+# Disable zsh auto-correct for the following words / regex.
+CORRECT_IGNORE_FILE=".git"  # ".*"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 neofetch

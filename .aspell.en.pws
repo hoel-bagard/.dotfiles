@@ -23,12 +23,13 @@ palletize
 palletizing
 pandoc
 pastable
-pyright
 preprocessing
+pyright
 repo
 reportGeneralTypeIssues
 reportUnknownVariableType
 ripgrep
+sed
 springer
 src
 utf
