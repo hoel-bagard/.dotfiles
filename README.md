@@ -27,3 +27,6 @@ If packages cannot be installed globally, do:
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 ~/powerlevel10k/gitstatus/install
 ```
+
+### Tmux
+Press `prefix + I` (capital i, as in Install) while in tmux to fetch the plugins. `prefix` is set to `C-space`.

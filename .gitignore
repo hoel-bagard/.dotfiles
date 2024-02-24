@@ -44,11 +44,12 @@
 .zcompdump-9a419132b54a-5.9.zwc
 .zcompdump-hoel-5.9
 .zcompdump-hoel-5.9.zwc
+.tmux/
+.keras/
+.password-store/
 Desktop/
 go/
 Downloads/
 work/
 work-hitachi/
-.password-store/
-.keras/
 mount
