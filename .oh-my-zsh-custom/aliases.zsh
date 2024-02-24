@@ -13,7 +13,8 @@ else
     alias ll="ls -lah"
 fi
 alias ls='ls --color=auto'
-alias mkdir="mkdir -p" # Create missing folders if needed
+alias mkdir="mkdir -p"
+mkfile() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 alias .1="cd .."
 alias .2="cd ../.."
 alias .3="cd ../../.."
