@@ -70,6 +70,8 @@ plugins=(
 #     fi
 # }
 
+# Export environment variables
+export $(envsubst <.env)
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -78,7 +80,6 @@ plugins=(
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-
 source $ZSH/oh-my-zsh.sh
 
 if [ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]; then
