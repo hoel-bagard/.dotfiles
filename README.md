@@ -1,4 +1,4 @@
-# Hoel Bagard's dotfiles
+# My dotfiles
 
 ## Git clone
 
