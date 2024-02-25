@@ -1,32 +1,37 @@
-# .dotfiles
+# Hoel Bagard's dotfiles
 
-See full instructions at the end of https://gist.github.com/hoel-bagard/37f1aa8d38bb780c1c72bc3e390ec211  
-Clone with:   (untested)
+## Git clone
+
+```console
+git clone --separate-git-dir=$HOME/.dotfiles git@github.com:hoel-bagard/.dotfiles.git $HOME/dotfiles-tmp --recurse-submodules
+mv -v ~/dotfiles-tmp/.* ~/
+mv -v ~/dotfiles-tmp/*.* ~/
+mv -v ~/dotfiles-tmp/README.md ~/
+rmdir dotfiles-tmp
 ```
-git clone --separate-git-dir=$HOME/.dotfiles git@github.com:hoel-bagard/.dotfiles.git $HOME/myconf-tmp
-mv -v ~/myconf-tmp/.* ~/
-rmdir myconf-tmp
-git-config submodule update --init --recursive
+
+Install plugins (this should not be necessary, check)
+
+```console
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+source ~/.zshrc
 ```
 
-https://wiki.archlinux.org/title/Dotfiles#User_repositories \
-https://news.ycombinator.com/item?id=11071754
+This way of doing is taken from [this hacker news thread](https://news.ycombinator.com/item?id=11071754).
 
-## Dependency install
+Note:\
+Another way to handle dotfiles would be to use [stow](https://www.gnu.org/software/stow/), but this involves trade offs (afaik).
+Advantages:
+- This would remove the need for the `.gitignore`
+Disadvantages:
+- Requires stow, which might not be present on servers.
+- Symlinks are (imo) less intuitive.
+- Managing dotfiles would require moving to the dotfiles folder or using the `git-config` alias.
+
+## Installing dependencies
 ### Arch
-See [arch install](https://github.com/hoel-bagard/arch-cheatsheet/blob/master/4-shell.md).
-
-```console
-sudo pacman -S zsh neofetch
-yay -S --noconfirm zsh-theme-powerlevel10k-git
-```
-
-### User install
-If packages cannot be installed globally, do:
-```console
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-~/powerlevel10k/gitstatus/install
-```
+See [these instructions](https://github.com/hoel-bagard/arch-cheatsheet/blob/master/4-shell.md) to install the necessary packages on Arch Linux.
 
 ### Tmux
 Press `prefix + I` (capital i, as in Install) while in tmux to fetch the plugins. `prefix` is set to `C-space`.
