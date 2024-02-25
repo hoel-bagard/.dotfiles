@@ -3,10 +3,11 @@
 ## Git clone
 
 ```console
-git clone --separate-git-dir=$HOME/.dotfiles git@github.com:hoel-bagard/.dotfiles.git $HOME/dotfiles-tmp --recurse-submodules
+git clone --separate-git-dir=$HOME/.dotfiles git@github.com:hoel-bagard/.dotfiles.git $HOME/dotfiles-tmp --recurse-submodules --shallow-submodules
 mv -v ~/dotfiles-tmp/.* ~/
 mv -v ~/dotfiles-tmp/*.* ~/
 mv -v ~/dotfiles-tmp/README.md ~/
+ln -s ~/.config/nvchad_custom ~/.config/nvim/lua/custom
 rmdir dotfiles-tmp
 ```
 
