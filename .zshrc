@@ -82,7 +82,11 @@ export $(envsubst < $HOME/.env)
 # For a full list of active aliases, run `alias`.
 source $ZSH/oh-my-zsh.sh
 
-if [ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]; then
+# Source powerlevel10k theme. First path is the one recommended in the install instructions.
+# Second one is if installed through the AUR, third one is a dirty way that sometimes happens.
+if [ -f ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k/powerlevel10k.zsh-theme ]; then
+    source ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k/powerlevel10k.zsh-theme
+elif [ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]; then
     source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 else
     source ~/powerlevel10k/powerlevel10k.zsh-theme
