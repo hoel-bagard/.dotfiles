@@ -1,14 +1,19 @@
 [submodule "zsh-autosuggestion"]
 	path = .oh-my-zsh-custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+	shallow = true
 
 [submodule "zsh-syntax-highlighting"]
 	path = .oh-my-zsh-custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+	shallow = true
+
+[submodule "/home/hoel/.oh-my-zsh-custom/themes/powerlevel10k"]
+	path = /home/hoel/.oh-my-zsh-custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+	shallow = true
 
 [submodule "hitachi-dotfiles"]
 	path = hitachi-dotfiles
 	url = git@github.com:hoel-bagard-hy/hitachi-dotfiles.git
-[submodule "/home/hoel/.oh-my-zsh-custom/themes/powerlevel10k"]
-	path = /home/hoel/.oh-my-zsh-custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
+
