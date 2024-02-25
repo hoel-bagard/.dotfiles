@@ -71,7 +71,7 @@ plugins=(
 # }
 
 # Export environment variables
-export $(envsubst <.env)
+export $(envsubst < $HOME/.env)
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
