@@ -17,3 +17,6 @@
 	path = hitachi-dotfiles
 	url = git@github.com:hoel-bagard-hy/hitachi-dotfiles.git
 
+[submodule "/home/hoel/.config/nvim"]
+	path = /home/hoel/.config/nvim
+	url = https://github.com/NvChad/NvChad
