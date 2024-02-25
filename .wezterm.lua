@@ -10,6 +10,8 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 
 -- Settings
 config.font = wezterm.font("MesloLGS NF", {weight="Regular", italic=false})
+config.font = wezterm.font_with_fallback {'JetbrainsMono Nerd Font'}
+
 config.color_scheme = "Breeze (Gogh)"
 config.colors = {
   cursor_fg = 'black',
