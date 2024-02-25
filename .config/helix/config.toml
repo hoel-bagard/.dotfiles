@@ -1,3 +1,5 @@
 [keys.normal]
-C-u = ["half_page_up", align_view_center"]
-C-d = ["half_page_down", align_view_center"]
+C-u = ["half_page_up", "align_view_center"]
+C-d = ["half_page_down", "align_view_center"]
+n = ["search_next", "align_view_center"]
+N = ["search_prev", "align_view_center"]
