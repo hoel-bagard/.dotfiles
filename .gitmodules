@@ -9,3 +9,6 @@
 [submodule "hitachi-dotfiles"]
 	path = hitachi-dotfiles
 	url = git@github.com:hoel-bagard-hy/hitachi-dotfiles.git
+[submodule "/home/hoel/.oh-my-zsh-custom/themes/powerlevel10k"]
+	path = /home/hoel/.oh-my-zsh-custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
