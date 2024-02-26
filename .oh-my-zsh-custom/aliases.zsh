@@ -24,6 +24,7 @@ alias duc="du -hcxd1 | sort -hr" # du -shcx /home/* | sort -hr
 # alias cpr="rsync -pogbr -hhh --backup-dir=/tmp/rsync -e /dev/null --progress"  # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp for details
 alias cpr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1" # From https://wiki.archlinux.org/title/rsync
 alias mvr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "
+alias hx="helix"
 
 # Git
 alias gc="git c"
