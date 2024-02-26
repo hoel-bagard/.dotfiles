@@ -3,6 +3,16 @@ theme = "darcula"
 [editor]
 line-number = "relative"
 bufferline = "multiple"
+mouse = true
+
+[editor.lsp]
+display-messages = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.file-picker]
+hidden = true
 
 [keys.normal]
 C-u = ["half_page_up", "align_view_center"]
@@ -12,6 +22,4 @@ N = ["search_prev", "align_view_center"]
 esc = ["collapse_selection", "keep_primary_selection"]
 D = ["ensure_selections_forward", "extend_to_line_end", "delete_selection"]
 d = { d = ["extend_to_line_bounds", "delete_selection"] }
-
-[editor.cursor-shape]
-insert = "bar"
+V = ["select_mode", "extend_to_line_bounds"]
