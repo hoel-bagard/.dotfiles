@@ -22,6 +22,10 @@ rmdir $dotfiles_tmp_dir
 ln -s ~/.config/nvchad_custom ~/.config/nvim/lua/custom
 ```
 
+TODO: fully move to stow (or the nix home manager thing?).\
+This will mean that `~/.config/nvim/lua/custom` will no longer be tracked if using pure git, but that should be fine on the servers.\
+(using stow, the file that is actually tracked is the one in the .dotfiles dir, not the simlink, so there's no submodule issue.)
+
 ## Using [stow](https://www.gnu.org/software/stow/)  (untested)
 Using `stow` has the following advantages:
 - It should make it easier to manage confirmation files in submodules (like `~/.config/nvim/lua/custom`).
