@@ -70,6 +70,8 @@ plugins=(
 #     fi
 # }
 
+# Export environment variables
+export $(envsubst < $HOME/.env)
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -78,10 +80,13 @@ plugins=(
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-
 source $ZSH/oh-my-zsh.sh
 
-if [ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]; then
+# Source powerlevel10k theme. First path is the one recommended in the install instructions.
+# Second one is if installed through the AUR, third one is a dirty way that sometimes happens.
+if [ -f ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k/powerlevel10k.zsh-theme ]; then
+    source ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k/powerlevel10k.zsh-theme
+elif [ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]; then
     source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 else
     source ~/powerlevel10k/powerlevel10k.zsh-theme
@@ -116,8 +121,8 @@ eval "$(pyenv init -)"
 # Below is used (among other things) if poetry is installed for the user only.
 export PATH="$HOME/.local/bin:$PATH"
 
-# Disable zsh auto-correct for the following words | regex.
-CORRECT_IGNORE_FILE=".git" # ".*"
+# Disable zsh auto-correct for the following words / regex.
+CORRECT_IGNORE_FILE=".git"  # ".*"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 neofetch

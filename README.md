@@ -1,29 +1,52 @@
-# .dotfiles
+# My dotfiles
 
-See full instructions at the end of https://gist.github.com/hoel-bagard/37f1aa8d38bb780c1c72bc3e390ec211  
-Clone with:   (untested)
+## Install
+## Using pure git
+This way of doing is taken from [this hacker news thread](https://news.ycombinator.com/item?id=11071754).
+
+```zsh
+export dotfiles_tmp_dir=$HOME/dotfiles-tmp
+git clone --separate-git-dir=$HOME/.dotfiles git@github.com:hoel-bagard/.dotfiles.git $dotfiles_tmp_dir
+
+# Get the submodules.
+mv -v ~/$dotfiles_tmp_dir/.gitmodules ~/
+git submodule update --init --recursive
+
+# Move all the files.
+mv -v $dotfiles_tmp_dir/.* ~/
+mv -v $dotfiles_tmp_dir/*.* ~/
+mv -v $dotfiles_tmp_dir/README.md ~/
+rmdir $dotfiles_tmp_dir
+
+# Special case for nvchad's config
+ln -s ~/.config/nvchad_custom ~/.config/nvim/lua/custom
 ```
-git clone --separate-git-dir=$HOME/.dotfiles git@github.com:hoel-bagard/.dotfiles.git $HOME/myconf-tmp
-mv -v ~/myconf-tmp/.* ~/
-rmdir myconf-tmp
-git-config submodule update --init --recursive
+
+## Using [stow](https://www.gnu.org/software/stow/)  (untested)
+Using `stow` has the following advantages:
+- It should make it easier to manage confirmation files in submodules (like `~/.config/nvim/lua/custom`).
+- It removes the need for the `.gitignore`
+
+However `stow` might not be present on server, and it requires using the `git-config` alias to manage the dotfiles from the home folder.
+
+From the home folder, do:
+```console
+git clone git@github.com:hoel-bagard/.dotfiles.git .dotfiles
+
+# Get the submodules.
+ln -s .dotfiles/.gitmodules .gitmodules
+git submodule update --init --recursive
+
+cd .dotfiles
+stow .
+
+# Special case for nvchad's config.
+ln -s ~/.config/nvchad_custom ~/.config/nvim/lua/custom
 ```
 
-https://wiki.archlinux.org/title/Dotfiles#User_repositories \
-https://news.ycombinator.com/item?id=11071754
-
-## Dependency install
+## Installing dependencies
 ### Arch
-See [arch install](https://github.com/hoel-bagard/arch-cheatsheet/blob/master/4-shell.md).
+See [these instructions](https://github.com/hoel-bagard/arch-cheatsheet/blob/master/4-shell.md) to install the necessary packages on Arch Linux.
 
-```console
-sudo pacman -S zsh neofetch
-yay -S --noconfirm zsh-theme-powerlevel10k-git
-```
-
-### User install
-If packages cannot be install globally, do:
-```console
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-~/powerlevel10k/gitstatus/install
-```
+### Tmux
+Press `prefix + I` (capital i, as in Install) while in tmux to fetch the plugins. `prefix` is set to `C-space`.

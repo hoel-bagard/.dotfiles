@@ -1,0 +1,8 @@
+# Config for shfmt
+[*.sh]
+indent_style = space
+indent_size = 4
+
+[*.zsh]
+indent_style = space
+indent_size = 4

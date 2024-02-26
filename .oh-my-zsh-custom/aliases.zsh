@@ -5,15 +5,16 @@ alias mount-home-private="sudo mount -t cifs //192.168.0.245/PrivateNAS /mnt/nas
 alias unmount-home-private="sudo umount /mnt/nas_private; ssh -t hoel@192.168.0.245 'sudo hdparm -y /dev/sdb'"
 
 # Everyday commands
-if (($ + commands[eza])); then
-	alias ll="eza -lahG"
-elif (($ + commands[exa])); then
-	alias ll="exa -lahFG"
+if ! which "$eza" &>/dev/null; then # (( $+commands[exa] )) is zsh specific and not supported by shfmt
+    alias ll="eza -lahG"
+elif ! which "$exa" &>/dev/null; then
+    alias ll="exa -lahFG"
 else
-	alias ll="ls -lah"
+    alias ll="ls -lah"
 fi
 alias ls='ls --color=auto'
-alias mkdir="mkdir -p" # Create missing folders if needed
+alias mkdir="mkdir -p"
+mkfile() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 alias .1="cd .."
 alias .2="cd ../.."
 alias .3="cd ../../.."
