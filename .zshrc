@@ -96,8 +96,8 @@ fi
 if [ -f $HOME/hitachi-dotfiles/proxy-commands.zsh ]; then
     source $HOME/hitachi-dotfiles/proxy-commands.zsh
 fi
-if [ -f $HOME/hitachi-dotfiles/wsl.zsh ]; then
-    source $HOME/hitachi-dotfiles/wsl.zsh
+if [ -f $HOME/hitachi-dotfiles/hitachi_aliases.zsh ]; then
+    source $HOME/hitachi-dotfiles/hitachi_aliases.zsh
 fi
 
 # Japanese inputs
