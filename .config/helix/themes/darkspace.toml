@@ -1,4 +1,6 @@
 # Based on darcula and inspired by the Spacemacs dark theme.
+# See https://github.com/helix-editor/helix/blob/master/runtime/themes/darcula.toml
+# and https://github.com/helix-editor/helix/blob/master/runtime/themes/monokai_pro_spectrum.toml
 
 inherits = "darcula"
 
