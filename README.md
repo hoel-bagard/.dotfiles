@@ -8,41 +8,31 @@ This way of doing is taken from [this hacker news thread](https://news.ycombinat
 export dotfiles_tmp_dir=$HOME/dotfiles-tmp
 git clone --separate-git-dir=$HOME/.dotfiles git@github.com:hoel-bagard/.dotfiles.git $dotfiles_tmp_dir
 
-# Get the submodules.
-mv -v $dotfiles_tmp_dir/.gitmodules ~/
-git submodule update --init --recursive
-
 # Move all the files.
 mv -v $dotfiles_tmp_dir/.* ~/
 mv -v $dotfiles_tmp_dir/*.* ~/
 mv -v $dotfiles_tmp_dir/README.md ~/
 rmdir $dotfiles_tmp_dir
 
-# Special case for nvchad's config
+# Get the submodules.
+git submodule update --init --recursive
+
+# Special case for nvchad's config since it is inside a submodule.
 ln -s ~/.config/nvchad_custom ~/.config/nvim/lua/custom
 ```
 
-TODO: fully move to stow (or the nix home manager thing?).\
-This will mean that `~/.config/nvim/lua/custom` will no longer be tracked if using pure git, but that should be fine on the servers.\
-(using stow, the file that is actually tracked is the one in the .dotfiles dir, not the simlink, so there's no submodule issue.)
-
 ## Using [stow](https://www.gnu.org/software/stow/)  (untested)
-Using `stow` has the following advantages:
-- It should make it easier to manage confirmation files in submodules (like `~/.config/nvim/lua/custom`).
-- It removes the need for the `.gitignore`
-
-However `stow` might not be present on server, and it requires using the `git-config` alias to manage the dotfiles from the home folder.
 
 From the home folder, do:
 ```console
 git clone git@github.com:hoel-bagard/.dotfiles.git .dotfiles
 
-# Get the submodules.
-ln -s .dotfiles/.gitmodules .gitmodules
-git submodule update --init --recursive
-
 cd .dotfiles
 stow .
+cd
+
+# Get the submodules.
+git submodule update --init --recursive
 
 # Special case for nvchad's config.
 ln -s ~/.config/nvchad_custom ~/.config/nvim/lua/custom
