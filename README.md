@@ -9,7 +9,7 @@ export dotfiles_tmp_dir=$HOME/dotfiles-tmp
 git clone --separate-git-dir=$HOME/.dotfiles git@github.com:hoel-bagard/.dotfiles.git $dotfiles_tmp_dir
 
 # Get the submodules.
-mv -v ~/$dotfiles_tmp_dir/.gitmodules ~/
+mv -v $dotfiles_tmp_dir/.gitmodules ~/
 git submodule update --init --recursive
 
 # Move all the files.
