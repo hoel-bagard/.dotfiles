@@ -1,34 +1,48 @@
 # My dotfiles
 
-## Git clone
-
-```console
-git clone --separate-git-dir=$HOME/.dotfiles git@github.com:hoel-bagard/.dotfiles.git $HOME/dotfiles-tmp --recurse-submodules --shallow-submodules
-mv -v ~/dotfiles-tmp/.* ~/
-mv -v ~/dotfiles-tmp/*.* ~/
-mv -v ~/dotfiles-tmp/README.md ~/
-ln -s ~/.config/nvchad_custom ~/.config/nvim/lua/custom
-rmdir dotfiles-tmp
-```
-
-Install plugins (this should not be necessary, check)
-
-```console
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-source ~/.zshrc
-```
-
+## Install
+## Using pure git
 This way of doing is taken from [this hacker news thread](https://news.ycombinator.com/item?id=11071754).
 
-Note:\
-Another way to handle dotfiles would be to use [stow](https://www.gnu.org/software/stow/), but this involves trade offs (afaik).
-Advantages:
-- This would remove the need for the `.gitignore`
-Disadvantages:
-- Requires stow, which might not be present on servers.
-- Symlinks are (imo) less intuitive.
-- Managing dotfiles would require moving to the dotfiles folder or using the `git-config` alias.
+```zsh
+export dotfiles_tmp_dir=$HOME/dotfiles-tmp
+git clone --separate-git-dir=$HOME/.dotfiles git@github.com:hoel-bagard/.dotfiles.git $dotfiles_tmp_dir
+
+# Get the submodules.
+mv -v ~/$dotfiles_tmp_dir/.gitmodules ~/
+git submodule update --init --recursive
+
+# Move all the files.
+mv -v $dotfiles_tmp_dir/.* ~/
+mv -v $dotfiles_tmp_dir/*.* ~/
+mv -v $dotfiles_tmp_dir/README.md ~/
+rmdir $dotfiles_tmp_dir
+
+# Special case for nvchad's config
+ln -s ~/.config/nvchad_custom ~/.config/nvim/lua/custom
+```
+
+## Using [stow](https://www.gnu.org/software/stow/)  (untested)
+Using `stow` has the following advantages:
+- It should make it easier to manage confirmation files in submodules (like `~/.config/nvim/lua/custom`).
+- It removes the need for the `.gitignore`
+
+However `stow` might not be present on server, and it requires using the `git-config` alias to manage the dotfiles from the home folder.
+
+From the home folder, do:
+```console
+git clone git@github.com:hoel-bagard/.dotfiles.git .dotfiles
+
+# Get the submodules.
+ln -s .dotfiles/.gitmodules .gitmodules
+git submodule update --init --recursive
+
+cd .dotfiles
+stow .
+
+# Special case for nvchad's config.
+ln -s ~/.config/nvchad_custom ~/.config/nvim/lua/custom
+```
 
 ## Installing dependencies
 ### Arch
