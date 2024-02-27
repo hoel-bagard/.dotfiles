@@ -47,6 +47,7 @@
 .tmux/
 .keras/
 .password-store/
+.password-store-hitachi/
 Desktop/
 go/
 Downloads/
