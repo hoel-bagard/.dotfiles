@@ -11,6 +11,9 @@ path = "~/hitachi-dotfiles/.gitconfig"
 [includeIf "gitdir:~/hitachi-dotfiles/"]
 path = "~/hitachi-dotfiles/.gitconfig"
 
+[includeIf "gitdir:~/.password-store-hitachi/"]
+path = "~/hitachi-dotfiles/.gitconfig"
+
 [core]
 	editor = nvim
 
