@@ -23,9 +23,8 @@ git-global = false
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
 # Movements
-# TODO: the commands below are bugged.
-# C-u = ["half_page_up", "align_view_center"]
-# C-d = ["half_page_down", "align_view_center"]
+C-u = ["page_cursor_half_up", "align_view_center"]
+C-d = ["page_cursor_half_down", "align_view_center"]
 C-left = "move_prev_word_start"
 C-right = "move_next_word_end"
 "{" = "goto_prev_paragraph"
@@ -39,7 +38,7 @@ N = ["search_prev", "align_view_center"]
 # Deletion
 D = ["ensure_selections_forward", "extend_to_line_end", "delete_selection"]
 d = { d = ["extend_to_line_bounds", "delete_selection"] }
-x = ["delete_selection", "move_char_left"]
+# x = ["delete_selection", "move_char_left"]
 
 # Other
 V = ["select_mode", "extend_to_line_bounds"]
