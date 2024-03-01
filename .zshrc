@@ -122,7 +122,7 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Disable zsh auto-correct for the following words / regex.
-CORRECT_IGNORE_FILE=".git"  # ".*"
+CORRECT_IGNORE_FILE=".*"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 neofetch
