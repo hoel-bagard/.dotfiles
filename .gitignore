@@ -48,6 +48,11 @@
 .keras/
 .password-store/
 .password-store-hitachi/
+.docker/
+.vnc/
+.zcompdump-086-otakema-5.5.1
+.zcompdump-086-otakema-5.5.1.zwc
+powerlevel10k/
 Desktop/
 go/
 Downloads/
