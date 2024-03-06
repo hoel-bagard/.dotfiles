@@ -244,11 +244,16 @@ path = "~/hitachi-dotfiles/.gitconfig"
 
 [transfer]
 	fsckobjects = true
+
 [fetch]
 	fsckobjects = true
+
 [receive]
 	fsckObjects = true
+
 [status]
 	submoduleSummary = true
-[submodule]
-	recurse = true
+
+# Always fetch submodules. Can slow down pulls quite a lot if there are a few submodules.
+# [submodule]
+#	recurse = true
