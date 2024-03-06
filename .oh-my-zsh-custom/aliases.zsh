@@ -5,9 +5,9 @@ alias mount-home-private="sudo mount -t cifs //192.168.0.245/PrivateNAS /mnt/nas
 alias unmount-home-private="sudo umount /mnt/nas_private; ssh -t hoel@192.168.0.245 'sudo hdparm -y /dev/sdb'"
 
 # Everyday commands
-if ! which "$eza" &>/dev/null; then # (( $+commands[exa] )) is zsh specific and not supported by shfmt
+if command -v eza >/dev/null 2>&1; then # Note: (( $+commands[exa] )) is zsh specific and not supported by shfmt
     alias ll="eza -lahG"
-elif ! which "$exa" &>/dev/null; then
+elif command -v exa >/dev/null 2>&1; then
     alias ll="exa -lahFG"
 else
     alias ll="ls -lah"
