@@ -45,7 +45,7 @@ alias cart="cargo test"
 alias psh="poetry shell"
 alias tb="tensorboard --logdir . --samples_per_plugin 'scalars=500,images=500'"
 alias sv="source venv/bin/activate"
-alias rr="ruff check . --fix && ruff format ."
+alias rr="ruff check . --fix; ruff format ."
 alias create-venv-sys="virtualenv --system-site-packages venv; source venv/bin/activate"
 alias create-venv="virtualenv venv; source venv/bin/activate"
 
