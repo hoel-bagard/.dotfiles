@@ -41,7 +41,7 @@ This function should only modify configuration layer settings."
           lsp-clients-lua-language-server-bin "~/.emacs.d/.cache/lsp/lua-language-server/bin/Linux/lua-language-server" ; default path
           lsp-clients-lua-language-server-main-location "~/.emacs.d/.cache/lsp/lua-language-server/main.lua") ; default path
      typescript
-     yaml
+     (yaml :variables yaml-enable-lsp t)
      html
      (shell-scripts :variables
                     shell-scripts-format-on-save t
