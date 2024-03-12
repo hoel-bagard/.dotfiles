@@ -118,6 +118,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# zoxide
+eval "$(zoxide init --cmd cd zsh)"
+
 # Below is used (among other things) if poetry is installed for the user only.
 export PATH="$HOME/.local/bin:$PATH"
 
