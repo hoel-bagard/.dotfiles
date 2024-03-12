@@ -66,3 +66,4 @@ alias xc-source="source $HOME/work/xc/xc-aliases/xc-aliases.zsh"
 
 # Misc
 # alias job-done="kdialog --passivepopup 'Job finished' --title 'Console'"
+most-used-commands() { history | awk '{print $4}' | sort | uniq -c | sort -nr | head -10; }
