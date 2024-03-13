@@ -1,4 +1,4 @@
-personal_ws-1.1 en 53 
+personal_ws-1.1 en 58 
 Activations
 Args
 CSV
@@ -13,6 +13,7 @@ benchmarking
 codespell
 config
 dev
+dir
 distro
 docstring
 dotfiles
@@ -36,9 +37,12 @@ palletizing
 pandoc
 pastable
 preprocessing
+pyproject
 pyright
 repo
+reportArgumentType
 reportGeneralTypeIssues
+reportOptionalMemberAccess
 reportUnknownVariableType
 ripgrep
 sed
@@ -48,6 +52,7 @@ src
 stubtest
 submodule
 submodules
+toml
 trainings
 utf
 utils

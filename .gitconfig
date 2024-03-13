@@ -216,7 +216,6 @@ path = "~/hitachi-dotfiles/.gitconfig"
   # hard reset and clean (unrecoverable)
 	nuke = "!git reset --hard HEAD && git clean -fd"
 
-
 [url "git@github.com:"]
 	insteadOf = gh:
 
