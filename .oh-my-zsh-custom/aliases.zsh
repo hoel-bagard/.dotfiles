@@ -53,7 +53,11 @@ alias create-venv-sys="virtualenv --system-site-packages venv; source venv/bin/a
 alias create-venv="virtualenv venv; source venv/bin/activate"
 
 # Maintenance
+# Arch
 alias arch-update="sudo pacman -Syu"
+alias pacman-instal="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias pacman-remove="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+# Other
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias journal-errors="sudo journalctl -b -p err..alert"
 alias disable-boost="sudo sh -c \"echo 0 >> /sys/devices/system/cpu/cpufreq/boost\""

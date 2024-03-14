@@ -41,6 +41,7 @@ plugins=(
     rsync
     archlinux
     colorize
+    fzf-tab
     zsh-syntax-highlighting
     zsh-autosuggestions
     command-not-found
@@ -120,6 +121,12 @@ eval "$(pyenv init -)"
 
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
+
+# fzf
+if [ -f /usr/share/fzf/key-bindings.zsh ]; then
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
+fi
 
 # Below is used (among other things) if poetry is installed for the user only.
 export PATH="$HOME/.local/bin:$PATH"
