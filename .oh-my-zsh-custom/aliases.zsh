@@ -25,6 +25,7 @@ alias duc="du -hcxd1 | sort -hr" # du -shcx /home/* | sort -hr
 alias cpr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1" # From https://wiki.archlinux.org/title/rsync
 alias mvr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "
 alias hx="helix"
+alias zshrc="${=EDITOR} ~/.zshrc"
 
 # Git
 alias gk="git ck"
