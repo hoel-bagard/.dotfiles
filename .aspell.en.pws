@@ -1,4 +1,4 @@
-personal_ws-1.1 en 58 
+personal_ws-1.1 en 60 
 Activations
 Args
 CSV
@@ -26,6 +26,8 @@ gradcam
 grayscale
 hardcoded
 img
+iterable
+json
 md
 metafile
 multiline
