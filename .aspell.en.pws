@@ -1,4 +1,4 @@
-personal_ws-1.1 en 60 
+personal_ws-1.1 en 62 
 Activations
 Args
 CSV
@@ -9,6 +9,7 @@ Symlinks
 TensorBoard
 Uncomment
 argmax
+benchmarked
 benchmarking
 codespell
 config
@@ -51,6 +52,7 @@ sed
 softmax
 springer
 src
+str
 stubtest
 submodule
 submodules

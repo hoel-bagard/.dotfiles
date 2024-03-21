@@ -55,8 +55,8 @@ config.keys = {
 
   -- Tab keybindings
   { key = "t",          mods = "LEADER",      action = act.SpawnTab("CurrentPaneDomain") },
-  { key = "[",          mods = "LEADER",      action = act.ActivateTabRelative(-1) },
-  { key = "]",          mods = "LEADER",      action = act.ActivateTabRelative(1) },
+  -- { key = "d",          mods = "LEADER",      action = act.ActivateTabRelative(-1) },
+  -- { key = "f",          mods = "LEADER",      action = act.ActivateTabRelative(1) },
   { key = "n",          mods = "LEADER",      action = act.ShowTabNavigator },
   {
     key = "e",
