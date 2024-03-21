@@ -9,8 +9,8 @@ local config = {}
 if wezterm.config_builder then config = wezterm.config_builder() end
 
 -- Settings
-config.font = wezterm.font("MesloLGS NF", {weight="Regular", italic=false})
-config.font = wezterm.font_with_fallback {'JetbrainsMono Nerd Font'}
+-- config.font = wezterm.font("MesloLGS NF", {weight="Regular", italic=false})
+-- config.font = wezterm.font_with_fallback {'JetbrainsMono Nerd Font'}
 
 config.color_scheme = "Breeze (Gogh)"
 config.colors = {
@@ -219,17 +219,6 @@ wezterm.on('update-right-status', function(window, pane)
   window:set_right_status(wezterm.format(elements))
 end)
 
--- wezterm.on("gui-startup", function(cmd)
---   local tab, ide_pane, window = mux.spawn_window(cmd or {})
---   window:gui_window():maximize()
-
---   local work_dir = wezterm.home_dir .. '/work'
---   local terminal_pane = ide_pane:split {
---     size = 0.2,
---     cwd = work_dir,
---   }
---   ide_pane:send_text "helix\n"
-
--- end)
+config.default_domain = "WSL:Arch"
 
 return config
