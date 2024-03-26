@@ -93,6 +93,8 @@ fi
 
 # Below is used (among other things) if poetry is installed for the user only.
 export PATH="$HOME/.local/bin:$PATH"
+# To be able to use binaries installed through cargo.
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Disable zsh auto-correct for the following words / regex.
 CORRECT_IGNORE_FILE=".*"
