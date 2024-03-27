@@ -26,6 +26,9 @@ alias cpr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window
 alias mvr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "
 alias hx="helix"
 alias zshrc="${=EDITOR} ~/.zshrc"
+if command -v nvim >/dev/null 2>&1; then
+    alias vim="nvim"
+fi
 
 # Git
 alias gk="git ck"
