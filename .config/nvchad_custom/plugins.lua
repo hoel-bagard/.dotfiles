@@ -7,6 +7,14 @@ local plugins = {
     lazy = false,
   },
 
+  {
+    "nvimtools/none-ls.nvim",
+    ft = {"python"},
+    opts = function()
+      return require "custom.configs.none-ls"
+    end,
+  },
+
   -- Override plugin definition options
 
   {

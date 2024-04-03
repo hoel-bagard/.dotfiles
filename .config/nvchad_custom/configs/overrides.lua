@@ -35,8 +35,12 @@ M.mason = {
     "prettier",
 
     -- c/cpp stuff
-    "clangd",
-    "clang-format",
+    -- "clangd",
+    -- "clang-format",
+
+    -- python
+    "pyright",
+    "ruff",
 
     -- shell stuff
     "shfmt",
