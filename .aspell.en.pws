@@ -1,19 +1,22 @@
-personal_ws-1.1 en 64 
+personal_ws-1.1 en 69 
 Activations
 Args
 ArgumentParser
 CSV
 DVC
+Downsample
 NAS
 README
 Symlinks
 TensorBoard
 Uncomment
+activations
 argmax
 benchmarked
 benchmarking
 codespell
 config
+convolutional
 dev
 dir
 distro
@@ -60,6 +63,8 @@ submodule
 submodules
 toml
 trainings
+underflows
+upsampling
 utf
 utils
 whitespace
