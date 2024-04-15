@@ -4,10 +4,10 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Enable mouse mode.
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Sync clipboard between OS and Neovim.
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -20,7 +20,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -33,11 +33,11 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Set some symbols for list mode (not that I use it often).  TODO: remove this ? 
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+-- Set some symbols for list mode (not that I use it often).  TODO: remove this ?
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions.
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Show which line the cursor is on.  TODO: activate once a theme is installed.
 -- vim.opt.cursorline = true
