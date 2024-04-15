@@ -4,7 +4,6 @@
 .bash_profile
 .bashrc
 .cache/
-.config/
 .emacs.d/
 .gnupg/
 .local/
