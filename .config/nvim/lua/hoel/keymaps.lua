@@ -29,3 +29,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
+
+-- [[ Unused (for now) Keymaps ]]
+-- vim.keymap.set("n", "<leader>f", function()
+--     require("conform").format({ async = true, lsp_fallback = true })
+-- end, { desc = "[F]ormat buffer" })
