@@ -1,0 +1,23 @@
+name: Linting CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  style-lint:
+    name: Check formatting
+    runs-on: ubuntu-latest
+    steps:- uses: actions/checkout@v4
+
+    - uses: JohnnyMorganz/stylua-action@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        version: v0.20.0
+        args: --check .
