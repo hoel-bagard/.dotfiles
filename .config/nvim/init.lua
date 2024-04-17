@@ -3,9 +3,6 @@ vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 
-require("hoel.settings")
-require("hoel.keymaps")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.system({
@@ -20,3 +17,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("hoel.plugins", opts)
+require("hoel.settings")
+require("hoel.keymaps")
