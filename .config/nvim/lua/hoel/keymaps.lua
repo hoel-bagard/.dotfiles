@@ -26,7 +26,42 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" 
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind [G]rep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [Buffers]" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
+vim.keymap.set("n", "<leader>bb", ":bprevious<CR>", { desc = "Previous [B]uffer" })
+
 vim.keymap.set("n", "<leader>fs", vim.cmd.update, { desc = "[F]ile [S]ave" })
+
+-- Move things while in highlight mode.
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Keep cursor in place when using J.
+vim.keymap.set("n", "J", "mzJ`z")
+
+-- Center screen when using moving
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+
+-- Paste over selection without losing buffer/register content.
+vim.keymap.set("x", "<leader>p", '"_dP')
+-- Delete without replacing clipboard.
+vim.keymap.set("n", "<leader>d", '"_d')
+vim.keymap.set("v", "<leader>d", '"_d')
+
+-- TODO: useful ?
+-- To switch between projects
+-- https://youtu.be/w7i4amO_zaE?si=EnRh9FKDKu5SE1Z5&t=1696
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- vim.keymap.set("n", "<leader>f", function()
+--     vim.lsp.buf.format()
+-- end)
+
+-- TODO: Quickfix list
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 
 -- [[ Basic Autocommands ]]
 -- Highlight when yanking text
