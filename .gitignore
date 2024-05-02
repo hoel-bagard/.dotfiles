@@ -48,7 +48,8 @@ powerlevel10k/
 go/
 
 Desktop/
-.config/
+.config/*
+!.config/nvim
 Downloads/
 work/
 work-hitachi/
