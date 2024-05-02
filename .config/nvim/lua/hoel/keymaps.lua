@@ -23,6 +23,7 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 -- Change file / telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
+vim.keymap.set("n", "<leader>fp", builtin.git_files, { desc = "[F]ind [P]roject (git) files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind [G]rep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [Buffers]" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
