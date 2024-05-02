@@ -16,6 +16,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("hoel.plugins", opts)
+require("lazy").setup("hoel.plugins")
 require("hoel.settings")
 require("hoel.keymaps")
