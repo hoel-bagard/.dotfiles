@@ -58,3 +58,6 @@ vim.opt.inccommand = "split"
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- I don't plan on using modelines, and it seems like having them on might cause issues, so turning them off just in case.
+vim.opt.modeline = false
