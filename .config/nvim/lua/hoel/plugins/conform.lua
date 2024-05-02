@@ -12,6 +12,7 @@ return {
             lua = { "stylua" },
             python = { "ruff_fix", "ruff_format" },
             rust = { "rustfmt" },
+            markdown = { "prettier" },
         },
     },
 }
