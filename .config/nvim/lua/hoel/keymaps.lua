@@ -28,6 +28,7 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind [G]rep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [Buffers]" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
 vim.keymap.set("n", "<leader>bb", ":bprevious<CR>", { desc = "Previous [B]uffer" })
+vim.keymap.set("n", "<leader>pt", ":Neotree<CR>", { desc = "[P]project [T]ree" })
 
 vim.keymap.set("n", "<leader>fs", vim.cmd.update, { desc = "[F]ile [S]ave" })
 
