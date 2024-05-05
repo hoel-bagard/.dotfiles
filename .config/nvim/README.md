@@ -9,12 +9,6 @@ It's still very much a work in progress.
 Similar to vimium "f", allows to jump anywhere.
 <https://github.com/ggandor/leap.nvim>
 
-## File tree
-
-Either neo tree or nvim tree.
-<https://github.com/nvim-neo-tree/neo-tree.nvim>
-<https://github.com/nvim-tree/nvim-tree.lua>
-
 ## Jump keymaps
 
 One of the below
@@ -26,6 +20,7 @@ vim-unimpaired
 ## DAP
 
 - nvim dap (and nvim-dap-python, nvim-dap-ui)
+- https://github.com/nvim-lua/kickstart.nvim/blob/master/lua/kickstart/plugins/debug.lua
 - <https://youtu.be/4BnVeOUeZxc?si=p-DH1AQ6IVmyBux8&t=591>
 - <https://github.com/tjdevries/config_manager/blob/eb8c846bdd480e6ed8fb87574eac09d31d39befa/xdg_config/nvim/after/plugin/dap.lua>
 
