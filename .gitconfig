@@ -16,6 +16,7 @@ path = "~/hitachi-dotfiles/.gitconfig"
 
 [core]
 	editor = nvim
+	fsmonitor = true
 
 [credential]
 	helper = cache --timeout=7200
