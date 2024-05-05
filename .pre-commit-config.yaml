@@ -1,0 +1,9 @@
+fail_fast: true
+
+repos:
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v0.20.0
+    hooks:
+      - id: stylua # or stylua-system / stylua-github
+        files: .config/nvim
+        args: [--config-path, .config/nvim/.stylua.toml]

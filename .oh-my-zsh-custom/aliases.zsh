@@ -59,9 +59,9 @@ alias create-venv="virtualenv .venv; source .venv/bin/activate"
 
 # Maintenance
 # Arch
-alias arch-update="sudo pacman -Syu"
 alias pacman-install="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias pacman-remove="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+alias pacman-update-mirrors="sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && sudo reflector --verbose --protocol https --latest 200 --number 20 --sort rate --save /etc/pacman.d/mirrorlist"
 # Other
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias journal-errors="sudo journalctl -b -p err..alert"
@@ -77,5 +77,4 @@ alias xc-end="count-hours log end ~/work/xc/.count-hours.csv"
 alias xc-source="source $HOME/work/xc/xc-aliases/xc-aliases.zsh"
 
 # Misc
-# alias job-done="kdialog --passivepopup 'Job finished' --title 'Console'"
 most-used-commands() { history | awk '{print $4}' | sort | uniq -c | sort -nr | head -10; }
