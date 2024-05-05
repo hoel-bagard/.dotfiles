@@ -37,7 +37,7 @@ alias gcm="git cm"
 alias ga="git commit --amend"
 alias gp="git push"
 alias gl="git pull"
-alias gu="git add . && git commit --amend --no-edit && git push --force-with-lease"
+alias gu="git add --update . && git commit --amend --no-edit && git push --force-with-lease"
 alias fix-ssh="chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519.pub && chmod 644 ~/.ssh/config"
 
 # Cargo
