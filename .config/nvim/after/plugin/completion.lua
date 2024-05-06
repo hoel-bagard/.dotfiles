@@ -74,8 +74,15 @@ cmp.setup({
             end
         end, { "i", "s" }),
 
-        -- tab completion
+        -- "Usual" tab completion
         ["<Tab>"] = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end,
+        ["<Down>"] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             else
@@ -85,6 +92,20 @@ cmp.setup({
         ["<S-Tab>"] = function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
+            else
+                fallback()
+            end
+        end,
+        ["<Up>"] = function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            else
+                fallback()
+            end
+        end,
+        ["<CR>"] = function(fallback)
+            if cmp.visible() then
+                cmp.cmp.confirm()
             else
                 fallback()
             end
