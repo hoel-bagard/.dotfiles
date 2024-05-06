@@ -32,3 +32,17 @@ vim-unimpaired
 ## Reformatting config
 
 - Split mason from lsp
+
+## Trouble
+
+- https://github.com/folke/trouble.nvim
+
+## ToggleTerm
+
+- https://github.com/akinsho/toggleterm.nvim
+
+## Rust settup
+
+- https://github.com/Saecki/crates.nvim
+- https://github.com/mrcjkb/rustaceanvim
+- https://www.youtube.com/watch?v=mh_EJhH49Ms
