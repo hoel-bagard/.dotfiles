@@ -103,13 +103,7 @@ cmp.setup({
                 fallback()
             end
         end,
-        ["<CR>"] = function(fallback)
-            if cmp.visible() then
-                cmp.cmp.confirm()
-            else
-                fallback()
-            end
-        end,
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
     },
 
     sources = cmp.config.sources({
