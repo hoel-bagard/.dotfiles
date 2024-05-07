@@ -1,4 +1,4 @@
-personal_ws-1.1 en 69 
+personal_ws-1.1 en 77 
 Activations
 Args
 ArgumentParser
@@ -7,17 +7,21 @@ DVC
 Downsample
 NAS
 README
+ReZero
 Symlinks
 TensorBoard
+UVCGAN
 Uncomment
 activations
 argmax
 benchmarked
 benchmarking
+codebase
 codespell
 config
 convolutional
 dev
+dimensionality
 dir
 distro
 docstring
@@ -31,6 +35,7 @@ gradcam
 grayscale
 hardcoded
 img
+imho
 iterable
 json
 md
@@ -52,6 +57,8 @@ reportArgumentType
 reportGeneralTypeIssues
 reportOptionalMemberAccess
 reportUnknownVariableType
+rescales
+rezero
 ripgrep
 sed
 softmax
@@ -64,6 +71,7 @@ submodules
 toml
 trainings
 underflows
+upsample
 upsampling
 utf
 utils
