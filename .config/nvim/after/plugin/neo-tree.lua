@@ -15,4 +15,10 @@ require("neo-tree").setup({
     enable_git_status = true,
     enable_diagnostics = true,
     sort_case_insensitive = false, -- used when sorting files and directories in the tree
+
+    filesystem = {
+        filtered_items = {
+            visible = true, -- when true, they will just be displayed differently than normal items
+        },
+    },
 })

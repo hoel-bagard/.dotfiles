@@ -46,3 +46,7 @@ vim-unimpaired
 - https://github.com/Saecki/crates.nvim
 - https://github.com/mrcjkb/rustaceanvim
 - https://www.youtube.com/watch?v=mh_EJhH49Ms
+
+## Misc
+
+- How to have <i+o> (inner symbol) ?
