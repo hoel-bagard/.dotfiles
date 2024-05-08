@@ -13,6 +13,7 @@ return {
             python = { "ruff_fix", "ruff_format" },
             rust = { "rustfmt" },
             markdown = { "prettier" },
+            javascript = { "prettier" },
         },
     },
 }
