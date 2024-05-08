@@ -17,8 +17,8 @@ rmdir $dotfiles_tmp_dir
 # Get the submodules.
 git submodule update --init --recursive
 
-# Special case for nvchad's config since it is inside a submodule.
-ln -s ~/.config/nvchad_custom ~/.config/nvim/lua/custom
+# Optional, do not show untracked files (notably those in the .config folder)
+git config --local status.showUntrackedFiles no
 ```
 
 ## Using [stow](https://www.gnu.org/software/stow/)  (untested)
@@ -34,8 +34,8 @@ cd
 # Get the submodules.
 git submodule update --init --recursive
 
-# Special case for nvchad's config.
-ln -s ~/.config/nvchad_custom ~/.config/nvim/lua/custom
+# Optional, do not show untracked files (notably those in the .config folder)
+git config --local status.showUntrackedFiles no
 ```
 
 ## Installing dependencies

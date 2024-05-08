@@ -13,12 +13,10 @@
 	url = https://github.com/romkatv/powerlevel10k.git
 	shallow = true
 
-[submodule ".config/nvim"]
-	path = .config/nvim
-	url = https://github.com/NvChad/NvChad
-	shallow = true
-
 [submodule "hitachi-dotfiles"]
 	path = hitachi-dotfiles
 	url = git@github.com:hoel-bagard-hy/hitachi-dotfiles.git
 	shallow = true
+[submodule "/home/hoel/.oh-my-zsh-custom/plugins/fzf-tab"]
+	path = /home/hoel/.oh-my-zsh-custom/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab

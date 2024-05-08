@@ -25,12 +25,19 @@ alias duc="du -hcxd1 | sort -hr" # du -shcx /home/* | sort -hr
 alias cpr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1" # From https://wiki.archlinux.org/title/rsync
 alias mvr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "
 alias hx="helix"
+alias zshrc="${=EDITOR} ~/.zshrc"
+if command -v nvim >/dev/null 2>&1; then
+    alias vim="nvim"
+fi
 
 # Git
+alias gk="git ck"
 alias gc="git c"
 alias gcm="git cm"
-alias gp="git p"
-alias gu="git add . && git commit --amend --no-edit && git push --force-with-lease"
+alias ga="git commit --amend"
+alias gp="git push"
+alias gl="git pull"
+alias gu="git add --update . && git commit --amend --no-edit && git push --force-with-lease"
 alias fix-ssh="chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519.pub && chmod 644 ~/.ssh/config"
 
 # Cargo
@@ -44,13 +51,18 @@ alias cart="cargo test"
 # Python
 alias psh="poetry shell"
 alias tb="tensorboard --logdir . --samples_per_plugin 'scalars=500,images=500'"
-alias sv="source venv/bin/activate"
-alias rr="ruff check . --fix && ruff format ."
-alias create-venv-sys="virtualenv --system-site-packages venv; source venv/bin/activate"
-alias create-venv="virtualenv venv; source venv/bin/activate"
+alias sv="source .venv/bin/activate"
+alias rr="ruff check . --fix; ruff format ."
+alias rf="ruff check . --fix --unsafe-fixes"
+alias create-venv-sys="virtualenv --system-site-packages .venv; source .venv/bin/activate"
+alias create-venv="virtualenv .venv; source .venv/bin/activate"
 
 # Maintenance
-alias arch-update="sudo pacman -Syu"
+# Arch
+alias pacman-install="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias pacman-remove="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+alias pacman-update-mirrors="sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && sudo reflector --verbose --protocol https --latest 200 --number 20 --sort rate --save /etc/pacman.d/mirrorlist"
+# Other
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias journal-errors="sudo journalctl -b -p err..alert"
 alias disable-boost="sudo sh -c \"echo 0 >> /sys/devices/system/cpu/cpufreq/boost\""
@@ -65,4 +77,4 @@ alias xc-end="count-hours log end ~/work/xc/.count-hours.csv"
 alias xc-source="source $HOME/work/xc/xc-aliases/xc-aliases.zsh"
 
 # Misc
-# alias job-done="kdialog --passivepopup 'Job finished' --title 'Console'"
+most-used-commands() { history | awk '{print $4}' | sort | uniq -c | sort -nr | head -10; }

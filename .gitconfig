@@ -14,6 +14,9 @@ path = "~/hitachi-dotfiles/.gitconfig"
 [includeIf "gitdir:~/.password-store-hitachi/"]
 path = "~/hitachi-dotfiles/.gitconfig"
 
+[includeIf "gitdir:~/.local/share/nvim/"]
+path = "~/hitachi-dotfiles/.gitconfig"
+
 [core]
 	editor = nvim
 	pager = 
@@ -195,7 +198,6 @@ path = "~/hitachi-dotfiles/.gitconfig"
 
   # hard reset and clean (unrecoverable)
 	nuke = "!git reset --hard HEAD && git clean -fd"
-
 
 [url "git@github.com:"]
 	insteadOf = gh:

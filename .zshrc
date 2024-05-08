@@ -1,3 +1,6 @@
+# Keep fastfetch before the Powerlevel10k instant prompt.
+fastfetch
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -5,33 +8,19 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-HISTSIZE=10000
-SAVEHIST=10000
-HIST_STAMPS="%y/%m/%d %T"
-# HISTFILE=~/.cache/zsh/history
-
 ZSH_THEME="robbyrussell"
 export ZSH="/home/hoel/.oh-my-zsh"  # Path to your oh-my-zsh installation.
 ZSH_CUSTOM=$HOME/.oh-my-zsh-custom  # Would you like to use another custom folder than $ZSH/custom?
 
-# Zsh options
-setopt HIST_IGNORE_DUPS  # TODO: Check if that's not the default
-setopt sharehistory   # It's the default, but just in case
+# Zsh history options. Those are the defaults in oh-my-zsh.
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt share_history          # share command history data
+HISTSIZE=10000000
+SAVEHIST=10000000
+HIST_STAMPS="%y/%m/%d %T"
 
 # Spelling correction   ("correctall" corrects commands and all arguments, "correct" corrects only commands)
 setopt correctall
-# ENABLE_CORRECTION="true"
-
-# Basic autocompletion   # TODO: See if usefull  (probably not)
-# autoload -Uz compinit
-# zstyle ':completion:*' menu select
-# zstyle ':completion::complete:*' gain-privileges 1  # Enable auto-completion for commands starting with sudo
-# zmodload zsh/complist
-# compinit
-# _comp_options+=(globdots)  # Include hidden files
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -41,40 +30,17 @@ plugins=(
     rsync
     archlinux
     colorize
+    fzf-tab
     zsh-syntax-highlighting
     zsh-autosuggestions
     command-not-found
     docker
-    # rust
-    # bgnotify
-    # colored-man-pages
-    # virtualenv
-    # autojump    # https://github.com/wting/autojump
+    vi-mode
+    colored-man-pages
 )
-
-
-# TODO
-# # vi mode
-# bindkey -v
-# export KEYTIMEOUT=1
-# # Change cursor shape for different vi modes.
-# function zle-keymap-select {
-#     if [[ ${KEYMAP} == vicmd ]] ||
-#            [[ $1 = 'block' ]]; then
-#         echo -ne '\e[1 q'
-#     elif [[ ${KEYMAP} == main ]] ||
-#              [[ ${KEYMAP} == viins ]] ||
-#              [[ ${KEYMAP} = '' ]] ||
-#              [[ $1 = 'beam' ]]; then
-#         echo -ne '\e[5 q'
-#     fi
-# }
 
 # Export environment variables
 export $(envsubst < $HOME/.env)
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -114,15 +80,26 @@ export EDITOR=nvim
 # To sign commits with git(hub)
 export GPG_TTY=$TTY
 
+# pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# zoxide
+eval "$(zoxide init --cmd cd zsh)"
+
+# fzf
+if [ -f /usr/share/fzf/key-bindings.zsh ]; then
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
+fi
+
 # Below is used (among other things) if poetry is installed for the user only.
 export PATH="$HOME/.local/bin:$PATH"
+# To be able to use binaries installed through cargo.
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Disable zsh auto-correct for the following words / regex.
 CORRECT_IGNORE_FILE=".*"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-neofetch
