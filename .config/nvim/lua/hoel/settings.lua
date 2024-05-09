@@ -61,3 +61,7 @@ vim.opt.scrolloff = 10
 
 -- I don't plan on using modelines, and it seems like having them on might cause issues, so turning them off just in case.
 vim.opt.modeline = false
+
+-- Spelling
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true

@@ -1,0 +1,13 @@
+L1
+UVCGAN
+L2
+MSE
+pyright
+reportUnknownVariableType
+noqa
+PLR0915
+NPY002
+UVCGAN2
+dataset
+config
+TODO
