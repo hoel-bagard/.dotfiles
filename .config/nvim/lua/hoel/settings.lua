@@ -63,5 +63,5 @@ vim.opt.scrolloff = 10
 vim.opt.modeline = false
 
 -- Spelling
-vim.opt.spelllang = "en_us"
+vim.opt.spelllang = "en"
 vim.opt.spell = true
