@@ -54,7 +54,7 @@ if [ -f ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k/powerlevel10
     source ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k/powerlevel10k.zsh-theme
 elif [ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]; then
     source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-else
+elif [ -f ~/powerlevel10k/powerlevel10k.zsh-theme ]; then
     source ~/powerlevel10k/powerlevel10k.zsh-theme
 fi
 
