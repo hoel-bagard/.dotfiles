@@ -1,3 +1,8 @@
+# Brew. Keep it near the top, otherwise packages installed with brew won't be available on startup.
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export HOMEBREW_CURL_PATH=/home/linuxbrew/.linuxbrew/bin/curl
+export HOMEBREW_NO_AUTO_UPDATE=false
+
 # Keep fastfetch before the Powerlevel10k instant prompt.
 fastfetch
 
