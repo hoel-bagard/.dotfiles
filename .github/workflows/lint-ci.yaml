@@ -14,10 +14,11 @@ jobs:
   style-lint:
     name: Check formatting
     runs-on: ubuntu-latest
-    steps:- uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-    - uses: JohnnyMorganz/stylua-action@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        version: v0.20.0
-        args: --check .
+      - uses: JohnnyMorganz/stylua-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: v0.20.0
+          args: --check .
