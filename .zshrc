@@ -8,10 +8,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-ZSH_THEME="robbyrussell"
-export ZSH="/home/hoel/.oh-my-zsh"
-ZSH_CUSTOM=$HOME/.oh-my-zsh-custom 
-
 # Zsh history options.
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
@@ -63,9 +59,10 @@ zinit cdreplay -q  # zinit optimization option.
 # Spelling correction   ("correctall" corrects commands and all arguments, "correct" corrects only commands)
 setopt correctall
 
-# Standard plugins can be found in $ZSH/plugins/, custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Because why use only zinit when you can have two plugins managers ?  
+export ZSH="${XDG_DATA_HOME:-${HOME}}/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
+ZSH_CUSTOM=$HOME/.oh-my-zsh-custom 
 
 # Source hitachi dotfiles if on work PC.
 if [ -f $HOME/hitachi-dotfiles/proxy-commands.zsh ]; then
