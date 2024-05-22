@@ -119,4 +119,7 @@ bindkey '^y' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+# Source my own aliases
+source $HOME/.oh-my-zsh-custom/aliases.zsh
+
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
