@@ -11,3 +11,14 @@ UVCGAN2
 dataset
 config
 TODO
+afhq
+Args
+PyTorch
+device
+eval
+TensorBoard
+docstring
+pretraining
+GAN
+α
+pretrained
