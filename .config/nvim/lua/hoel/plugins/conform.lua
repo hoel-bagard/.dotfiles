@@ -14,6 +14,9 @@ return {
             rust = { "rustfmt" },
             markdown = { "prettier" },
             javascript = { "prettier" },
+            zsh = { "shfmt" },
+            bash = { "shfmt" },
+            sh = { "shfmt" },
         },
     },
 }
