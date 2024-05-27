@@ -47,8 +47,8 @@ zinit snippet OMZP::command-not-found
 zinit snippet OMZP::rsync
 zinit snippet OMZP::colorize
 zinit snippet OMZP::docker
-zinit snippet OMZP::vi-mode
-zinit snippet OMZP::colored-man-pages
+# This works fine but is quite slow. Maybe try it again after completely removing oh-my-zsh.
+# zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 zinit ice as"completion"; zinit snippet OMZP::ripgrep/_ripgrep
 
 # Load completions
@@ -60,9 +60,13 @@ zinit cdreplay -q  # zinit optimization option.
 setopt correctall
 
 # Because why use only zinit when you can have two plugins managers ?  
+# Standard plugins can be found in $ZSH/plugins/
+# vi-mode does not work properly when installed through zinit.
+plugins=(
+    vi-mode
+)
 export ZSH="${XDG_DATA_HOME:-${HOME}}/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
-ZSH_CUSTOM=$HOME/.oh-my-zsh-custom 
 
 # Source hitachi dotfiles if on work PC.
 if [ -f $HOME/hitachi-dotfiles/proxy-commands.zsh ]; then
