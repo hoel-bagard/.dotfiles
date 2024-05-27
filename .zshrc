@@ -79,13 +79,13 @@ fi
 # Export environment variables
 export $(envsubst < $HOME/.env)
 
+# Use nvim instead of colored-man-pages.
+export MANPAGER='nvim +Man!'
+
 # Japanese inputs
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
-
-# Set neovim as default text editor
-export EDITOR=nvim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
