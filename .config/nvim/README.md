@@ -55,3 +55,4 @@ vim-unimpaired
 - Have the "help" (shift-K) at the bottom like in spacemacs, when editing the args. And when having cursor on a variable (get type).
 - Have the lsp (ruff) show the error code and not just the message (otherwise can't ignore it)
 - I have to restart (re-attach ?) the lsp a lot (:e), is there a way to remedy to that ? Also, sometimes the import suddenly don't get resolved anymore. In that case :e doesn't solve it and I have to restart nvim.
+- When in edit mode, allow going to previous/next line using left/right arrows.

@@ -22,3 +22,6 @@ pretraining
 GAN
 α
 pretrained
+deserialization
+json
+pretrain
