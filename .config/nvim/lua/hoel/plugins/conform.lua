@@ -16,6 +16,7 @@ return {
             javascript = { "prettier" },
             bash = { "shfmt" },
             sh = { "shfmt" },
+            toml = { "taplo" },
         },
     },
 }

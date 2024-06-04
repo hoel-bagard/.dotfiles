@@ -132,6 +132,7 @@ return {
             "jsonlint",
             -- "markdownlint",
             "prettier", -- Used to format markdown amongst other things.
+            "taplo", -- toml formatter
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
