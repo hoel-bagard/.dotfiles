@@ -72,14 +72,6 @@ else
 fi
 source $ZSH/oh-my-zsh.sh
 
-# Source hitachi dotfiles if on work PC.
-if [ -f $HOME/hitachi-dotfiles/proxy-commands.zsh ]; then
-    source $HOME/hitachi-dotfiles/proxy-commands.zsh
-fi
-if [ -f $HOME/hitachi-dotfiles/hitachi_aliases.zsh ]; then
-    source $HOME/hitachi-dotfiles/hitachi_aliases.zsh
-fi
-
 # Export environment variables
 export $(envsubst < $HOME/.env)
 
@@ -129,5 +121,13 @@ bindkey '^n' history-search-forward
 
 # Source my own aliases
 source $HOME/.oh-my-zsh-custom/aliases.zsh
+
+# Source hitachi dotfiles if on work PC.
+if [ -f $HOME/hitachi-dotfiles/proxy-commands.zsh ]; then
+    source $HOME/hitachi-dotfiles/proxy-commands.zsh
+fi
+if [ -f $HOME/hitachi-dotfiles/hitachi_aliases.zsh ]; then
+    source $HOME/hitachi-dotfiles/hitachi_aliases.zsh
+fi
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
