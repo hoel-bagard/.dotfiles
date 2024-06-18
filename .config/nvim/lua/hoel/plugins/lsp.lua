@@ -101,7 +101,8 @@ return {
         --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
         local servers = {
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-            pyright = {},
+            -- Use pyright from path, since there are a lot of differences between pyright versions.
+            -- pyright = {},
             ruff = {},
             rust_analyzer = {},
             tsserver = {},
@@ -117,6 +118,10 @@ return {
                 },
             },
         }
+
+        local pyright = {}
+        pyright.capabilities = vim.tbl_deep_extend("force", {}, capabilities, pyright.capabilities or {})
+        require("lspconfig").pyright.setup(pyright)
 
         -- Ensure the servers and tools above are installed
         --  To check the current status of installed tools and/or manually install other tools, run :Mason
