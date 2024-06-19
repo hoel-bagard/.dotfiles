@@ -17,6 +17,7 @@ return {
             bash = { "shfmt" },
             sh = { "shfmt" },
             toml = { "taplo" },
+            yaml = { "yamlfmt" },
         },
     },
 }
