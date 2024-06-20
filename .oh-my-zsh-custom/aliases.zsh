@@ -57,6 +57,7 @@ alias rr="ruff check . --fix; ruff format ."
 alias rf="ruff check . --fix --unsafe-fixes"
 alias create-venv-sys="virtualenv --system-site-packages .venv; source .venv/bin/activate"
 alias create-venv="virtualenv .venv; source .venv/bin/activate"
+alias pl="poetry lock --no-update"
 
 # Maintenance
 # Arch
