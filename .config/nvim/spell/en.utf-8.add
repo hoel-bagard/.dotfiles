@@ -27,3 +27,5 @@ json
 pretrain
 timecodes
 inpainting
+whitespace
+classmethod
