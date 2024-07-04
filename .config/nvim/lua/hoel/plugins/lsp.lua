@@ -103,7 +103,7 @@ return {
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
             -- Use pyright from path, since there are a lot of differences between pyright versions.
             -- pyright = {},
-            ruff = {},
+            -- ruff = {},
             rust_analyzer = {},
             tsserver = {},
             lua_ls = {
@@ -122,6 +122,10 @@ return {
         local pyright = {}
         pyright.capabilities = vim.tbl_deep_extend("force", {}, capabilities, pyright.capabilities or {})
         require("lspconfig").pyright.setup(pyright)
+
+        local ruff = {}
+        ruff.capabilities = vim.tbl_deep_extend("force", {}, capabilities, ruff.capabilities or {})
+        require("lspconfig").ruff.setup(ruff)
 
         -- Ensure the servers and tools above are installed
         --  To check the current status of installed tools and/or manually install other tools, run :Mason
