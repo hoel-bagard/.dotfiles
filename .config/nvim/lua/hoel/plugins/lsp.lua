@@ -101,8 +101,9 @@ return {
         --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
         local servers = {
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-            pyright = {},
-            ruff = {},
+            -- Use pyright from path, since there are a lot of differences between pyright versions.
+            -- pyright = {},
+            -- ruff = {},
             rust_analyzer = {},
             tsserver = {},
             lua_ls = {
@@ -118,6 +119,14 @@ return {
             },
         }
 
+        local pyright = {}
+        pyright.capabilities = vim.tbl_deep_extend("force", {}, capabilities, pyright.capabilities or {})
+        require("lspconfig").pyright.setup(pyright)
+
+        local ruff = {}
+        ruff.capabilities = vim.tbl_deep_extend("force", {}, capabilities, ruff.capabilities or {})
+        require("lspconfig").ruff.setup(ruff)
+
         -- Ensure the servers and tools above are installed
         --  To check the current status of installed tools and/or manually install other tools, run :Mason
         --  Press `g?` for help in this menu.
@@ -132,6 +141,8 @@ return {
             "jsonlint",
             -- "markdownlint",
             "prettier", -- Used to format markdown amongst other things.
+            "taplo", -- toml formatter
+            "yamlfmt",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

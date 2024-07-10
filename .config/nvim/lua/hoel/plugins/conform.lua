@@ -14,6 +14,10 @@ return {
             rust = { "rustfmt" },
             markdown = { "prettier" },
             javascript = { "prettier" },
+            bash = { "shfmt" },
+            sh = { "shfmt" },
+            toml = { "taplo" },
+            yaml = { "yamlfmt" },
         },
     },
 }
