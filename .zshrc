@@ -124,11 +124,11 @@ bindkey '^n' history-search-forward
 source $HOME/.oh-my-zsh-custom/aliases.zsh
 
 # Source hitachi dotfiles if on work PC.
-if [ -f $HOME/hitachi-dotfiles/proxy-commands.zsh ]; then
-    source $HOME/hitachi-dotfiles/proxy-commands.zsh
-fi
 if [ -f $HOME/hitachi-dotfiles/hitachi_aliases.zsh ]; then
     source $HOME/hitachi-dotfiles/hitachi_aliases.zsh
+fi
+if [ -f $HOME/hitachi-dotfiles/proxy-commands.zsh ]; then
+    source $HOME/hitachi-dotfiles/proxy-commands.zsh
 fi
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
