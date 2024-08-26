@@ -30,6 +30,7 @@ if command -v nvim >/dev/null 2>&1; then
     alias vim="nvim"
 fi
 alias notepad="nvim ~/work/notepad.md"
+alias df="df -h"
 
 # Git
 alias gk="git ck"
