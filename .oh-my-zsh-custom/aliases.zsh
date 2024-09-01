@@ -33,9 +33,9 @@ alias notepad="nvim ~/work/notepad.md"
 alias df="df -h"
 
 # Git
-alias gk="git ck"
-alias gc="git c"
-alias gcm="git cm"
+alias gk="git checkout"
+alias gc="git commit --verbose -am"
+alias gcm="git commit --verbose -m"
 alias ga="git commit --amend"
 alias gp="git push"
 alias gl="git pull"
@@ -52,13 +52,13 @@ alias cart="cargo test"
 
 # Python
 alias psh="poetry shell"
+alias pl="poetry lock --no-update"
 alias tb="tensorboard --logdir . --samples_per_plugin 'scalars=500,images=500'"
 alias sv="source .venv/bin/activate"
 alias rr="ruff check . --fix; ruff format ."
 alias rf="ruff check . --fix --unsafe-fixes"
 alias create-venv-sys="virtualenv --system-site-packages .venv; source .venv/bin/activate"
 alias create-venv="virtualenv .venv; source .venv/bin/activate"
-alias pl="poetry lock --no-update"
 
 # Maintenance
 # Arch
