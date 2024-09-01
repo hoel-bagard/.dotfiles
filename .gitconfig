@@ -80,6 +80,8 @@ path = "~/hitachi-dotfiles/.gitconfig"
 	browser = chrome
 
 [alias]
+	alias-main-as-master = !git symbolic-ref refs/heads/master refs/heads/main && git symbolic-ref refs/remotes/origin/master refs/remotes/origin/main
+
 	ec = "!f() { [ -f \"${XDG_CONFIG_HOME:-$HOME/.config}\"/dotfiles.conf ] && . \"${XDG_CONFIG_HOME:-$HOME/.config}\"/dotfiles.conf; git --git-dir=\"$dotfiles_dir\" config --global --edit; }; f"
 	ecl = config --edit
 
@@ -151,7 +153,7 @@ path = "~/hitachi-dotfiles/.gitconfig"
 	ca = commit --verbose --amend
 	can = commit --verbose --amend --no-edit
 
-  # network (in)
+	# network (in)
 	cl = clone
 	p = pull
 
@@ -200,7 +202,7 @@ path = "~/hitachi-dotfiles/.gitconfig"
 	res = reset --soft
 	reh = reset --hard
 
-  # w-commands
+	# w-commands
 	which = branch --all --contains
 	which-tag = describe --always --contains
 	who = shortlog --summary --numbered --no-merges
@@ -214,7 +216,7 @@ path = "~/hitachi-dotfiles/.gitconfig"
 	#    git open [<remote>]
 	open = "!f() { URL=$(git config remote.${1:-origin}.url); xdg-open \"${URL%%.git}\"; }; f"
 
-  # hard reset and clean (unrecoverable)
+	# hard reset and clean (unrecoverable)
 	nuke = "!git reset --hard HEAD && git clean -fd"
 
 [url "git@github.com:"]
