@@ -9,8 +9,8 @@ fastfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [[ -r "~/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "~/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Zsh history options.
@@ -27,39 +27,28 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups  # ignore duplicated commands history list
 setopt hist_find_no_dups
 
-# Set the directory we want to store zinit and plugins.
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+ZSH_THEME="robbyrussell"
+export ZSH="/home/hoel/.oh-my-zsh"  # Path to your oh-my-zsh installation.
+ZSH_CUSTOM=$HOME/.oh-my-zsh-custom  # Would you like to use another custom folder than $ZSH/custom?
 
-# Download Zinit, if not done yet.
-if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+source $ZSH/oh-my-zsh.sh
+
+# Source powerlevel10k theme. First path is the one recommended in the install instructions.
+# Second one is if installed through the AUR, third one is a dirty way that sometimes happens.
+if [ -f ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme ]; then
+    source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+elif [ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]; then
+    source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+elif [ -f ~/powerlevel10k/powerlevel10k.zsh-theme ]; then
+    source ~/powerlevel10k/powerlevel10k.zsh-theme
 fi
-source "${ZINIT_HOME}/zinit.zsh"
-
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-# zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
-
-# Add in snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::command-not-found
-zinit snippet OMZP::rsync
-zinit snippet OMZP::colorize
-zinit snippet OMZP::docker
-# This works fine but is quite slow. Maybe try it again after completely removing oh-my-zsh.
-# zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
-zinit ice as"completion"; zinit snippet OMZP::ripgrep/_ripgrep
 
 # Load completions
 autoload -Uz compinit && compinit
-
-zinit cdreplay -q  # zinit optimization option.
 
 # Spelling correction   ("correctall" corrects commands and all arguments, "correct" corrects only commands)
 setopt correctall
@@ -68,7 +57,17 @@ setopt correctall
 # Standard plugins can be found in $ZSH/plugins/
 # vi-mode does not work properly when installed through zinit.
 plugins=(
+    ripgrep
+    rsync
+    archlinux
+    colorize
+    fzf-tab
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    command-not-found
+    docker
     vi-mode
+    colored-man-pages
     direnv
 )
 if [ -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
