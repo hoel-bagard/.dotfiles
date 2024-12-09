@@ -121,7 +121,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # Source my own aliases
-source $HOME/.oh-my-zsh-custom/aliases.zsh
+source $HOME/.config/zsh/aliases.zsh
 
 # Source hitachi dotfiles if on work PC.
 if [ -f $HOME/hitachi-dotfiles/hitachi_aliases.zsh ]; then
