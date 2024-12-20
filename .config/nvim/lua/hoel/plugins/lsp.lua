@@ -104,6 +104,7 @@ return {
             -- Use pyright from path, since there are a lot of differences between pyright versions.
             -- pyright = {},
             -- ruff = {},
+            clangd = {},
             rust_analyzer = {},
             ts_ls = {},
             lua_ls = {
