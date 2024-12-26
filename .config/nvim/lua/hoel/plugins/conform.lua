@@ -13,6 +13,7 @@ return {
             python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
             rust = { "rustfmt" },
             markdown = { "prettier" },
+            json = { "prettier" },
             javascript = { "prettier" },
             bash = { "shfmt" },
             sh = { "shfmt" },
