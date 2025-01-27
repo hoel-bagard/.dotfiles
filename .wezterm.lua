@@ -13,6 +13,9 @@ end
 -- Settings
 config.font = wezterm.font("MesloLGS NF", { weight = "Regular", italic = false })
 config.font = wezterm.font_with_fallback({ "JetbrainsMono Nerd Font" })
+-- Setting the Image Protocol
+config.enable_kitty_graphics = true
+config.term = "xterm-kitty" -- xterm-256color
 
 config.color_scheme = "Breeze (Gogh)"
 config.colors = {
