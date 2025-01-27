@@ -222,8 +222,9 @@ path = "~/hitachi-dotfiles/.gitconfig"
 [url "git@github.com:"]
 	insteadOf = gh:
 
-[url "git@github.com:"]
-	insteadOf = "https://github.com/"
+; [url "git@github.com:"]
+; 	insteadOf = "https://github.com/"
+; 	Temp comment out for dioxus
 
 [url "git@gitlab.com:"]
 	insteadOf = gl:
