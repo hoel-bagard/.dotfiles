@@ -41,7 +41,7 @@ vim.keymap.set("n", "<leader>fs", vim.cmd.update, { desc = "[F]ile [S]ave" })
 
 -- Oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-vim.keymap.set("n", "<space>e", require("oil").toggle_float, { desc = "Open/close parent directory in floating mode" })
+vim.keymap.set("n", "<space>o", require("oil").toggle_float, { desc = "Open/close parent directory in floating mode" })
 
 -- Move things while in highlight mode.
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
