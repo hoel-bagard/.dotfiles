@@ -119,6 +119,7 @@ cmp.setup({
     ---@diagnostic disable-next-line: missing-fields
     formatting = {
         format = lspkind.cmp_format({
+            before = require("tailwind-tools.cmp").lspkind_format,
             mode = "symbol_text",
             menu = {
                 buffer = "[Buffer]",
