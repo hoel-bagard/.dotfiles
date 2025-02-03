@@ -1,5 +1,11 @@
 return {
-    { "hrsh7th/nvim-cmp" },
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "tailwind-tools",
+            "onsails/lspkind-nvim",
+        },
+    },
     {
         "saadparwaiz1/cmp_luasnip",
         dependencies = {
