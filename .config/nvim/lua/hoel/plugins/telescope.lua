@@ -16,6 +16,7 @@ return {
         require("telescope").setup({
             --  See `:help telescope.setup()`
             extensions = {
+                fzf = {},
                 ["ui-select"] = {
                     require("telescope.themes").get_dropdown(),
                 },
