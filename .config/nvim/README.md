@@ -4,11 +4,6 @@ It's still very much a work in progress.
 
 # TODOs
 
-## Leap
-
-Similar to vimium "f", allows to jump anywhere.
-<https://github.com/ggandor/leap.nvim>
-
 ## Jump keymaps
 
 One of the below
