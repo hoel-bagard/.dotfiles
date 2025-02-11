@@ -50,6 +50,7 @@ go/
 Desktop/
 .config/*
 !.config/nvim
+!.config/zsh
 Downloads/
 work/
 work-hitachi/
