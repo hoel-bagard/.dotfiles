@@ -29,10 +29,6 @@ vim-unimpaired
 - <https://github.com/nvim-treesitter/nvim-treesitter-textobjects>
 - The [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) plugin seems pretty useful.
 
-## Reformatting config
-
-- Split mason from lsp
-
 ## Trouble
 
 - https://github.com/folke/trouble.nvim
