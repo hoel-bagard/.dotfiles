@@ -4,14 +4,6 @@ It's still very much a work in progress.
 
 # TODOs
 
-## Jump keymaps
-
-One of the below
-Mini
-<https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bracketed.md>
-vim-unimpaired
-<https://github.com/tpope/vim-unimpaired>
-
 ## DAP
 
 - nvim dap (and nvim-dap-python, nvim-dap-ui)
