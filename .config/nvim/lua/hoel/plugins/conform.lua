@@ -19,6 +19,7 @@ return {
             sh = { "shfmt" },
             toml = { "taplo" },
             yaml = { "yamlfmt" },
+            just = { "just" },
         },
     },
 }
