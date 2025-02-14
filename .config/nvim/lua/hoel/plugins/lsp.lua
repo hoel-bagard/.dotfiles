@@ -128,6 +128,8 @@ return {
         ruff.capabilities = vim.tbl_deep_extend("force", {}, capabilities, ruff.capabilities or {})
         require("lspconfig").ruff.setup(ruff)
 
+        require("lspconfig").typos_lsp.setup({ init_options = { config = "~/config/nvim/spell/typos.toml" } })
+
         -- Ensure the servers and tools above are installed
         --  To check the current status of installed tools and/or manually install other tools, run :Mason
         --  Press `g?` for help in this menu.
@@ -146,6 +148,8 @@ return {
             "yamlfmt",
             "bash-language-server",
             "shellcheck", -- bash linter
+            "typos-lsp",
+            "typos",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
