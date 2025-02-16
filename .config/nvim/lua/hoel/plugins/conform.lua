@@ -20,6 +20,7 @@ return {
             toml = { "taplo" },
             yaml = { "yamlfmt" },
             just = { "just" },
+            css = { "rustywind", "prettier" },
             ["*"] = { "typos" },
         },
     },
