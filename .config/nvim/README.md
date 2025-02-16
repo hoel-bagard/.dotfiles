@@ -20,7 +20,7 @@ It's still very much a work in progress.
 
 - https://github.com/folke/trouble.nvim
 
-## Rust settup
+## Rust setup
 
 - https://github.com/Saecki/crates.nvim
 - https://github.com/mrcjkb/rustaceanvim
@@ -29,6 +29,6 @@ It's still very much a work in progress.
 ## Misc
 
 - How to have <i+o> (inner symbol) ?
-- How to not have "'" insert two charaters (opening and ending) when typing comments ?
+- How to not have "'" insert two characters (opening and ending) when typing comments ?
 - Have the "help" (shift-K) at the bottom like in spacemacs, when editing the args. And when having cursor on a variable (get type).
 - Have the lsp (ruff) show the error code and not just the message (otherwise can't ignore it)
