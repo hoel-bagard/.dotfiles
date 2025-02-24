@@ -13,7 +13,6 @@ It's still very much a work in progress.
 
 ## Treesitter
 
-- <https://github.com/nvim-treesitter/nvim-treesitter-textobjects>
 - The [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) plugin seems pretty useful.
 
 ## Trouble
@@ -22,7 +21,6 @@ It's still very much a work in progress.
 
 ## Rust setup
 
-- https://github.com/Saecki/crates.nvim
 - https://github.com/mrcjkb/rustaceanvim
 - https://www.youtube.com/watch?v=mh_EJhH49Ms
 
