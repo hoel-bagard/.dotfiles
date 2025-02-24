@@ -29,7 +29,7 @@ return {
             yaml = { "yamlfmt" },
             just = { "just" },
             css = { "rustywind", "prettier" },
-            ["*"] = { "typos" },
+            -- ["*"] = { "typos" },
         },
     },
 }
