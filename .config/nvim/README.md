@@ -11,10 +11,6 @@ It's still very much a work in progress.
 - <https://youtu.be/4BnVeOUeZxc?si=p-DH1AQ6IVmyBux8&t=591>
 - <https://github.com/tjdevries/config_manager/blob/eb8c846bdd480e6ed8fb87574eac09d31d39befa/xdg_config/nvim/after/plugin/dap.lua>
 
-## Treesitter
-
-- The [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) plugin seems pretty useful.
-
 ## Trouble
 
 - https://github.com/folke/trouble.nvim
