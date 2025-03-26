@@ -43,6 +43,7 @@
 .password-store-hitachi/
 .docker/
 .vnc/
+.yarnrc
 .zcompdump*
 powerlevel10k/
 go/
@@ -55,3 +56,4 @@ Downloads/
 work/
 work-hitachi/
 mount
+
