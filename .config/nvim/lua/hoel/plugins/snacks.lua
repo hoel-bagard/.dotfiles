@@ -44,6 +44,7 @@ return {
         indent = { enabled = true, animate = { enabled = false } },
         quickfile = { enabled = true },
         git = { enabled = true },
+        gitbrowse = { enabled = true },
     },
 
     -- stylua: ignore
@@ -59,5 +60,6 @@ return {
         { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
         { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
         { "<leader>gf", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
+        { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
     },
 }
