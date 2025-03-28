@@ -16,6 +16,7 @@ config.font = wezterm.font_with_fallback({ "JetbrainsMono Nerd Font" })
 -- Setting the Image Protocol
 config.enable_kitty_graphics = true
 config.term = "xterm-kitty" -- xterm-256color
+-- config.term = "xterm-256color"
 
 config.color_scheme = "Breeze (Gogh)"
 config.colors = {
