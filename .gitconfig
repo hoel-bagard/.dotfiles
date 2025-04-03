@@ -256,6 +256,9 @@ path = "~/hitachi-dotfiles/.gitconfig"
 [status]
 	submoduleSummary = true
 
+[commit]
+	template = ~/.config/git/commit.template
+
 # Always fetch submodules. Can slow down pulls quite a lot if there are a few submodules.
 # [submodule]
 #	recurse = true
