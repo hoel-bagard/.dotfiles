@@ -1,1 +1,10 @@
 *
+# Note: the "*" are needed for the file picker in neovim to work.
+!.config/nvim/*
+!.config/zsh/*
+!.github/*
+!.gnupg/*
+!.ssh/*
+!.zshrc
+!.wezterm.lua
+!.editorconfig
