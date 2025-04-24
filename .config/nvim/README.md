@@ -2,6 +2,16 @@
 
 It's still very much a work in progress.
 
+## Usage
+
+### Remote file editing
+
+Edit files on server [using oil](https://github.com/stevearc/oil.nvim?tab=readme-ov-file#ssh):
+
+```console
+nvim oil-ssh://[username@]hostname[:port]/[path]
+```
+
 # TODOs
 
 ## DAP
