@@ -65,3 +65,30 @@ vim.opt.modeline = false
 -- Spelling
 vim.opt.spelllang = "en"
 vim.opt.spell = true
+
+-- Diagnostics
+-- Define icons for diagnostic errors.
+-- https://neovim.io/doc/user/diagnostic.html#diagnostic-signs
+vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
+
+vim.diagnostic.config({
+    virtual_text = {
+        source = true,
+        format = function(diagnostic)
+            if diagnostic.user_data and diagnostic.user_data.code then
+                return string.format("%s %s", diagnostic.user_data.code, diagnostic.message)
+            else
+                return diagnostic.message
+            end
+        end,
+    },
+    -- Make the diagnostics window a bit nicer.
+    float = {
+        header = "Diagnostics",
+        source = true,
+        border = "rounded",
+    },
+})
