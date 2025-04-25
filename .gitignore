@@ -1,16 +1,47 @@
+# Ignore everything by default.
 *
+
+# Then add exceptions (mainly for the file picker in neovim to work).
 !.config
+
+# Git
+!.config/git
+!.config/git/commit.template
+!.gitconfig
+!.gitignore
+!.gitmodules
+
+# Helix
+!.config/helix
+!.config/helix/config.toml
+!.config/helix/themes
+!.config/helix/themes/*
+
+# Nix
+.config/nix
+.config/nix/nix.co
 
 # Nvim config
 !.config/nvim
-!.config/nvim/after/plugin
-!.config/nvim/lua/hoel
-!.config/nvim/lua/hoel/plugins
 !.config/nvim/*
+!.config/nvim/*/*
+!.config/nvim/*/*/*
+!.config/nvim/*/*/*/*
+
+# Pip
+!.config/pip
+!.config/pip/pip.conf
+
+# Tmux
+!.config/tmux
+!.config/tmux/tmux.conf
 
 # ZSH config
+!.zshrc
 !.config/zsh
 !.config/zsh/*
+!.config/zsh/tools
+!.config/zsh/tools/*
 
 # GitHub CI
 !.github
@@ -24,6 +55,18 @@
 !.ssh
 !.ssh/config
 
-!.zshrc
-!.wezterm.lua
+# Work specific dotfiles, used as a submodule.
+!hitachi-dotfiles
+
+# Other files
+!.aspell.en.pws
 !.editorconfig
+!.env
+!.p10k.zsh
+!.pre-commit-config.yaml
+!.spacemacs
+!.vimrc
+!.wezterm.lua
+!.yamlfmt
+!7skb.layout.json
+!README.md
