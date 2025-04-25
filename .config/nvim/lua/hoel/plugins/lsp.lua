@@ -130,6 +130,7 @@ return {
         require("lspconfig").ruff.setup(ruff)
 
         require("lspconfig").typos_lsp.setup({ init_options = { config = "~/config/nvim/spell/typos.toml" } })
+        require("lspconfig").just.setup({})
 
         -- Ensure the servers and tools above are installed
         --  To check the current status of installed tools and/or manually install other tools, run :Mason
@@ -153,6 +154,7 @@ return {
             "typos",
             "rustywind",
             "graphql-language-service-cli",
+            -- "just-lsp",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
