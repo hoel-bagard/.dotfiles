@@ -23,6 +23,7 @@ return {
             markdown = { "prettier" },
             json = { "prettier" },
             javascript = { "prettier" },
+            graphql = { "prettier" },
             bash = { "shfmt" },
             sh = { "shfmt" },
             toml = { "taplo" },

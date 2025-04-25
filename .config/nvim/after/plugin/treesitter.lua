@@ -18,6 +18,7 @@ require("nvim-treesitter.configs").setup({
         "typescript",
         "vim",
         "vimdoc",
+        "graphql",
     },
     sync_install = false,
     auto_install = true,

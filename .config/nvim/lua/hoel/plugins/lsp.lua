@@ -118,6 +118,7 @@ return {
                     },
                 },
             },
+            graphql = {},
         }
 
         local pyright = {}
@@ -151,6 +152,7 @@ return {
             "typos-lsp",
             "typos",
             "rustywind",
+            "graphql-language-service-cli",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
