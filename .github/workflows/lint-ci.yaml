@@ -3,7 +3,7 @@ name: Linting CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
 
 concurrency:
@@ -20,5 +20,5 @@ jobs:
       - uses: JohnnyMorganz/stylua-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          version: v0.20.0
+          version: v2.1.0
           args: --check .
