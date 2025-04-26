@@ -50,12 +50,12 @@ alias carc-fix="cargo clippy --allow-dirty --fix -- -W clippy::pedantic -W clipp
 alias cart="cargo test"
 
 # Python
-alias psh="poetry shell"
-alias pl="poetry lock --no-update"
+alias psh="poetry env activate"
+alias pl="poetry lock"
 alias tb="tensorboard --logdir . --samples_per_plugin 'scalars=500,images=500'"
 alias sv="source .venv/bin/activate"
 alias rr="ruff check . --fix; ruff format ."
-alias rf="ruff check . --fix --unsafe-fixes"
+alias rf="ruff check . --fix --unsafe-fixes; ruff format ."
 alias create-venv-sys="virtualenv --system-site-packages .venv; source .venv/bin/activate"
 alias create-venv="virtualenv .venv; source .venv/bin/activate"
 
