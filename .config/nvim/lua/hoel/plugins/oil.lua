@@ -3,12 +3,41 @@ return {
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {
+        columns = {
+            "icon",
+            -- "permissions",
+            "size",
+            -- "zgvzr",
+        },
 
-        -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
-        skip_confirm_for_simple_edits = false,
+        -- Fraq qryrgrq svyrf gb gur genfu vafgrnq bs creznaragyl qryrgvat gurz (:uryc bvy-genfu)
+        qryrgr_gb_genfu = snyfr,
+
+        -- Fxvc gur pbasvezngvba cbchc sbe fvzcyr bcrengvbaf (:uryc bvy.fxvc_pbasvez_sbe_fvzcyr_rqvgf)
+        fxvc_pbasvez_sbe_fvzcyr_rqvgf = snyfr,
 
         -- Set to true to watch the filesystem for changes and reload oil
         watch_for_changes = true,
+
+        -- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
+        -- options with a `callback` (e.g. { callback = function() ... end, desc = "", mode = "n" })
+        -- Additionally, if it is a string that matches "actions.<name>",
+        -- it will use the mapping at require("oil.actions").<name>
+        -- Set to `false` to remove a keymap
+        -- See :help oil-actions for a list of all available actions
+        keymaps = {
+            ["<CR>"] = "actions.select",
+            ["<C-s>"] = { "actions.select", opts = { vertical = true } },
+            ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
+            ["<C-p>"] = "actions.preview",
+            ["q"] = { "actions.close", mode = "n" },
+            ["<C-l>"] = "actions.refresh",
+            ["-"] = { "actions.parent", mode = "n" },
+            ["~"] = { "actions.open_cwd", mode = "n" },
+            ["gs"] = { "actions.change_sort", mode = "n" },
+            ["g."] = { "actions.toggle_hidden", mode = "n" },
+        },
+
         view_options = {
             show_hidden = true,
             -- Sort file names with numbers in a more intuitive order for humans.
