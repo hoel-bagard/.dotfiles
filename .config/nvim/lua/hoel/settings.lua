@@ -45,7 +45,10 @@ vim.opt.incsearch = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Set some symbols for list mode (not that I use it often).  TODO: remove this ?
+-- Sets how neovim will display certain whitespace characters in the editor when in list mode (and enable list mode).
+-- See `:help 'list'` and `:help 'listchars'`
+vim.opt.list = true
+---@diagnostic disable-next-line: missing-fields
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions.
