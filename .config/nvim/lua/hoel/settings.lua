@@ -54,8 +54,8 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 -- Preview substitutions.
 vim.opt.inccommand = "split"
 
--- Show which line the cursor is on.  TODO: activate once a theme is installed.
--- vim.opt.cursorline = true
+-- Make the line number of the line the cursor is on stand out.
+vim.opt.cursorline = true
 
 -- vim.opt.colorcolumn = "120"
 
