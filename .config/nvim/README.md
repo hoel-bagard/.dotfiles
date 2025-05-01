@@ -35,3 +35,12 @@ nvim oil-ssh://[username@]hostname[:port]/[path]
 - How to have <i+o> (inner symbol) ?
 - How to not have "'" insert two characters (opening and ending) when typing comments ?
 - Have the "help" (shift-K) at the bottom like in spacemacs, when editing the args. And when having cursor on a variable (get type).
+  - https://www.reddit.com/r/neovim/comments/uwycp6/first_neovim_plugin_show_go_signatures_in_echo/
+  - https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
+    - Tried it, quite bad
+  - https://github.com/ray-x/lsp_signature.nvim
+    - Not ideal, but better than nothing at all ?
+  - Or switch to coc ?
+    - Worth it even with the new nvim version ?
+  - Try noice: https://github.com/folke/noice.nvim signature help
+- Better folds: https://github.com/kevinhwang91/nvim-ufo
