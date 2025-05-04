@@ -19,7 +19,13 @@ setopt correctall
 export $(envsubst < $HOME/.env)
 
 # Use nvim instead of colored-man-pages.
-export MANPAGER='nvim +Man!'
+if (( ${+commands[nvim]} )); then
+    export MANPAGER='nvim +Man!'
+elif (( ${+commands[vim]} )); then
+    export MANPAGER="vim +MANPAGER --not-a-term -"
+elif (( ${+commands[less]} )); then
+    export MANPAGER="less --incsearch"
+fi
 
 # Japanese inputs
 export GTK_IM_MODULE=fcitx
