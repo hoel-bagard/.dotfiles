@@ -3,6 +3,9 @@
 vim.opt.hlsearch = true -- True by default, but set it just in case.
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- Save all unsaved buffers and then quits them all. Also mapped to ZZ by default.
+vim.keymap.set("n", "<leader>Q", ":xa<CR>", { desc = "[Q]uit all", noremap = true, silent = true })
+
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
