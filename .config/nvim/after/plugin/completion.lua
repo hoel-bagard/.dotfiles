@@ -112,7 +112,6 @@ cmp.setup({
         { name = "luasnip" },
         { name = "render-markdown" },
         { name = "crates" },
-    }, {
         { name = "path" },
         { name = "buffer", keyword_length = 5 },
     }),
