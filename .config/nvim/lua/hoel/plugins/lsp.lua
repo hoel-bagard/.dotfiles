@@ -102,10 +102,9 @@ return {
         local servers = {
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
             -- Use pyright from path, since there are a lot of differences between pyright versions.
-            -- pyright = {},
-            -- ruff = {},
+            pyright = {},
+            ruff = {},
             clangd = {},
-            rust_analyzer = {},
             ts_ls = {},
             lua_ls = {
                 settings = {
@@ -120,6 +119,28 @@ return {
             },
             graphql = {},
         }
+
+        require("lspconfig").rust_analyzer.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {
+                ["rust-analyzer"] = {
+                    check = {
+                        -- allFeatures = true,
+                        command = "clippy",
+                        extraArgs = {
+                            "--",
+                            "--no-deps",
+                            "-Wclippy::pedantic",
+                            "-Wclippy::nursery",
+                            "-Wclippy::unwrap_used",
+                            "-Wclippy::expect_used",
+                            "-Adead_code",
+                        },
+                    },
+                },
+            },
+        })
 
         local pyright = {}
         pyright.capabilities = vim.tbl_deep_extend("force", {}, capabilities, pyright.capabilities or {})
