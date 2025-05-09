@@ -30,6 +30,17 @@ alias zshrc="${=EDITOR} ~/.zshrc"
 alias zsh-aliases="${=EDITOR} ~/.config/zsh/aliases.zsh"
 alias notepad="nvim ~/work/notepad.md"
 alias df="df -h"
+if command -v catimg >/dev/null 2>&1; then
+    alias catimg="catimg"
+elif command -v feh >/dev/null 2>&1; then
+    alias catimg="feh"
+elif command -v display >/dev/null 2>&1; then
+    alias catimg="display"
+elif command -v viu >/dev/null 2>&1; then
+    alias catimg="viu"
+elif command -v tiv >/dev/null 2>&1; then
+    alias catimg="tiv"
+fi
 
 # Git
 alias gk="git checkout"
