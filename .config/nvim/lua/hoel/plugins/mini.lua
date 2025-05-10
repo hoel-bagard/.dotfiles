@@ -69,7 +69,18 @@ return {
     -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
     -- - sd'   - [S]urround [D]elete [']quotes
     -- - sr)'  - [S]urround [R]eplace [)] [']
-    { "echasnovski/mini.surround", version = "*" },
+    {
+        "echasnovski/mini.surround",
+        version = "*",
+
+        opts = {
+            mappings = {
+                add = "<leader>sa", -- Add surrounding in Normal and Visual modes
+                delete = "<leader>sd", -- Delete surrounding
+                replace = "<leader>sr", -- Replace surrounding
+            },
+        },
+    },
 
     -- Better Around/Inside textobjects
     -- Example:
