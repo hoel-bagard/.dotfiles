@@ -36,3 +36,12 @@ nvim oil-ssh://[username@]hostname[:port]/[path]
 - How to not have "'" insert two characters (opening and ending) when typing comments ?
 - Better folds: https://github.com/kevinhwang91/nvim-ufo
 - `ctrl + ^` to go back and forth between two files. -> Use harpoon instead.
+
+## Plugins
+
+- [flit.nvim](https://github.com/ggandor/flit.nvim)
+  - For better `f`/`F`/`t`/`T` motions.
+  - Add "clever repeat": using `f` or `t` repeats the previous `f`/`F` or `t`/`T`.
+  - Make the motions multiline.
+- [leap.nvim](https://github.com/ggandor/leap.nvim)
+  - Forward/backward jumps with `s`/`S`.
