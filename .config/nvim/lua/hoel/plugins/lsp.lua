@@ -56,6 +56,7 @@ return {
 
                 -- Execute a code action, usually the cursor needs to be on top of an error
                 -- or a suggestion from your LSP for this to activate.
+                -- For example to activate the "auto-complete" import on a function/class that was typed manually.
                 map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
                 -- Opens a popup that displays documentation about the word under the cursor

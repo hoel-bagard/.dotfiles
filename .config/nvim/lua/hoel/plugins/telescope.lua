@@ -28,6 +28,7 @@ return {
         pcall(require("telescope").load_extension, "ui-select")
 
         -- See `:help telescope.builtin`
+        -- TODO: move to keymaps ?
         local builtin = require("telescope.builtin")
         vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
         vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
