@@ -7,4 +7,3 @@ return {
         vim.cmd.colorscheme("tokyonight-night")
     end,
 }
--- TODO: https://github.com/folke/tokyonight.nvim?tab=readme-ov-file#fix-undercurls-in-tmux
