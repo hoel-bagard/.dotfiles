@@ -160,6 +160,27 @@ return {
 
         require("lspconfig").just.setup({})
 
+        require("lspconfig.configs").ty = {
+            default_config = {
+                cmd = { "ty", "server" },
+                filetypes = { "python" },
+                root_dir = require("lspconfig").util.root_pattern(".git"),
+                root_markers = {
+                    "ty.toml",
+                    "pyproject.toml",
+                    "setup.py",
+                    "setup.cfg",
+                    "requirements.txt",
+                    "Pipfile",
+                    ".git",
+                },
+            },
+        }
+
+        local ty = {}
+        ty.capabilities = vim.tbl_deep_extend("force", {}, capabilities, ty.capabilities or {})
+        require("lspconfig").ty.setup(ty)
+
         -- Ensure the servers and tools above are installed
         --  To check the current status of installed tools and/or manually install other tools, run :Mason
         --  Press `g?` for help in this menu.
