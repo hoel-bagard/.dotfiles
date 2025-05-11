@@ -101,6 +101,9 @@ vim.diagnostic.config({
     },
 })
 
+-- Set highlight on search, true by default, but set it just in case.
+vim.opt.hlsearch = true
+
 -- Highlight when yanking text
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking text",

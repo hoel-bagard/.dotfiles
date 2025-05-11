@@ -19,9 +19,7 @@ require("which-key").add({
     },
 })
 
--- [[ Basic Keymaps ]]
--- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true -- True by default, but set it just in case.
+-- Clear highlight on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Save all unsaved buffers and then quits them all. Also mapped to ZZ by default.
