@@ -1,0 +1,12 @@
+[default]
+locale = "en-us"
+extend-ignore-re = [
+  # https://github.com/crate-ci/typos/blob/master/docs/reference.md
+  # Allow to disable a line by adding "# spellchecker:disable-line" at the end.
+  "(?Rm)^.*\\s+spellchecker:disable-line$",
+  # Allow to disable a block of lines with "# spellchecker:<on|off>".
+  "(?s)(#|//)\\s*spellchecker:off.*?\\n\\s*(#|//)\\s*spellchecker:on",
+  # Allow patterns like [S]earch, used for which-key.
+  "\\[[A-Za-z]\\][a-z]+",
+]
+extend-words = { noice = "noice" }

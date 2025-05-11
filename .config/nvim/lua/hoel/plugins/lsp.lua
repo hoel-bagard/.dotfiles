@@ -119,6 +119,13 @@ return {
                 },
             },
             graphql = {},
+            typos_lsp = {
+                capabilities = capabilities,
+                init_options = {
+                    diagnosticSeverity = "hint",
+                    config = vim.env.XDG_CONFIG_HOME .. "/nvim/spell/typos.toml",
+                },
+            },
         }
 
         require("lspconfig").rust_analyzer.setup({
@@ -127,7 +134,7 @@ return {
             settings = {
                 ["rust-analyzer"] = {
                     check = {
-                        -- allFeatures = true,
+                        allFeatures = true,
                         command = "clippy",
                         extraArgs = {
                             "--",
@@ -151,7 +158,6 @@ return {
         ruff.capabilities = vim.tbl_deep_extend("force", {}, capabilities, ruff.capabilities or {})
         require("lspconfig").ruff.setup(ruff)
 
-        require("lspconfig").typos_lsp.setup({ init_options = { config = "~/config/nvim/spell/typos.toml" } })
         require("lspconfig").just.setup({})
 
         -- Ensure the servers and tools above are installed
@@ -173,7 +179,6 @@ return {
             "bash-language-server",
             "shellcheck", -- bash linter
             "typos-lsp",
-            "typos",
             "rustywind",
             "graphql-language-service-cli",
             -- "just-lsp",
