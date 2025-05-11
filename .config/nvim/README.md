@@ -45,3 +45,4 @@ nvim oil-ssh://[username@]hostname[:port]/[path]
   - Make the motions multiline.
 - [leap.nvim](https://github.com/ggandor/leap.nvim)
   - Forward/backward jumps with `s`/`S`.
+- [nvim-surround](https://github.com/kylechui/nvim-surround)
