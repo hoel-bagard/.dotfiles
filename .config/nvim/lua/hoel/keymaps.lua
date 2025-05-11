@@ -1,3 +1,24 @@
+require("which-key").add({
+    { "<leader>c", group = "[C]ode" },
+    { "<leader>c_", hidden = true },
+    { "<leader>d", group = "[D]ocument" },
+    { "<leader>d_", hidden = true },
+    { "<leader>r", group = "[R]ename" },
+    { "<leader>r_", hidden = true },
+    { "<leader>s", group = "[S]earch" },
+    { "<leader>s_", hidden = true },
+    { "<leader>w", group = "[W]orkspace" },
+    { "<leader>w_", hidden = true },
+
+    {
+        "<leader>?",
+        function()
+            require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+    },
+})
+
 -- [[ Basic Keymaps ]]
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true -- True by default, but set it just in case.
@@ -78,16 +99,6 @@ vim.keymap.set("v", "<leader>d", '"_d')
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-
--- [[ Basic Autocommands ]]
--- Highlight when yanking text
-vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking text",
-    group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-})
 
 -- [[ Unused (for now) Keymaps ]]
 -- vim.keymap.set("n", "<leader>f", function()
