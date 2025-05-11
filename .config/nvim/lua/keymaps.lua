@@ -79,8 +79,6 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- Center screen when using moving
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "{", "{zz")
-vim.keymap.set("n", "}", "}zz")
 
 -- Paste over selection without losing buffer/register content.
 vim.keymap.set("x", "<leader>p", '"_dP')
