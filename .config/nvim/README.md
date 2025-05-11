@@ -32,9 +32,6 @@ nvim oil-ssh://[username@]hostname[:port]/[path]
 
 ## Misc
 
-- How to have <i+o> (inner symbol) ?
-- How to not have "'" insert two characters (opening and ending) when typing comments ?
-- Better folds: https://github.com/kevinhwang91/nvim-ufo
 - `ctrl + ^` to go back and forth between two files. -> Use harpoon instead.
 
 ## Plugins
