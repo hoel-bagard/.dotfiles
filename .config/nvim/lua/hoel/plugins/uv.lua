@@ -16,7 +16,7 @@ return {
             run_file = true, -- Run current file (<leader>ur)
             run_selection = true, -- Run selected code (<leader>us)
             run_function = true, -- Run function (<leader>uf)
-            venv = true, -- Environment management (<leader>ue)
+            venv = true, -- Environment management (<leader>ue) spellchecker:disable-line
             init = true, -- Initialize uv project (<leader>ui)
             add = true, -- Add a package (<leader>ua)
             remove = true, -- Remove a package (<leader>ud)
