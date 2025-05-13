@@ -1,3 +1,5 @@
+local icons = require("icons")
+
 -- [[ Various settings ]]
 -- Line numbers
 vim.opt.number = true
@@ -74,10 +76,10 @@ vim.opt.spell = true
 vim.diagnostic.config({
     signs = {
         text = {
-            [vim.diagnostic.severity.ERROR] = " ",
-            [vim.diagnostic.severity.WARN] = " ",
-            [vim.diagnostic.severity.INFO] = " ",
-            [vim.diagnostic.severity.HINT] = "󰌵",
+            [vim.diagnostic.severity.ERROR] = icons.error,
+            [vim.diagnostic.severity.WARN] = icons.warn,
+            [vim.diagnostic.severity.INFO] = icons.info,
+            [vim.diagnostic.severity.HINT] = icons.hint,
         },
         -- The numhl makes the line number (be it absolute or relative) be highlighted/colored as an error or warning.
         -- numhl = {
@@ -112,3 +114,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
+
+-- Set fold icons
+vim.opt.fillchars = { foldclose = icons.fold_closed, foldopen = icons.fold_open }

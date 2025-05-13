@@ -15,11 +15,9 @@ return {
             agent = "copilot", -- Default agent to use, see ':CopilotChatAgents' for available agents (can be specified manually in prompt via @).
             temperature = 0, -- GPT result temperature
 
-            question_header = " " .. icons.ui.User .. " ",
-            answer_header = " " .. icons.ui.Bot .. " ",
-            error_header = "> " .. icons.diagnostics.Warn .. " ",
-
-            -- selection = select.visual,
+            question_header = " " .. icons.user .. " ",
+            answer_header = " " .. icons.bot .. " ",
+            error_header = "> " .. icons.warn .. " ",
 
             window = {
                 layout = "vertical", -- 'vertical', 'horizontal', 'float', 'replace', or a function that returns the layout
