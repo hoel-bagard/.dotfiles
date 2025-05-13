@@ -26,7 +26,7 @@ return {
                     title = "Git Status",
                     section = "terminal",
                     enabled = function()
-                        return snacks.git.get_root() ~= nil
+                        return Snacks.git.get_root() ~= nil
                     end,
                     cmd = "git status --short --branch --renames",
                     height = 5,
