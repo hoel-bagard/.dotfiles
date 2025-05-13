@@ -164,16 +164,17 @@ return {
             default_config = {
                 cmd = { "ty", "server" },
                 filetypes = { "python" },
-                root_dir = require("lspconfig").util.root_pattern(".git"),
-                root_markers = {
-                    "ty.toml",
-                    "pyproject.toml",
-                    "setup.py",
-                    "setup.cfg",
-                    "requirements.txt",
-                    "Pipfile",
-                    ".git",
-                },
+                root_dir = function(fname)
+                    return require("lspconfig").util.root_pattern(
+                        "ty.toml",
+                        "pyproject.toml",
+                        "setup.py",
+                        "setup.cfg",
+                        "requirements.txt",
+                        "Pipfile",
+                        ".git"
+                    )(fname)
+                end,
             },
         }
 
