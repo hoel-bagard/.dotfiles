@@ -113,8 +113,9 @@ local function ai_question()
     end)
 end
 wk.add({
-    { "<leader>a", group = "[A]I", mode = { "n", "v" }, icon = { icon = icons.bot, color = "azure" } },
-    { "<leader>aj", group = "AI Japanese", mode = "v", icon = { icon = icons.bot, color = "azure" } },
+    icon = { icon = icons.bot, color = "azure" },
+    { "<leader>a", group = "[A]I", mode = { "n", "v" } },
+    { "<leader>aj", group = "AI Japanese", mode = "v" },
     { "<leader>aa", chat.toggle, desc = "AI Toggle", mode = "n" },
     { "<leader>aa", chat.open, desc = "AI Open", mode = "v" },
     { "<leader>ax", chat.reset, desc = "AI Reset", mode = "n" },
