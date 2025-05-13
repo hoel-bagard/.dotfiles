@@ -1,3 +1,10 @@
+#!/bin/zsh
+
+function command_exists() {
+    # Note: (( $+commands[$1] )) is zsh specific and not supported by shfmt/bash, for bash use `command -v "$1" >/dev/null 2>&1`.
+    (( $+commands[$1] ))
+}
+
 # Mount home NAS
 alias mount-home-public="sudo mount -t cifs //192.168.0.245/PublicNAS /mnt/nas_public -o uid=$(id -u),gid=$(id -g)"
 alias unmount-home-public="sudo umount /mnt/nas_public; ssh -t hoel@192.168.0.245 'sudo hdparm -y /dev/sda'"
@@ -5,9 +12,9 @@ alias mount-home-private="sudo mount -t cifs //192.168.0.245/PrivateNAS /mnt/nas
 alias unmount-home-private="sudo umount /mnt/nas_private; ssh -t hoel@192.168.0.245 'sudo hdparm -y /dev/sdb'"
 
 # Everyday commands
-if command -v eza >/dev/null 2>&1; then # Note: (( $+commands[exa] )) is zsh specific and not supported by shfmt
+if command_exists -v eza; then
     alias ll="eza -lahG"
-elif command -v exa >/dev/null 2>&1; then
+elif command_exists exa; then
     alias ll="exa -lahFG"
 else
     alias ll="ls -lah"
@@ -30,15 +37,15 @@ alias zshrc="${=EDITOR} ~/.zshrc"
 alias zsh-aliases="${=EDITOR} ~/.config/zsh/aliases.zsh"
 alias notepad="nvim ~/work/notepad.md"
 alias df="df -h"
-if command -v catimg >/dev/null 2>&1; then
+if command_exists catimg; then
     alias catimg="catimg"
-elif command -v feh >/dev/null 2>&1; then
+elif command_exists feh; then
     alias catimg="feh"
-elif command -v display >/dev/null 2>&1; then
+elif command_exists display; then
     alias catimg="display"
-elif command -v viu >/dev/null 2>&1; then
+elif command_exists viu; then
     alias catimg="viu"
-elif command -v tiv >/dev/null 2>&1; then
+elif command_exists tiv; then
     alias catimg="tiv"
 fi
 
