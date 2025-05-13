@@ -73,10 +73,15 @@ return {
                     context = "git:staged",
                     prompt = "Write commit message for the change with commitizen convention. Keep the title under 50 characters and wrap message at 72 characters. Format as a gitcommit code block.",
                 },
-                Translate = {
-                    mapping = "<leader>ac",
-                    description = "AI Translate",
+                JapaneseTranslate = {
+                    mapping = "<leader>ajt",
+                    description = "AI Japanese Translate",
                     prompt = "Translate the selected text to Japanese.",
+                },
+                JapanFix = {
+                    mapping = "<leader>ajf",
+                    description = "AI Japanese Fix",
+                    prompt = "Fix any mistake in the selected Japanese text.",
                 },
             },
         },
