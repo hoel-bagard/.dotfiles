@@ -127,6 +127,7 @@ wk.add({
 
 -- Git
 local snacks = require("snacks")
+local gitsigns = require("gitsigns")
 -- stylua: ignore
 wk.add({
     { "<leader>g", group = "[G]it", icon = {icon = icons.git, color="orange" } },
@@ -139,4 +140,24 @@ wk.add({
     { "<leader>gd", function() snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
     { "<leader>gf", function() snacks.picker.git_log_file() end, desc = "Git Log File" },
     { "<leader>gB", function() snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
+    -- Hunks
+    { "<leader>h", group = "Git [H]unks", icon = {icon = icons.git, color="orange" } },
+    -- Navigation
+    { "<leader>]c", function() if vim.wo.diff then vim.cmd.normal({ "]c", bang = true }) else gitsigns.nav_hunk("next") end end, desc = "Jump to next git [c]hange", mode = "n" },
+    { "<leader>[c", function() if vim.wo.diff then vim.cmd.normal({ "[c", bang = true }) else gitsigns.nav_hunk("prev") end end, desc = "Jump to previous git [c]hange", mode = "n" },
+    -- Actions
+    { "<leader>hs", function() gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, desc = "[S]tage git hunk", mode = "v" },
+    { "<leader>hr", function() gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, desc = "[R]eset git hunk", mode = "v" },
+    { "<leader>hs", gitsigns.stage_hunk, desc = "Git [S]tage hunk" },
+    { "<leader>hr", gitsigns.reset_hunk, desc = "Git [R]eset hunk" },
+    { "<leader>hS", gitsigns.stage_buffer, desc = "Git [S]tage buffer" },
+    { "<leader>hu", gitsigns.undo_stage_hunk, desc = "Git [U]ndo stage hunk" },
+    { "<leader>hR", gitsigns.reset_buffer, desc = "Git [R]eset buffer" },
+    { "<leader>hp", gitsigns.preview_hunk, desc = "Git [P]review hunk" },
+    { "<leader>hb", gitsigns.blame_line, desc = "Git [B]lame line" },
+    { "<leader>hd", gitsigns.diffthis, desc = "Git [D]iff against index" },
+    { "<leader>hD", function() gitsigns.diffthis("@") end, desc = "Git [D]iff against last commit" },
+    -- Toggles
+    { "<leader>tb", gitsigns.toggle_current_line_blame, desc = "[T]oggle git show [B]lame line" },
+    { "<leader>tD", gitsigns.toggle_deleted, desc = "[T]oggle git show [D]eleted" },
 })
