@@ -1,4 +1,7 @@
-require("which-key").add({
+local wk = require("which-key")
+local icons = require("icons")
+
+wk.add({
     { "<leader>c", group = "[C]ode" },
     { "<leader>d", group = "[D]ocument" },
     { "<leader>r", group = "[R]ename" },
@@ -99,3 +102,39 @@ vim.keymap.set("v", "<leader>d", '"_d')
 -- vim.keymap.set("n", "<leader>f", function()
 --     require("conform").format({ async = true, lsp_fallback = true })
 -- end, { desc = "[F]ormat buffer" })
+
+-- CopilotChat
+local chat = require("CopilotChat")
+local function ai_question()
+    vim.ui.input({ prompt = "AI Question> " }, function(input)
+        if input ~= "" then
+            chat.ask(input)
+        end
+    end)
+end
+wk.add({
+    { "<leader>a", group = "[A]I", mode = { "n", "v" }, icon = { icon = icons.bot, color = "azure" } },
+    { "<leader>aa", chat.toggle, desc = "AI Toggle", mode = "n" },
+    { "<leader>aa", chat.open, desc = "AI Open", mode = "v" },
+    { "<leader>ax", chat.reset, desc = "AI Reset", mode = "n" },
+    { "<leader>as", chat.stop, desc = "AI Stop", mode = "n" },
+    { "<leader>am", chat.select_model, desc = "AI Models", mode = "n" },
+    { "<leader>ap", chat.select_prompt, desc = "AI Prompts", mode = { "n", "v" } },
+    { "<leader>aq", ai_question, desc = "AI Question", mode = { "n", "v" } },
+})
+
+-- Git
+local snacks = require("snacks")
+-- stylua: ignore
+wk.add({
+    { "<leader>g", group = "[G]it", icon = {icon = icons.git, color="orange" } },
+    { "<leader>gD", function() vim.cmd("DiffviewOpen master..HEAD") end, desc = "Git Diff master" },
+    { "<leader>gb", function() snacks.picker.git_branches() end, desc = "Git Branches" },
+    { "<leader>gl", function() snacks.picker.git_log() end, desc = "Git Log" },
+    { "<leader>gL", function() snacks.picker.git_log_line() end, desc = "Git Log Line" },
+    { "<leader>gs", function() snacks.picker.git_status() end, desc = "Git Status" },
+    { "<leader>gS", function() snacks.picker.git_stash() end, desc = "Git Stash" },
+    { "<leader>gd", function() snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
+    { "<leader>gf", function() snacks.picker.git_log_file() end, desc = "Git Log File" },
+    { "<leader>gB", function() snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
+})

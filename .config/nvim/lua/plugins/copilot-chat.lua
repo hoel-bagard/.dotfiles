@@ -1,13 +1,13 @@
 local icons = require("icons")
 
 return {
-
     {
         "CopilotC-Nvim/CopilotChat.nvim",
         dependencies = {
             { "zbirenbaum/copilot.lua" },
             { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
         },
+        event = "VeryLazy",
         build = "make tiktoken",
         opts = {
             system_prompt = "COPILOT_INSTRUCTIONS", -- System prompt to use (can be specified manually in prompt via /).
@@ -70,7 +70,6 @@ return {
                 Commit = {
                     mapping = "<leader>ac",
                     description = "AI Generate Commit",
-                    -- selection = select.buffer,
                     context = "git:staged",
                     prompt = "Write commit message for the change with commitizen convention. Keep the title under 50 characters and wrap message at 72 characters. Format as a gitcommit code block.",
                 },
@@ -82,34 +81,19 @@ return {
             },
         },
 
-        -- config = function()
-        --     local chat = require("CopilotChat")
-        --
-        --     vim.api.nvim_create_autocmd("BufEnter", {
-        --         desc = "Disable line numbers in chat window",
-        --         group = vim.api.nvim_create_augroup("chat-window", { clear = true }),
-        --         pattern = "copilot-*",
-        --         callback = function()
-        --             vim.opt_local.relativenumber = false
-        --             vim.opt_local.number = false
-        --         end,
-        --     })
-        --
-        --     vim.keymap.set({ "n" }, "<leader>aa", chat.toggle, { desc = "AI Toggle" })
-        --     vim.keymap.set({ "v" }, "<leader>aa", chat.open, { desc = "AI Open" })
-        --     vim.keymap.set({ "n" }, "<leader>ax", chat.reset, { desc = "AI Reset" })
-        --     vim.keymap.set({ "n" }, "<leader>as", chat.stop, { desc = "AI Stop" })
-        --     vim.keymap.set({ "n" }, "<leader>am", chat.select_model, { desc = "AI Models" })
-        --     vim.keymap.set({ "n", "v" }, "<leader>ap", chat.select_prompt, { desc = "AI Prompts" })
-        --     vim.keymap.set({ "n", "v" }, "<leader>aq", function()
-        --         vim.ui.input({
-        --             prompt = "AI Question> ",
-        --         }, function(input)
-        --             if input ~= "" then
-        --                 chat.ask(input)
-        --             end
-        --         end)
-        --     end, { desc = "AI Question" })
-        -- end,
+        config = function(_, opts)
+            local chat = require("CopilotChat")
+            chat.setup(opts)
+
+            vim.api.nvim_create_autocmd("BufEnter", {
+                desc = "Disable line numbers in chat window",
+                group = vim.api.nvim_create_augroup("chat-window", { clear = true }),
+                pattern = "copilot-*",
+                callback = function()
+                    vim.opt_local.relativenumber = false
+                    vim.opt_local.number = false
+                end,
+            })
+        end,
     },
 }

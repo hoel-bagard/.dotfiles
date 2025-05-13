@@ -1,14 +1,5 @@
 return {
     "sindrets/diffview.nvim",
-    keys = {
-        {
-            "<leader>gD",
-            function()
-                vim.cmd("DiffviewOpen master..HEAD")
-            end,
-            desc = "[G]it [D]iff master",
-        },
-    },
     opts = {
         keymaps = {
             view = {
