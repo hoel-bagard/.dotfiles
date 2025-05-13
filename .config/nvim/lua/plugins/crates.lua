@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
     "saecki/crates.nvim",
     tag = "stable",

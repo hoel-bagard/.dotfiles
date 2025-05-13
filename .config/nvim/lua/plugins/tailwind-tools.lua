@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
     "luckasRanarison/tailwind-tools.nvim",
     name = "tailwind-tools",

@@ -1,7 +1,7 @@
+---@type LazyPluginSpec
 return {
     "ray-x/lsp_signature.nvim",
 
-    -- event = "InsertEnter",
     opts = {
         bind = true,
         handler_opts = {
@@ -9,7 +9,9 @@ return {
         },
     },
 
-    config = function()
+    config = function(_, opts)
+        require("lsp_signature").setup(opts)
+
         -- require("lspconfig").gopls.setup()
         require("lsp_signature").setup({
             bind = true,

@@ -1,4 +1,5 @@
 -- Collection of various small independent plugins/modules
+---@type LazyPluginSpec[]
 return {
     -- Simple and easy statusline.
     {

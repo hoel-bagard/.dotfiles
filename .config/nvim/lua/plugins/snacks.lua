@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
     "folke/snacks.nvim",
     priority = 1000,
@@ -25,7 +26,7 @@ return {
                     title = "Git Status",
                     section = "terminal",
                     enabled = function()
-                        return Snacks.git.get_root() ~= nil
+                        return snacks.git.get_root() ~= nil
                     end,
                     cmd = "git status --short --branch --renames",
                     height = 5,
@@ -49,7 +50,7 @@ return {
     -- stylua: ignore
     keys = {
         -- Top Pickers & Explorer
-        { "<leader>ch", function() Snacks.picker.command_history() end, desc = "[C]ommand [H]istory" },
-        { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
+        { "<leader>ch", function() snacks.picker.command_history() end, desc = "[C]ommand [H]istory" },
+        { "<leader>n", function() snacks.picker.notifications() end, desc = "Notification History" },
     },
 }

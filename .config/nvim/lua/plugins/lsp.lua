@@ -1,4 +1,5 @@
 -- LSP Configuration
+---@type LazyPluginSpec
 return {
     "neovim/nvim-lspconfig",
     dependencies = {

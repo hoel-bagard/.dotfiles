@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
     "benomahony/uv.nvim",
     opts = {
