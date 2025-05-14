@@ -5,7 +5,8 @@
 ---@type LazyPluginSpec
 return {
     "NMAC427/guess-indent.nvim",
-    event = "LazyFile",
+    event = "VeryLazy",
+
     ---@type GuessIndentConfig
     opts = {},
 }
