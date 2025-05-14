@@ -43,3 +43,5 @@ nvim oil-ssh://[username@]hostname[:port]/[path]
 - [leap.nvim](https://github.com/ggandor/leap.nvim)
   - Forward/backward jumps with `s`/`S`.
 - [nvim-surround](https://github.com/kylechui/nvim-surround)
+- [guess-indent](#https://github.com/NMAC427/guess-indent.nvim)
+  - Automatic indentation style detection for Neovim
