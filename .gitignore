@@ -58,6 +58,10 @@
 # Work specific dotfiles, used as a submodule.
 !hitachi-dotfiles
 
+# bat
+!.config/bat
+!.config/bat/config
+
 # Other files
 !.aspell.en.pws
 !.editorconfig
