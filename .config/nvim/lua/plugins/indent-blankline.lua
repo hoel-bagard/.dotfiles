@@ -8,8 +8,33 @@ return {
     dependencies = { "https://gitlab.com/HiPhish/rainbow-delimiters.nvim" },
 
     ---@type ibl.config
-    opts = {},
-    config = function()
+    opts = {
+        exclude = {
+            filetypes = {
+                "lazy",
+                "lazyterm",
+                "dashboard",
+                "neo-tree",
+                "mason",
+                "notify",
+                "Trouble",
+                "lspinfo",
+                "checkhealth",
+                "help",
+                "man",
+                "gitcommit",
+                "TelescopePrompt",
+                "TelescopeResults",
+                "''",
+            },
+        },
+        indent = {
+            priority = 10,
+        },
+    },
+    config = function(_, opts)
+        require("ibl").setup(opts)
+
         local highlight = {
             "RainbowRed",
             "RainbowYellow",
