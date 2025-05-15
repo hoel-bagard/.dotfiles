@@ -1,13 +1,15 @@
+---@module "rainbow-delimiters"
+---@module "ibl"
+
 ---@type LazyPluginSpec
 return {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     dependencies = { "https://gitlab.com/HiPhish/rainbow-delimiters.nvim" },
 
-    ---@module "ibl"
     ---@type ibl.config
     opts = {},
-    config = function(_, opts)
+    config = function()
         local highlight = {
             "RainbowRed",
             "RainbowYellow",
