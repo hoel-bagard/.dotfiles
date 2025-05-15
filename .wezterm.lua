@@ -3,6 +3,9 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local mux = wezterm.mux
 
+local is_windows = wezterm.target_triple:find("windows") ~= nil
+local is_linux = wezterm.target_triple:find("linux") ~= nil
+
 local config = {}
 
 -- In newer versions of wezterm, use the config_builder which will help provide clearer error messages
@@ -11,12 +14,13 @@ if wezterm.config_builder then
 end
 
 -- Settings
-config.font = wezterm.font("MesloLGS NF", { weight = "Regular", italic = false })
-config.font = wezterm.font_with_fallback({ "JetbrainsMono Nerd Font" })
--- Setting the Image Protocol
-config.enable_kitty_graphics = true
-config.term = "xterm-kitty" -- xterm-256color
--- config.term = "xterm-256color"
+config.font = wezterm.font("JetBrainsMono Nerd Font")
+if is_linux then
+	-- Set the image protocol
+	config.enable_kitty_graphics = true
+	config.term = "xterm-kitty"
+	-- config.term = "xterm-256color"
+end
 
 config.color_scheme = "Breeze (Gogh)"
 config.colors = {
@@ -209,7 +213,7 @@ wezterm.on("update-right-status", function(window, pane)
 	local num_cells = 0
 
 	-- Translate a cell into elements
-	function push(text)
+	local function push(text)
 		local cell_no = num_cells + 1
 
 		table.insert(elements, { Foreground = { Color = colors[cell_no] } })
@@ -241,5 +245,9 @@ end)
 --   ide_pane:send_text "helix\n"
 
 -- end)
+
+if is_windows then
+	config.default_domain = "WSL:Arch"
+end
 
 return config
