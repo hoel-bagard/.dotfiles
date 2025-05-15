@@ -1,6 +1,12 @@
 ---@type LazyPluginSpec
 return {
     "stevearc/oil.nvim",
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    lazy = false,
+
+    -- Optional dependencies
+    dependencies = { "echasnovski/mini.icons", "nvim-tree/nvim-web-devicons" },
+
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {
@@ -8,14 +14,14 @@ return {
             "icon",
             -- "permissions",
             "size",
-            -- "zgvzr",
+            -- "mtime",
         },
 
-        -- Fraq qryrgrq svyrf gb gur genfu vafgrnq bs creznaragyl qryrgvat gurz (:uryc bvy-genfu)
-        qryrgr_gb_genfu = snyfr,
+        -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
+        delete_to_trash = false,
 
-        -- Fxvc gur pbasvezngvba cbchc sbe fvzcyr bcrengvbaf (:uryc bvy.fxvc_pbasvez_sbe_fvzcyr_rqvgf)
-        fxvc_pbasvez_sbe_fvzcyr_rqvgf = snyfr,
+        -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
+        skip_confirm_for_simple_edits = false,
 
         -- Set to true to watch the filesystem for changes and reload oil
         watch_for_changes = true,
@@ -60,9 +66,4 @@ return {
             preview_split = "right",
         },
     },
-
-    -- Optional dependencies
-    dependencies = { "echasnovski/mini.icons", "nvim-tree/nvim-web-devicons" },
-    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-    lazy = false,
 }
