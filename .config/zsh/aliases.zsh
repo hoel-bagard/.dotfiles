@@ -12,7 +12,7 @@ alias mount-home-private="sudo mount -t cifs //192.168.0.245/PrivateNAS /mnt/nas
 alias unmount-home-private="sudo umount /mnt/nas_private; ssh -t hoel@192.168.0.245 'sudo hdparm -y /dev/sdb'"
 
 # Everyday commands
-if command_exists -v eza; then
+if command_exists eza; then
     alias ll="eza -lahG"
 elif command_exists exa; then
     alias ll="exa -lahFG"
