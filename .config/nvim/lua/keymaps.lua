@@ -147,6 +147,18 @@ wk.add({
     { "<leader>tD", gitsigns.toggle_deleted, desc = "[T]oggle git show [D]eleted" },
 })
 
+-- TODOs
+-- stylua: ignore
+wk.add({
+    { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
+    { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
+
+    { "<leader>qt", "<cmd>TodoQuickFix<cr>", desc = "Add TODOs to QuickFix " },
+    { "<leader>qT", "<cmd>TodoQuickFix keywords=TODO,FIX,FIXME<cr>", desc = "Add TODO/FIX to QuickFix " },
+    { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Search TODO" },
+    { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Search TODO/FIX" },
+})
+
 -- Conform
 ---Toggle auto-formatting globally (it is also possible to toggle for the buffer only, but I do not need that).
 local function toggle_autoformat()
