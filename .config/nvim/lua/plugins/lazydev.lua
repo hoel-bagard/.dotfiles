@@ -1,6 +1,6 @@
 -- The @module part is mainly to make the lazydev types be available in the workspace, c.f. link below.
 -- https://github.com/folke/lazydev.nvim/issues/25#issuecomment-2153142682
---- @module "lazydev"
+---@module "lazydev"
 
 ---@brief
 ---

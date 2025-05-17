@@ -6,7 +6,7 @@ wk.add({
     { "<leader>d", group = "[D]ocument" },
     { "<leader>r", group = "[R]ename" },
     { "<leader>s", group = "[S]earch" },
-    { "<leader>w", group = "[W]orkspace" },
+    { "<leader>t", group = "[T]oggle" },
 
     {
         "<leader>?",
@@ -160,4 +160,21 @@ wk.add({
     -- Toggles
     { "<leader>tb", gitsigns.toggle_current_line_blame, desc = "[T]oggle git show [B]lame line" },
     { "<leader>tD", gitsigns.toggle_deleted, desc = "[T]oggle git show [D]eleted" },
+})
+
+-- Conform
+---Toggle auto-formatting globally (it is also possible to toggle for the buffer only, but I do not need that).
+local function toggle_autoformat()
+    vim.b.disable_autoformat = not vim.g.disable_autoformat
+    vim.g.disable_autoformat = not vim.g.disable_autoformat
+
+    if vim.g.disable_autoformat then
+        require("noice").notify("Disabled auto-formatting globally", "info", { title = "AutoFormatting" })
+    else
+        require("noice").notify("Enabled auto-formatting globally", "info", { title = "AutoFormatting" })
+    end
+end
+wk.add({
+    { "<leader>uC", "<cmd>ConformInfo<cr>", desc = "Conform information" },
+    { "<leader>tf", toggle_autoformat, desc = "Toggle auto-format" },
 })
