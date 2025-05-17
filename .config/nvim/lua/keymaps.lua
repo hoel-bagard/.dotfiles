@@ -5,10 +5,10 @@ wk.add({
     { "<leader>c", group = "[C]ode" },
     { "<leader>d", group = "[D]ocument" },
     { "<leader>f", group = "[F]ind" },
+    { "<leader>q", group = "[Q]uickfix/Diagnostics" },
     { "<leader>r", group = "[R]ename" },
     { "<leader>s", group = "[S]earch" },
     { "<leader>t", group = "[T]oggle" },
-    { "<leader>x", group = "Diagnostics/Quickfix" },
     { "<leader>w", group = "[W]orkspace" }, -- TODO: change to windows
 
     {
@@ -30,9 +30,30 @@ vim.keymap.set("n", "<C-q>", ":xa<CR>", { desc = "[Q]uit all", noremap = true, s
 -- stylua: ignore start
 vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, { desc = "Go to next [D]iagnostic message" })
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 -- stylua: ignore end
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
+-- Note: A location list is a window-local quickfix list.(c.f. https://neovim.io/doc/user/quickfix.html)
+vim.keymap.set("n", "<leader>qb", vim.diagnostic.setloclist, { desc = "Add buffer diagnostics to the location list." })
+local function toggle_loclist()
+    for _, win in pairs(vim.fn.getwininfo()) do
+        if win.loclist == 1 then
+            vim.cmd("lclose")
+            return
+        end
+    end
+    vim.cmd("lopen")
+end
+vim.keymap.set("n", "<leader>qq", toggle_loclist, { noremap = true, silent = true })
+local function toggle_quickfix()
+    for _, win in pairs(vim.fn.getwininfo()) do
+        if win.quickfix == 1 then
+            vim.cmd("cclose")
+            return
+        end
+    end
+    vim.cmd("copen")
+end
+vim.keymap.set("n", "<leader>qf", toggle_quickfix, { noremap = true, silent = true })
 
 -- Move window focus.
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
