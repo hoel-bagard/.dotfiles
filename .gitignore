@@ -56,7 +56,7 @@
 !.ssh/config
 
 # Work specific dotfiles, used as a submodule.
-!hitachi-dotfiles
+!.config/hitachi-dotfiles
 !.config/xc-dotfiles
 
 # bat

@@ -25,11 +25,9 @@ source $HOME/.config/zsh/tools/fzf.zsh  # Keep fzf after zoxide.
 source $HOME/.config/zsh/aliases.zsh
 
 # Source hitachi dotfiles if on work PC.
-if [ -f $HOME/hitachi-dotfiles/hitachi_aliases.zsh ]; then
-    source $HOME/hitachi-dotfiles/hitachi_aliases.zsh
-fi
-if [ -f $HOME/hitachi-dotfiles/proxy-commands.zsh ]; then
-    source $HOME/hitachi-dotfiles/proxy-commands.zsh
+if [ "$(ls -A $HOME/.config/hitachi-dotfiles)" ]; then
+    source $HOME/.config/hitachi-dotfiles/hitachi_aliases.zsh
+    source $HOME/.config/hitachi-dotfiles/proxy-commands.zsh
 fi
 
 if [ -f $HOME/.config/xc-dotfiles/aliases.zsh ]; then
