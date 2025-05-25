@@ -62,6 +62,10 @@
 !.config/bat
 !.config/bat/config
 
+# Keyboards layouts
+!.config/keyboards
+!.config/keyboards/7skb.layout.json
+
 # Other files
 !.aspell.en.pws
 !.editorconfig
