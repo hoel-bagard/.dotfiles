@@ -2,8 +2,6 @@
 
 ## Install
 
-## Using pure git
-
 This way of doing is taken from [this hacker news thread](https://news.ycombinator.com/item?id=11071754).
 
 ```zsh
@@ -15,21 +13,6 @@ mv -v $dotfiles_tmp_dir/.* ~/
 mv -v $dotfiles_tmp_dir/*.* ~/
 mv -v $dotfiles_tmp_dir/README.md ~/
 rmdir $dotfiles_tmp_dir
-
-# Optional, do not show untracked files (notably those in the .config folder)
-git config --local status.showUntrackedFiles no
-```
-
-## Using [stow](https://www.gnu.org/software/stow/) (untested)
-
-From the home folder, do:
-
-```console
-git clone git@github.com:hoel-bagard/.dotfiles.git .dotfiles
-
-cd .dotfiles
-stow .
-cd
 
 # Optional, do not show untracked files (notably those in the .config folder)
 git config --local status.showUntrackedFiles no
