@@ -32,4 +32,8 @@ if [ -f $HOME/hitachi-dotfiles/proxy-commands.zsh ]; then
     source $HOME/hitachi-dotfiles/proxy-commands.zsh
 fi
 
+if [ -f $HOME/.config/xc-dotfiles/aliases.zsh ]; then
+    source $HOME/.config/xc-dotfiles/aliases.zsh
+fi
+
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet

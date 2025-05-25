@@ -57,6 +57,7 @@
 
 # Work specific dotfiles, used as a submodule.
 !hitachi-dotfiles
+!.config/xc-dotfiles
 
 # bat
 !.config/bat

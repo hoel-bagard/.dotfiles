@@ -20,3 +20,6 @@
 [submodule "/home/hoel/.oh-my-zsh-custom/plugins/fzf-tab"]
 	path = /home/hoel/.oh-my-zsh-custom/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
+[submodule ".config/xc-dotfiles"]
+	path = .config/xc-dotfiles
+	url = git@github.com:hoel-bagard/xc-dotfiles.git

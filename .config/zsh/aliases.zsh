@@ -91,10 +91,5 @@ alias enable-boost="sudo sh -c \"echo 1 >> /sys/devices/system/cpu/cpufreq/boost
 # Dotfiles management
 alias git-config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
-# Work
-alias xc-start="count-hours log start ~/work/xc/xc-hours/count-hours.csv"
-alias xc-end="count-hours log end ~/work/xc/xc-hours/count-hours.csv"
-alias xc-source="source $HOME/work/xc/xc-aliases/xc-aliases.zsh"
-
 # Misc
 most-used-commands() { history | awk '{print $4}' | sort | uniq -c | sort -nr | head -10; }
