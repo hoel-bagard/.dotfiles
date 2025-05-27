@@ -6,13 +6,13 @@
 	signingkey = 4F2E04C61B7ED6D3
 
 [includeIf "gitdir:~/work-hitachi/"]
-path = "~/hitachi-dotfiles/.gitconfig"
+path = "~/.config/hitachi-dotfiles/.gitconfig"
 
-[includeIf "gitdir:~/hitachi-dotfiles/"]
-path = "~/hitachi-dotfiles/.gitconfig"
+[includeIf "gitdir:~/.config/hitachi-dotfiles/"]
+path = "~/.config/hitachi-dotfiles/.gitconfig"
 
 [includeIf "gitdir:~/.password-store-hitachi/"]
-path = "~/hitachi-dotfiles/.gitconfig"
+path = "~/.config/hitachi-dotfiles/.gitconfig"
 
 [core]
 	editor = nvim
