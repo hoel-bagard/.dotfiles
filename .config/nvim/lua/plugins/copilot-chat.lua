@@ -75,12 +75,17 @@ return {
                 prompt = "Write commit message for the change with commitizen convention. Keep the title under 50 characters and wrap message at 72 characters. Format as a gitcommit code block.",
             },
             JapaneseTranslate = {
-                mapping = "<leader>ajt",
-                description = "AI Japanese Translate",
+                mapping = "<leader>atj",
+                description = "AI Translate to Japanese",
                 prompt = "Translate the selected text to Japanese.",
             },
+            EnglishTranslate = {
+                mapping = "<leader>ate",
+                description = "AI Translate to English",
+                prompt = "Translate the selected text to English.",
+            },
             JapanFix = {
-                mapping = "<leader>ajf",
+                mapping = "<leader>aj",
                 description = "AI Japanese Fix",
                 prompt = "Fix any mistake in the selected Japanese text.",
             },
