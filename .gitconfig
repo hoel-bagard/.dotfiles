@@ -201,6 +201,7 @@ path = "~/.config/hitachi-dotfiles/.gitconfig"
 	re = reset
 	res = reset --soft
 	reh = reset --hard
+	ro = reset --hard @{u}  # "ro" for "reset origin", u is for upstream
 
 	# w-commands
 	which = branch --all --contains
