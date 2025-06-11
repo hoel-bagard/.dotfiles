@@ -48,6 +48,9 @@ elif command_exists viu; then
 elif command_exists tiv; then
     alias catimg="tiv"
 fi
+if command_exists fd; then
+    alias find="echo 'fd is available, maybe try using it instead ?'; find"
+fi
 
 # Git
 alias gk="git checkout"
