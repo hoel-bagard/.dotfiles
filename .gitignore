@@ -67,6 +67,10 @@
 !.config/keyboards
 !.config/keyboards/7skb.layout.json
 
+# Presenterm
+!.config/presenterm
+!.config/presenterm/config.yaml
+
 # Other files
 !.aspell.en.pws
 !.editorconfig
