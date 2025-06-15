@@ -51,6 +51,10 @@ fi
 if command_exists fd; then
     alias find="echo 'fd is available, maybe try using it instead ?'; find"
 fi
+if command_exists dust; then
+    alias du="echo 'dust is available, maybe try using it instead ?'; du"
+fi
+
 
 # Git
 alias gk="git checkout"
