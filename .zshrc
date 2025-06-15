@@ -17,6 +17,7 @@ source $HOME/.config/zsh/zinit.zsh
 source $HOME/.config/zsh/oh-my-zsh.zsh
 
 # Set-up various tools.
+source $HOME/.config/zsh/tools/direnv.zsh
 source $HOME/.config/zsh/tools/pyenv.zsh
 source $HOME/.config/zsh/tools/zoxide.zsh
 source $HOME/.config/zsh/tools/fzf.zsh  # Keep fzf after zoxide.

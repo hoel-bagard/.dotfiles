@@ -3,7 +3,6 @@
 # vi-mode does not work properly when installed through zinit.
 plugins=(
     vi-mode
-    direnv
 )
 if [ -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
     export ZSH="${HOME}/.oh-my-zsh"
