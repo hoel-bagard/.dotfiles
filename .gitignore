@@ -71,6 +71,10 @@
 !.config/presenterm
 !.config/presenterm/config.yaml
 
+# Nushell
+!.config/nushell
+!.config/nushell/config.nu
+
 # Other files
 !.aspell.en.pws
 !.editorconfig
