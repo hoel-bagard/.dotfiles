@@ -74,6 +74,8 @@
 # Nushell
 !.config/nushell
 !.config/nushell/config.nu
+!.config/nushell/autoload
+!.config/nushell/autoload/*
 
 # Starship
 !.config/starship.toml
