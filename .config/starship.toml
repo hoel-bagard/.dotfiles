@@ -1,0 +1,120 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+format = """
+$os\
+[ ](bg:color_blue fg:color_white)\
+$directory\
+[](bg:color_green fg:color_blue)\
+$git_branch\
+$git_status\
+[](fg:color_green) \
+"""
+
+right_format = """
+[](fg:color_white)\
+$time\
+$rust\
+$java\
+$python\
+$docker_context\
+"""
+
+palette = 'my_colors'
+
+[palettes.my_colors]
+color_white = '#ffffff'
+color_black = '#000000'
+color_blue = '#1d99f3'
+color_green = '#11d116'
+color_orange = '#f67400'
+
+[os]
+disabled = false
+style = "bold bg:color_white fg:color_black"
+format = "[ $symbol ]($style)"
+
+[os.symbols]
+Amazon = ""
+Arch = "󰣇"
+Debian = "󰣚"
+Ubuntu = "󰕈"
+CentOS = ""
+Linux = "󰌽"
+
+[directory]
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+use_os_path_sep = true
+style = "bg:color_blue fg:color_white"
+format = "[$path]($style)"
+
+# TODO: See the link below to change the color of the git part based on the status.
+# https://github.com/AOSC-Dev/aoscify-starship-theme/blob/master/starship-git.sh
+# Also:
+# https://github.com/starship/starship/discussions/1252#discussioncomment-58920
+[git_branch]
+symbol = ""
+style = "bg:color_green"
+only_attached = true
+format = '[[ $symbol $branch ](fg:color_black bg:color_green)]($style)'
+
+[git_status]
+style = "bg:color_green fg:color_black"
+format = '[$all_status$ahead_behind]($style)'
+
+[rust]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[java]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[python]
+symbol = ""
+style = "bg:color_green fg:color_black"
+format = '[[](bg:color_white fg:color_green)$symbol( $version) ]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[time]
+disabled = false
+time_format = "%T"
+style = "fg:color_black bg:color_white"
+format = '[ $time ]($style)'
+
+
+# [sudo]
+# format = "[$symbol]($style)"
+# style = "bold italic bright-purple"
+# symbol = "⋈┈"
+# disabled = false
+
+# [battery]
+# format = "[ $percentage $symbol]($style)"
+# full_symbol = "█"
+# charging_symbol = "[↑](italic bold green)"
+# discharging_symbol = "↓"
+# unknown_symbol = "░"
+# empty_symbol = "▃"
+#
+# [[battery.display]]
+# threshold = 20
+# style = "italic bold red"
+#
+# [[battery.display]]
+# threshold = 60
+# style = "italic dimmed bright-purple"
+#
+# [[battery.display]]
+# threshold = 70
+# style = "italic dimmed yellow"
