@@ -75,6 +75,9 @@
 !.config/nushell
 !.config/nushell/config.nu
 
+# Starship
+!.config/starship.toml
+
 # Other files
 !.aspell.en.pws
 !.editorconfig
