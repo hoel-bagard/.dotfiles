@@ -35,6 +35,8 @@ color_blue = '#1d99f3'
 color_green = '#11d116'
 color_orange = '#f67400'
 color_grey = '#9e9e9e'
+color_rust = '#f94b00'
+color_java = '#0f6aa8'
 
 [os]
 disabled = false
@@ -71,14 +73,15 @@ style = "bg:color_green fg:color_black"
 format = '[$all_status$ahead_behind]($style)'
 
 [rust]
+version_format = 'v${major}.${minor}'
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_rust"
+format = '[[](bg:color_white fg:color_rust)$symbol( $version) ]($style)'
 
 [java]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_java"
+format = '[[](bg:color_white fg:color_java)$symbol( $version) ]($style)'
 
 [python]
 symbol = ""
@@ -92,10 +95,10 @@ style = "fg:color_black bg:color_white"
 format = '[ $time ]($style)'
 
 [cmd_duration]
-min_time = 2_000                                                     # in ms
+min_time = 1_000
 show_milliseconds = false
 style = "fg:color_black bg:color_grey"
-format = '[[](fg:color_grey bg:color_green)took $duration]($style)'
+format = '[ took $duration]($style)'
 
 # TODO: Do not have the status (exit code) when the command was a success.
 [status]
