@@ -15,13 +15,17 @@ $git_status\
 """
 
 right_format = """
+$status\
 [](fg:color_white)\
 $time\
 $rust\
 $java\
 $python\
 $docker_context\
+$cmd_duration\
 """
+
+continuation_prompt = '▶▶ '
 
 palette = 'my_colors'
 
@@ -31,6 +35,7 @@ color_black = '#000000'
 color_blue = '#1d99f3'
 color_green = '#11d116'
 color_orange = '#f67400'
+color_grey = '#9e9e9e'
 
 [os]
 disabled = false
@@ -92,29 +97,16 @@ time_format = "%T"
 style = "fg:color_black bg:color_white"
 format = '[ $time ]($style)'
 
+[cmd_duration]
+min_time = 2_000                                                     # in ms
+show_milliseconds = false
+style = "fg:color_black bg:color_grey"
+format = '[[](fg:color_grey bg:color_green)took $duration]($style)'
 
-# [sudo]
-# format = "[$symbol]($style)"
-# style = "bold italic bright-purple"
-# symbol = "⋈┈"
-# disabled = false
-
-# [battery]
-# format = "[ $percentage $symbol]($style)"
-# full_symbol = "█"
-# charging_symbol = "[↑](italic bold green)"
-# discharging_symbol = "↓"
-# unknown_symbol = "░"
-# empty_symbol = "▃"
-#
-# [[battery.display]]
-# threshold = 20
-# style = "italic bold red"
-#
-# [[battery.display]]
-# threshold = 60
-# style = "italic dimmed bright-purple"
-#
-# [[battery.display]]
-# threshold = 70
-# style = "italic dimmed yellow"
+# TODO: Do not have the status (exit code) when the command was a success.
+[status]
+disabled = false
+format = '[$status $symbol]($style) '
+symbol = '✘'
+success_symbol = '✔'
+success_style = "green"
