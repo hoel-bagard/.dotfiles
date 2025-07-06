@@ -1,4 +1,4 @@
-mkdir ($nu.data-dir | path join "vendor/autoload")
+use std/util "path add"
 
 $env.config.buffer_editor = "nvim"
 

@@ -1,5 +1,8 @@
-# Starship config
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+# Set up starship if needed.
+if not ($nu.data-dir | path join "vendor/autoload/starship.nu" | path exists) {
+    mkdir ($nu.data-dir | path join "vendor/autoload")
+    starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+}
 
 # Keep the right prompt after executing a command.
 # TODO: the command duration and exit code are for the previous command, not the one that got executed, can this be changed ?
