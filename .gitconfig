@@ -134,7 +134,7 @@ path = "~/.config/hitachi-dotfiles/.gitconfig"
 	ds = diff --find-renames --stat --cc -c
 
 	# status
-	s = status
+	s = status -u
 	si = status --ignored
 	sa = status --ignored --untracked-files
 
