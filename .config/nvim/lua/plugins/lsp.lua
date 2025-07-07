@@ -168,9 +168,9 @@ return {
             },
         }
 
-        local ty = {}
-        ty.capabilities = vim.tbl_deep_extend("force", {}, capabilities, ty.capabilities or {})
-        require("lspconfig").ty.setup(ty)
+        -- local ty = {}
+        -- ty.capabilities = vim.tbl_deep_extend("force", {}, capabilities, ty.capabilities or {})
+        -- require("lspconfig").ty.setup(ty)
 
         -- Ensure the servers and tools above are installed
         require("mason").setup()
