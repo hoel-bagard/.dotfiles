@@ -79,13 +79,13 @@ show_milliseconds = false
 style = "fg:color_black bg:color_grey"
 format = '[ took $duration]($style)'
 
-# TODO: Do not have the status (exit code) when the command was a success.
 [status]
 disabled = false
 format = '[$status $symbol]($style) '
 symbol = '✘'
-success_symbol = '✔'
-success_style = "green"
+# Ideally I would like to have the symbol, but not the status (exit code) when the command was a success. However that does not seem to be possible without using a custom script.
+# success_symbol = '✔'
+# success_style = "green"
 
 # Languages
 [c]
