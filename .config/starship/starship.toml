@@ -8,7 +8,7 @@ format = """
 $os\
 [ ](bg:color_blue fg:color_white)\
 $directory\
-${custom.git}\
+${custom.git} \
 """
 
 right_format = """
