@@ -22,67 +22,67 @@ UNMERGED_SYMBOL="="
 AHEAD_SYMBOL="⇡"
 BEHIND_SYMBOL="⇣"
 
-git_status=""
-STATUS=$(git status --porcelain -b 2>/dev/null || echo "")
+status=""
+GIT_STATUS=$(git status --porcelain -b 2>/dev/null || echo "")
 
 # Check whether branch is ahead/behind
 ahead_count=$(git rev-list --right-only --count origin...HEAD 2>/dev/null)
 if [[ $ahead_count -ge 1 ]]; then
-    git_status="${git_status} ${AHEAD_SYMBOL}${ahead_count}"
+    status="${status} ${AHEAD_SYMBOL}${ahead_count}"
 fi
 behind_count=$(git rev-list --left-only --count origin...HEAD 2>/dev/null)
 if [[ $behind_count -ge 1 ]]; then
-    git_status="${git_status} ${BEHIND_SYMBOL}${behind_count}"
+    status="${status} ${BEHIND_SYMBOL}${behind_count}"
 fi
 
 # Check for stashes
-if git rev-parse --verify refs/stash >/dev/null 2>&1; then
-    stash_count=$(git stash list | wc -l)
-    git_status="${git_status} ${STASHED_SYMBOL}${stash_count}"
+stash_count=$(git stash list | wc -l)
+if [[ $stash_count -ge 1 ]]; then
+    status="${status} ${STASHED_SYMBOL}${stash_count}"
 fi
 
 # Check for untracked files
-if [[ "$STATUS" =~ $'\n'\?\?\ [[:print:]]+ ]]; then
-    untracked_count=$(echo "$STATUS" | grep -c "^?? ")
-    git_status="${git_status} ${UNTRACKED_SYMBOL}${untracked_count}"
+untracked_count=$(echo "$GIT_STATUS" | grep -c "^?? ")
+if [[ $untracked_count -ge 1 ]]; then
+    status="${status} ${UNTRACKED_SYMBOL}${untracked_count}"
 fi
 
 # Check for staged files
-if echo "$STATUS" | grep -E '^[AMDU][ MD] ' &>/dev/null; then
-    staged_count=$(echo "$STATUS" | grep -c -E '^[AMDU][ MD] ')
-    git_status="${git_status} ${ADDED_SYMBOL}${staged_count}"
+staged_count=$(echo "$GIT_STATUS" | grep -c -E '^[AMDU][ MD] ')
+if [[ $staged_count -ge 1 ]]; then
+    status="${status} ${ADDED_SYMBOL}${staged_count}"
 fi
 
 # Check for modified files
-modified_count=$(echo "$STATUS" | grep -c -E '^[ MARC]M ')
+modified_count=$(echo "$GIT_STATUS" | grep -c -E '^[ MARC]M ')
 if [[ $modified_count -ge 1 ]]; then
-    git_status="${git_status} ${MODIFIED_SYMBOL}${modified_count}"
+    status="${status} ${MODIFIED_SYMBOL}${modified_count}"
 fi
 
 # Check for renamed files
-if echo "$STATUS" | grep -E '^R[ MD] ' &>/dev/null; then
-    renamed_count=$(echo "$STATUS" | grep -c -E '^R[ MD] ')
-    git_status="${git_status} ${RENAMED_SYMBOL}${renamed_count}"
+renamed_count=$(echo "$GIT_STATUS" | grep -c -E '^R[ MD] ')
+if [[ $renamed_count -ge 1 ]]; then
+    status="${status} ${RENAMED_SYMBOL}${renamed_count}"
 fi
 
 # Check for deleted files
-deleted_count=$(echo "$STATUS" | grep -c -E '^[MARCDU ]D |^D[ UM] ')
+deleted_count=$(echo "$GIT_STATUS" | grep -c -E '^[MARCDU ]D |^D[ UM] ')
 if [[ $deleted_count -ge 1 ]]; then
-    git_status="${git_status} ${DELETED_SYMBOL}${deleted_count}"
+    status="${status} ${DELETED_SYMBOL}${deleted_count}"
 fi
 
 # Check for unmerged files
-if echo "$STATUS" | grep -E '^(U[UDA] |AA |DD |[DA]U ) ' &>/dev/null; then
-    unmerged_count=$(echo "$STATUS" | grep -c -E '^(U[UDA] |AA |DD |[DA]U ) ')
-    git_status="${git_status} ${UNMERGED_SYMBOL}${unmerged_count}"
+unmerged_count=$(echo "$GIT_STATUS" | grep -c -E '^(U[UDA] |AA |DD |[DA]U ) ')
+if [[ $unmerged_count -ge 1 ]]; then
+    status="${status} ${UNMERGED_SYMBOL}${unmerged_count}"
 fi
 
 branch_name=$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --exact-match 2>/dev/null || git rev-parse --short HEAD 2>/dev/null || echo "unknown")
 
 if [[ $modified_count -ge 1 || $deleted_count -ge 1 ]]; then
-    output="${BG_COLOR}${ORANGE}${FG_COLOR}${BLUE}${FG_COLOR}${BLACK}   ${branch_name}${git_status}${FG_COLOR}${ORANGE}${BG_RESET}${RESET}"
+    output="${BG_COLOR}${ORANGE}${FG_COLOR}${BLUE}${FG_COLOR}${BLACK}   ${branch_name}${status}${FG_COLOR}${ORANGE}${BG_RESET}${RESET}"
 else
-    output="${BG_COLOR}${GREEN}${FG_COLOR}${BLUE}${FG_COLOR}${BLACK}   ${branch_name}${git_status}${FG_COLOR}${GREEN}${BG_RESET}${RESET}"
+    output="${BG_COLOR}${GREEN}${FG_COLOR}${BLUE}${FG_COLOR}${BLACK}   ${branch_name}${status}${FG_COLOR}${GREEN}${BG_RESET}${RESET}"
 fi
 
 echo -e "$output"
