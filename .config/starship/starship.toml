@@ -12,7 +12,7 @@ ${custom.git} \
 """
 
 right_format = """
-$status\
+${custom.status}\
 [](fg:color_white)\
 $time\
 $aws\
@@ -79,13 +79,13 @@ show_milliseconds = false
 style = "fg:color_black bg:color_grey"
 format = '[ took $duration]($style)'
 
-[status]
-disabled = false
-format = '[$status $symbol]($style) '
-symbol = '✘'
-# Ideally I would like to have the symbol, but not the status (exit code) when the command was a success. However that does not seem to be possible without using a custom script.
-# success_symbol = '✔'
-# success_style = "green"
+[custom.status]
+description = "Displays the exit code of the previous command. Differs from the default status in that it displays the symbol but not the status (exit code) when the command was a success."
+when = true
+# command = "bash ~/.config/starship/starship-status.sh"
+command = 'GREEN_FG="\\033[38;2;17;209;22m"; RED_FG="\\033[38;2;237;21;21m"; RESET="\\033[0m"; if [[ $LAST_EXIT_CODE == 0 ]]; then echo -e "${GREEN_FG}✔${RESET}"; else echo -e "${RED_FG}${LAST_EXIT_CODE}✘${RESET}"; fi'
+format = "$output"
+shell = "/usr/bin/bash"
 
 # Languages
 [c]
