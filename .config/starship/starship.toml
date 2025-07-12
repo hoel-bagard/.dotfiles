@@ -8,10 +8,7 @@ format = """
 $os\
 [ ](bg:color_blue fg:color_white)\
 $directory\
-[](bg:color_green fg:color_blue)\
-$git_branch\
-$git_status\
-[](fg:color_green) \
+${custom.git}\
 """
 
 right_format = """
@@ -62,29 +59,13 @@ use_os_path_sep = true
 style = "bg:color_blue fg:color_white"
 format = "[$path]($style)"
 
-# TODO: See the link below to change the color of the git part based on the status.
-# https://github.com/AOSC-Dev/aoscify-starship-theme/blob/master/starship-git.sh
-# Also:
-# https://github.com/starship/starship/discussions/1252#discussioncomment-58920
-[git_branch]
-symbol = ""
-style = "bg:color_green"
-only_attached = true
-format = '[[  $symbol $branch ](fg:color_black bg:color_green)]($style)'
-
-[git_status]
-style = "bg:color_green fg:color_black"
-format = '[$all_status$ahead_behind]($style)'
-disabled = true
-
-[custom.git_status]
+[custom.git]
 description = "git status which calls git directly"
-command = "~/bin/git_status_prompt.zsh || true"
-when = "true"
-style = "bold red"
-# current master version of how to specify formats
-format = "[\\[$output\\]]($style) "
-#disabled = true
+when = true
+require_repo = true
+command = "bash ~/.config/starship/starship-git.sh"
+format = "$output"
+disabled = false
 
 [time]
 disabled = false
