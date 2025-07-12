@@ -70,11 +70,21 @@ format = "[$path]($style)"
 symbol = ""
 style = "bg:color_green"
 only_attached = true
-format = '[[ $symbol $branch ](fg:color_black bg:color_green)]($style)'
+format = '[[  $symbol $branch ](fg:color_black bg:color_green)]($style)'
 
 [git_status]
 style = "bg:color_green fg:color_black"
 format = '[$all_status$ahead_behind]($style)'
+disabled = true
+
+[custom.git_status]
+description = "git status which calls git directly"
+command = "~/bin/git_status_prompt.zsh || true"
+when = "true"
+style = "bold red"
+# current master version of how to specify formats
+format = "[\\[$output\\]]($style) "
+#disabled = true
 
 [time]
 disabled = false

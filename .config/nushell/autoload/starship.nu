@@ -1,3 +1,5 @@
+$env.STARSHIP_CONFIG = ($env.HOME | path join ".config/starship/starship.toml")
+
 # Set up starship if needed.
 if not ($nu.data-dir | path join "vendor/autoload/starship.nu" | path exists) {
     mkdir ($nu.data-dir | path join "vendor/autoload")

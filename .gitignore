@@ -78,7 +78,8 @@
 !.config/nushell/autoload/*
 
 # Starship
-!.config/starship.toml
+!.config/starship
+!.config/starship/*
 
 # Other files
 !.aspell.en.pws
