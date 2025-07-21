@@ -2,6 +2,7 @@ use std/util "path add"
 
 $env.config.show_banner = false
 $env.config.buffer_editor = "nvim"
+$env.config.history.max_size = 1000
 
 $env.config.edit_mode = "vi"
 # Disable prompt from Nushell, since we're using Starship's prompt.
