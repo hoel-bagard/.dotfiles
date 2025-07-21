@@ -148,6 +148,8 @@ return {
         ruff.capabilities = vim.tbl_deep_extend("force", {}, capabilities, ruff.capabilities or {})
         require("lspconfig").ruff.setup(ruff)
 
+        vim.lsp.enable("nushell")
+
         require("lspconfig").just.setup({})
 
         require("lspconfig.configs").ty = {
