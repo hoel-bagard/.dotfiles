@@ -1,5 +1,8 @@
 use std/util "path add"
 
+zoxide init nushell --cmd cd | save -f ~/.config/zoxide.nu
+source ~/.config/zoxide.nu
+
 $env.config.show_banner = false
 $env.config.buffer_editor = "nvim"
 $env.config.history.max_size = 1000
