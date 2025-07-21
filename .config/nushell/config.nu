@@ -14,7 +14,7 @@ $env.config.cursor_shape.vi_normal = "block"
 
 path add ($env.HOME | path join ".local/bin")
 path add ($env.HOME | path join ".cargo/bin")
-# On Arch Linux, try to find the package providing the command.
+
 # On Arch Linux, in case of a command not found error, try to find the package providing the command.
 $env.config.hooks.command_not_found = $env.config.hooks.command_not_found | append {
     |cmd_name| (
@@ -46,3 +46,15 @@ $env.config = ($env.config | upsert hooks.env_change.PWD {
     ]
 })
 
+# Make direnv work the way it does with other shells.
+$env.config.hooks.pre_prompt = $env.config.hooks.pre_prompt | append {
+    | |
+        if (which direnv | is-empty) {
+            return
+        }
+
+        direnv export json | from json | default {} | load-env
+        if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
+            $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
+        }
+}
