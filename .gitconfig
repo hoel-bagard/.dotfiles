@@ -5,14 +5,12 @@
 	name = Hoel Bagard
 	signingkey = 4F2E04C61B7ED6D3
 
-[includeIf "gitdir:~/work-hitachi/"]
-path = "~/.config/hitachi-dotfiles/.gitconfig"
+; Include only if a remote with the given URL exists.
+[includeIf "hasconfig:remote.*.url:git@github.com:ai-platform-metis/**"]
+	path = "~/.config/hitachi-dotfiles/.gitconfig"
 
-[includeIf "gitdir:~/.config/hitachi-dotfiles/"]
-path = "~/.config/hitachi-dotfiles/.gitconfig"
-
-[includeIf "gitdir:~/.password-store-hitachi/"]
-path = "~/.config/hitachi-dotfiles/.gitconfig"
+[includeIf "hasconfig:remote.*.url:git@github.com:hoel-bagard-hy/**"]
+	path = "~/.config/hitachi-dotfiles/.gitconfig"
 
 [core]
 	editor = nvim
