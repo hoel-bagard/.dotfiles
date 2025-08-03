@@ -61,3 +61,13 @@ $env.config.hooks.pre_prompt = $env.config.hooks.pre_prompt | append {
             $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
         }
 }
+
+# Enable carapace external completions:
+let carapace_completer = {|spans|
+    carapace $spans.0 nushell ...$spans | from json
+}
+$env.config.completions.external = {
+    enable: true
+    max_results: 100
+    completer: $carapace_completer
+}
