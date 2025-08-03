@@ -37,14 +37,14 @@ alias zshrc="${=EDITOR} ~/.zshrc"
 alias zsh-aliases="${=EDITOR} ~/.config/zsh/aliases.zsh"
 alias notepad="nvim ~/work/notepad.md"
 alias df="df -h"
-if command_exists catimg; then
-    alias catimg="catimg"
+if command_exists viu; then
+    alias catimg="viu"
 elif command_exists feh; then
     alias catimg="feh"
 elif command_exists display; then
     alias catimg="display"
-elif command_exists viu; then
-    alias catimg="viu"
+elif command_exists catimg; then
+    alias catimg="catimg"
 elif command_exists tiv; then
     alias catimg="tiv"
 fi
