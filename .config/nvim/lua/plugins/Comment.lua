@@ -3,6 +3,9 @@ return {
     "numToStr/Comment.nvim",
     ---@type CommentConfig
     ---@diagnostic disable: missing-fields
-    opts = {},
+    opts = {
+        -- ignores empty lines
+        ignore = "^$",
+    },
     lazy = false,
 }
