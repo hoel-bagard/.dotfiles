@@ -20,7 +20,6 @@ def --wrapped sudo [...args] { sudo-builtin -v; sudo-builtin ...$args }
 alias duc = du | sort-by physical -r
 alias cpr = rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 # From https://wiki.archlinux.org/title/rsync
 alias mvr = rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files
-alias hx = helix
 alias nu-aliases = nu -c $"($env.EDITOR) ($env.HOME)/.config/nushell/autoload/aliases.nu"
 alias notepad = nvim ~/work/notepad.md
 alias df-builtin = df
@@ -56,12 +55,6 @@ def unmount-home-private [] {
 }
 
 # Git
-alias gk = git checkout
-alias gc = git commit --verbose -am
-alias gcm = git commit --verbose -m
-alias ga = git commit --amend
-alias gpu = git push
-alias gp = git pull
 def gu [] {
     git add --update .
     git commit --amend --no-edit
@@ -75,19 +68,13 @@ def fix-ssh-file-permissions [] {
 }
 
 # Cargo
-alias card = cargo doc
-alias cardo = cargo doc --open
-alias carb = cargo build
 alias carc = cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A dead_code
 alias carc-fix = cargo clippy --allow-dirty --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A dead_code
-alias cart = cargo test
 
 # Python
 alias tb = tensorboard --logdir . --samples_per_plugin 'scalars=500,images=500'
 def rr [] { ruff check --fix; ruff format }
 def rf [] { ruff check --fix --unsafe-fixes; ruff format }
-# alias sv = source .venv/bin/activate
-# alias create-venv = virtualenv .venv; source .venv/bin/activate
 
 # Maintenance
 # Arch
