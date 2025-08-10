@@ -7,7 +7,6 @@ if not ($nu.data-dir | path join "vendor/autoload/starship.nu" | path exists) {
 }
 
 # Keep the right prompt after executing a command.
-# TODO: the command duration and exit code are for the previous command, not the one that got executed, can this be changed ?
 $env.TRANSIENT_PROMPT_COMMAND_RIGHT = { || starship prompt --right --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)' }
 
 # Fix the right prompt appearing one line above the left prompt. c.f. https://github.com/starship/starship/issues/6473

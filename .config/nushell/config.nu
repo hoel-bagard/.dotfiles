@@ -7,6 +7,9 @@ $env.config.show_banner = false
 $env.config.buffer_editor = "nvim"
 $env.config.history.max_size = 1000
 
+# To sign commits with git
+$env.GPG_TTY = (tty)
+
 $env.config.edit_mode = "vi"
 # Disable prompt from Nushell, since we're using Starship's prompt.
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
@@ -88,3 +91,15 @@ $env.config.menus ++= [{
         selected_text: { bg: "#303030" attr: b }
     }
 }]
+
+
+# Set NU_OVERLAYS with overlay list, so that it can be used in the starship prompt.
+# Do not add the python venv to it, since it's handled separately.
+$env.config.hooks.pre_prompt = ($env.config.hooks.pre_prompt | append {||
+    let overlays  = overlay list | slice 1.. | where $it != activate
+    if not ($overlays | is-empty) {
+        $env.NU_OVERLAYS = $overlays | str join ", "
+    } else {
+        $env.NU_OVERLAYS = null
+    }
+})

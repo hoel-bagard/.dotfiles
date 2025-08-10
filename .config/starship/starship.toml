@@ -5,6 +5,7 @@
 add_newline = true
 
 format = """
+${env_var}\
 $os\
 [ ](bg:color_blue fg:color_white)\
 $directory\
@@ -86,6 +87,10 @@ when = true
 command = 'GREEN_FG="\\033[38;2;17;209;22m"; RED_FG="\\033[38;2;237;21;21m"; RESET="\\033[0m"; if [[ $LAST_EXIT_CODE == 0 ]]; then echo -e "${GREEN_FG}✔${RESET}"; else echo -e "${RED_FG}${LAST_EXIT_CODE}✘${RESET}"; fi'
 format = "$output"
 shell = "/usr/bin/bash"
+
+[env_var.NU_OVERLAYS]
+format = """📌 Overlays: [($env_value)]($style)\n"""
+style = 'red'
 
 # Languages
 [c]
