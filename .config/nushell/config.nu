@@ -18,6 +18,10 @@ $env.config.cursor_shape.vi_normal = "block"
 path add ($env.HOME | path join ".local/bin")
 path add ($env.HOME | path join ".cargo/bin")
 
+# When activating a python virtualenv, prevent it from being showed in the prompt, since we're already doing it with Starship.
+# cf: https://github.com/pypa/virtualenv/blob/78ebc61f8f30ff3ab2e175418ac69fe112002ff5/src/virtualenv/activation/nushell/activate.nu#L68
+$env.VIRTUAL_ENV_DISABLE_PROMPT = true
+
 # On Arch Linux, in case of a command not found error, try to find the package providing the command.
 $env.config.hooks.command_not_found = $env.config.hooks.command_not_found | append {
     |cmd_name| (
