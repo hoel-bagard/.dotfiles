@@ -12,6 +12,7 @@ def --wrapped ll [...rest] {
         ls -lah ...$rest
     }
 }
+alias lll = eza --tree --level=3 --long --icons --git
 def mkfile [path: string] { mkdir (dirname $path); touch $path }
 alias bat = bat --paging=never
 # Refresh the timeout every time sudo is used (to avoid having to retype the password)
