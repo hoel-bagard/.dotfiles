@@ -17,28 +17,28 @@ alias bat = bat --paging=never
 # Refresh the timeout every time sudo is used (to avoid having to retype the password)
 alias sudo-builtin = ^sudo
 def --wrapped sudo [...args] { sudo-builtin -v; sudo-builtin ...$args }
-alias duc = du | sort-by physical -r
+def duc [] { du | sort-by physical -r }
 alias cpr = rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 # From https://wiki.archlinux.org/title/rsync
 alias mvr = rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files
 alias nu-aliases = nu -c $"($env.EDITOR) ($env.HOME)/.config/nushell/autoload/aliases.nu"
 alias notepad = nvim ~/work/notepad.md
 alias df-builtin = df
 def --wrapped df [...args] { df-builtin -h ...$args | | str replace "Mounted on" "Mountpoint" | detect columns | sort-by Size --reverse }
-def --wrapped catimg [...rest] {
+def --wrapped catimg [...args] {
     if (_command-exists viu) {
-        viu ...$rest
+        viu ...$args
     }
     else if (_command-exists feh) {
-        feh ...$rest
+        feh ...$args
     }
     else if (_command-exists display) {
-        display ...$rest
+        display ...$args
     }
     else if (_command-exists catimg) {
-        catimg ...$rest
+        catimg ...$args
     }
     else if (_command-exists tiv) {
-        tiv ...$rest
+        tiv ...$args
     }
 }
 
