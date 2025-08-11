@@ -27,3 +27,10 @@ $env.XDG_STATE_HOME = $env.HOME | path join ".local/state"
 $env.XDG_DATA_HOME = $env.HOME | path join ".local/share"
 path add ($env.HOME | path join ".local/bin")
 path add ($env.HOME | path join ".cargo/bin")
+
+# Source XC aliases if on home PC.
+use (if ("~/.config/xc-dotfiles/aliases.nu" | path exists) {
+    '~/.config/xc-dotfiles/aliases.nu'
+} else {
+    '~/.config/nushell/env.nu'  # Does nothing
+}) *
