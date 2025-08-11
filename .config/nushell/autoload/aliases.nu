@@ -79,8 +79,8 @@ def rf [] { ruff check --fix --unsafe-fixes; ruff format }
 
 # Maintenance
 # Arch
-alias pacman-install = pacman -Sql | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S
-alias pacman-remove = pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns
+def pacman-install [] { pacman -Sql | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S }
+def pacman-remove [] { pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns }
 def pacman-update-mirrors [] {
     sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
     sudo reflector --verbose --protocol https --latest 200 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
