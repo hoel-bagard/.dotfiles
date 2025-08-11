@@ -23,7 +23,7 @@ alias mvr = rsync --archive -hh --partial --info=stats1,progress2 --modify-windo
 alias nu-aliases = nu -c $"($env.EDITOR) ($env.HOME)/.config/nushell/autoload/aliases.nu"
 alias notepad = nvim ~/work/notepad.md
 alias df-builtin = df
-def --wrapped df [...args] { df-builtin -h ...$args | | str replace "Mounted on" "Mountpoint" | detect columns }
+def --wrapped df [...args] { df-builtin -h ...$args | | str replace "Mounted on" "Mountpoint" | detect columns | sort-by Size --reverse }
 def --wrapped catimg [...rest] {
     if (_command-exists viu) {
         viu ...$rest
