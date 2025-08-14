@@ -186,6 +186,8 @@ local function toggle_autoformat()
     vim.b.disable_autoformat = not vim.g.disable_autoformat
     vim.g.disable_autoformat = not vim.g.disable_autoformat
 
+    vim.g.obsidian_frontmatter_disabled = not vim.g.obsidian_frontmatter_disabled
+
     if vim.g.disable_autoformat then
         require("noice").notify("Disabled auto-formatting globally", "info", { title = "AutoFormatting" })
     else
@@ -195,4 +197,10 @@ end
 wk.add({
     { "<leader>uC", "<cmd>ConformInfo<cr>", desc = "Conform information" },
     { "<leader>tf", toggle_autoformat, desc = "Toggle auto-format" },
+})
+
+-- Obsidian
+-- stylua: ignore
+wk.add({
+    "gf", function() return require("obsidian").util.gf_passthrough() end, desc = "Follow links"
 })
