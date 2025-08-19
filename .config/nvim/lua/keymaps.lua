@@ -6,6 +6,7 @@ wk.add({
     { "<leader>d", group = "[D]ocument" },
     { "<leader>f", group = "[F]ind" },
     { "<leader>m", group = "[M]isc" },
+    { "<leader>m", group = "[N]otes" },
     { "<leader>q", group = "[Q]uickfix/Diagnostics" },
     { "<leader>r", group = "[R]ename" },
     { "<leader>s", group = "[S]earch" },
@@ -203,5 +204,7 @@ wk.add({
 -- Obsidian
 -- stylua: ignore
 wk.add({
-    "gf", function() return require("obsidian").util.gf_passthrough() end, desc = "Follow links"
+    {"gf", function() return require("obsidian").util.gf_passthrough() end, desc = "Follow links"},
+    { "<leader>nn", "<cmd>ObsidianNew<cr>", desc = "Create a new note" },
+    { "<leader>nt", "<cmd>ObsidianToday<cr>", desc = "Open/create today's daily note." },
 })
