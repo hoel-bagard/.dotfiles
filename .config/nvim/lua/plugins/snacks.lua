@@ -51,6 +51,6 @@ return {
     keys = {
         -- Top Pickers & Explorer
         { "<leader>ch", function() snacks.picker.command_history() end, desc = "[C]ommand [H]istory" },
-        { "<leader>n", function() snacks.picker.notifications() end, desc = "Notification History" },
+        { "<leader>mn", function() snacks.picker.notifications() end, desc = "Notification History" },
     },
 }

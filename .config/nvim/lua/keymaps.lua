@@ -5,6 +5,7 @@ wk.add({
     { "<leader>c", group = "[C]ode" },
     { "<leader>d", group = "[D]ocument" },
     { "<leader>f", group = "[F]ind" },
+    { "<leader>m", group = "[M]isc" },
     { "<leader>q", group = "[Q]uickfix/Diagnostics" },
     { "<leader>r", group = "[R]ename" },
     { "<leader>s", group = "[S]earch" },
