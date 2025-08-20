@@ -206,5 +206,7 @@ wk.add({
 wk.add({
     {"gf", function() return require("obsidian").util.gf_passthrough() end, desc = "Follow links"},
     { "<leader>nn", "<cmd>ObsidianNew<cr>", desc = "Create a new note" },
+    { "<leader>ny", "<cmd>ObsidianYesterday <cr>", desc = "Open/create yesterday's daily note." },
     { "<leader>nt", "<cmd>ObsidianToday<cr>", desc = "Open/create today's daily note." },
+    { "<leader>nm", "<cmd>ObsidianTomorrow  <cr>", desc = "Open/create tomorrow's daily note." },
 })
