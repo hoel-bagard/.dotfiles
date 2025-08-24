@@ -3,7 +3,7 @@ local icons = require("icons")
 
 wk.add({
     { "<leader>c", group = "[C]ode" },
-    { "<leader>d", group = "[D]ocument" },
+    { "<leader>d", group = "[D]ebug" },
     { "<leader>f", group = "[F]ind" },
     { "<leader>m", group = "[M]isc" },
     { "<leader>m", group = "[N]otes" },
@@ -97,7 +97,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- Paste over selection without losing buffer/register content.
 vim.keymap.set("x", "<leader>p", '"_dP')
 -- Delete without replacing clipboard.
-vim.keymap.set("n", "<leader>d", '"_d')
 vim.keymap.set("v", "<leader>d", '"_d')
 
 -- TODO: Quickfix list
@@ -204,9 +203,25 @@ wk.add({
 -- Obsidian
 -- stylua: ignore
 wk.add({
-    {"gf", function() return require("obsidian").util.gf_passthrough() end, desc = "Follow links"},
+    { "gf", function() return require("obsidian").util.gf_passthrough() end, desc = "Follow links" },
     { "<leader>nn", "<cmd>ObsidianNew<cr>", desc = "Create a new note" },
     { "<leader>ny", "<cmd>ObsidianYesterday <cr>", desc = "Open/create yesterday's daily note." },
     { "<leader>nt", "<cmd>ObsidianToday<cr>", desc = "Open/create today's daily note." },
     { "<leader>nm", "<cmd>ObsidianTomorrow  <cr>", desc = "Open/create tomorrow's daily note." },
+})
+
+
+-- Nvim DAP
+-- stylua: ignore
+wk.add({
+    { "<F1>", function() require("dap").continue() end, desc = "Debug: Start/Continue" },
+    { "<leader>dn", function() require("dap").continue() end, desc = "Debug: New/Continue" },
+    { "<leader>de", function() require("dap").disconnect() end, desc = "Debug: Exit" },
+    { "<leader>di", function() require("dap").step_into() end, desc = "Debug: Step Into" },
+    { "<leader>do", function() require("dap").step_over() end, desc = "Debug: Step Over" },
+    { "<leader>dO", function() require("dap").step_out() end, desc = "Debug: Step Out" },
+    { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Debug: Toggle Breakpoint" },
+    { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, desc = "Debug: Set Breakpoint" },
+    -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
+    { "<leader>s", function() require("dapui").toggle() end, desc = "Debug: See last session result." },
 })
