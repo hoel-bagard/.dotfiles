@@ -10,6 +10,9 @@ return {
         "mason-org/mason.nvim",
         "jay-babu/mason-nvim-dap.nvim",
 
+        -- Get virtual text (for example showing the variables' values next to them on each line)
+        "theHamsta/nvim-dap-virtual-text",
+
         -- Debug adapters
         { url = "https://codeberg.org/mfussenegger/nvim-dap-python.git" },
     },
@@ -49,6 +52,14 @@ return {
         dap.listeners.after.event_initialized["dapui_config"] = dapui.open
         dap.listeners.before.event_terminated["dapui_config"] = dapui.close
         dap.listeners.before.event_exited["dapui_config"] = dapui.close
+
+        require("nvim-dap-virtual-text").setup({
+            commented = false, -- prefix virtual text with comment string
+            only_first_definition = true, -- only show virtual text at first definition (if there are multiple)
+            all_references = false, -- show virtual text on all all references of the variable (not only definitions)
+            -- experimental features:
+            virt_text_pos = "eol", -- position of virtual text, see `:h nvim_buf_set_extmark()`
+        })
 
         require("dap-python").setup("uv")
     end,
