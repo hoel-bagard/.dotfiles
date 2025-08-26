@@ -71,8 +71,9 @@ alias fix-ssh="chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_ed25519 && chmod 600 ~/.s
 alias card="cargo doc"
 alias cardo="cargo doc --open"
 alias carb="cargo build"
-alias carc="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A dead_code"
-alias carc-fix="cargo clippy --allow-dirty --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used -A dead_code"
+alias carc="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -A dead_code"
+alias carc-strict="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::expect_used -W clippy::unwrap_used -A dead_code"
+alias carc-fix="cargo clippy --allow-dirty --fix -- -W clippy::pedantic -W clippy::nursery  -W clippy::unwrap_used -A dead_code"
 alias cart="cargo test"
 
 # Python
