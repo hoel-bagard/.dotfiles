@@ -32,7 +32,7 @@ return {
             lua = { "stylua" },
             python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
             rust = { "rustfmt", "dioxus_fmt" },
-            markdown = { "prettier" },
+            markdown = { "prettier" }, -- TODO: Switch to mdformat
             json = { "prettier" },
             javascript = { "prettier" },
             graphql = { "prettier" },
