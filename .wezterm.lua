@@ -247,7 +247,7 @@ end)
 -- end)
 
 if is_windows then
-	config.default_domain = "WSL:Arch"
+	config.default_domain = "WSL:archlinux"
 end
 
 return config
