@@ -25,6 +25,6 @@ zinit snippet OMZP::colorize
 zinit snippet OMZP::docker
 # This works fine but is quite slow. Maybe try it again after completely removing oh-my-zsh.
 # zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
-zinit ice as"completion"; zinit snippet OMZP::ripgrep/_ripgrep
+# zinit ice as"completion"; zinit snippet OMZP::ripgrep/_ripgrep
 
 zinit cdreplay -q  # zinit optimization option.
