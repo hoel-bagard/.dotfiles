@@ -42,6 +42,7 @@ return {
             yaml = { "yamlfmt" },
             just = { "just" },
             css = { "rustywind", "prettier" },
+            java = { "google-java-format" },
             -- nu = { "nufmt" },
             -- ["*"] = { "typos" },
         },

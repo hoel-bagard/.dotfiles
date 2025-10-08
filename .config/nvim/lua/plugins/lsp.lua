@@ -182,6 +182,7 @@ return {
             "jsonlint",
             -- "markdownlint",
             "prettier", -- Used to format markdown amongst other things.
+            "google-java-format",
             "taplo", -- toml formatter
             "yamlfmt",
             "bash-language-server",
