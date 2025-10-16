@@ -190,6 +190,7 @@ return {
             "typos-lsp",
             "rustywind",
             "graphql-language-service-cli",
+            "java-language-server",
             -- "just-lsp",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
