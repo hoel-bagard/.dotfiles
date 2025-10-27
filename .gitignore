@@ -81,6 +81,10 @@
 !.config/starship
 !.config/starship/*
 
+# OpenCode
+!.config/opencode
+!.config/opencode/*
+
 # Other files
 !.aspell.en.pws
 !.editorconfig
