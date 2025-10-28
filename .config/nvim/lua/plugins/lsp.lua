@@ -166,9 +166,8 @@ return {
             },
         }
 
-        -- local ty = {}
-        -- ty.capabilities = vim.tbl_deep_extend("force", {}, capabilities, ty.capabilities or {})
-        -- require("lspconfig").ty.setup(ty)
+        -- require("java").setup()
+        require("lspconfig").jdtls.setup({})
 
         -- Ensure the servers and tools above are installed
         require("mason").setup()
@@ -190,7 +189,6 @@ return {
             "typos-lsp",
             "rustywind",
             "graphql-language-service-cli",
-            "java-language-server",
             -- "just-lsp",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
