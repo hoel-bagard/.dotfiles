@@ -12,7 +12,7 @@ return {
     ---@type CopilotChat.config
     opts = {
         system_prompt = "COPILOT_INSTRUCTIONS", -- System prompt to use (can be specified manually in prompt via /).
-        model = "claude-3.7-sonnet", -- "gpt-4.1", see ':CopilotChatModels' for available models
+        model = "claude-sonnet-4.5", -- See ':CopilotChatModels' for available models
         agent = "copilot", -- Default agent to use, see ':CopilotChatAgents' for available agents (can be specified manually in prompt via @).
         temperature = 0, -- GPT result temperature
 
