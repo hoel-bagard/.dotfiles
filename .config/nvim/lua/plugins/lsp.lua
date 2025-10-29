@@ -189,6 +189,8 @@ return {
             "typos-lsp",
             "rustywind",
             "graphql-language-service-cli",
+            -- Use Omnisharp (and not csharp-language-server or roslyn) because it can be installed using Mason. Also, no setup needed.
+            "omnisharp", -- C# LSP
             -- "just-lsp",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
