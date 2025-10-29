@@ -94,6 +94,7 @@ return {
 
     ---@param opts CopilotChat.config
     config = function(_, opts)
+        require("copilot").setup() -- This line is required to be able to call the auth during the first setup
         local chat = require("CopilotChat")
         chat.setup(opts)
 
