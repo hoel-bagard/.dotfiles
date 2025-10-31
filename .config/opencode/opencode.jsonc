@@ -31,6 +31,10 @@
       "extensions": [".py"],
       "command": ["ruff", "check", "--fix", "$FILE"],
     },
+    "rustfmt": {
+      "extensions": [".rs"],
+      "command": ["rustfmt", "$FILE"],
+    },
   },
   // "instructions": ["CONTRIBUTING.md", "docs/guidelines.md", ".cursor/rules/*.md"]
   "keybinds": {
