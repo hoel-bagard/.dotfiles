@@ -13,7 +13,7 @@ setopt hist_ignore_dups  # ignore duplicated commands history list
 setopt hist_find_no_dups
 
 # Spelling correction   ("correctall" corrects commands and all arguments, "correct" corrects only commands)
-setopt correctall
+setopt correct
 
 # Export environment variables
 export $(envsubst < $HOME/.env)
