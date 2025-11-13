@@ -1,3 +1,4 @@
+-- TODO: can this be removed ? Conform is used instead.....
 ---@type LazyPluginSpec
 return {
     "mfussenegger/nvim-lint",
