@@ -85,6 +85,10 @@
 !.config/opencode
 !.config/opencode/*
 
+# Bash scripts/commands
+!.local/bin
+!.local/bin/*
+
 # Other files
 !.aspell.en.pws
 !.editorconfig
