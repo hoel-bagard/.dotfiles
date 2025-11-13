@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Paste from clipboard to stdout or file argument
+# Falls back to /tmp/clipboard if no clipboard tool is available
+# This file is not shared with the actual clipboard, and can only be used through the copy command, or by writing to the file directly.
+#
+# Usage example:
+# pasta
+# pasta > output.txt
+# pasta output.txt
+
+if command -v xclip >/dev/null 2>&1; then
+	if [ $# -eq 0 ]; then
+		exec xclip -selection clipboard -o
+	else
+		exec xclip -selection clipboard -o >"$1"
+	fi
+elif command -v wl-paste >/dev/null 2>&1; then
+	if [ $# -eq 0 ]; then
+		exec wl-paste
+	else
+		exec wl-paste >"$1"
+	fi
+else
+	# echo "Warning: Neither xclip nor wl-paste found, using /tmp/clipboard" >&2
+	if [ ! -f /tmp/clipboard ]; then
+		exec echo ""
+	elif [ $# -eq 0 ]; then
+		exec cat /tmp/clipboard
+	else
+		exec cat /tmp/clipboard >"$1"
+	fi
+fi

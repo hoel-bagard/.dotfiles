@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Copy stdin or file argument to clipboard
+# Falls back to /tmp/clipboard if no clipboard tool is available
+# This file is not shared with the actual clipboard, and can only be used through the pasta command, or by reading the file directly.
+#
+# Usage example:
+# echo "Text I want to copy" | copy
+# copy README.md
+
+if command -v xclip >/dev/null 2>&1; then
+	if [ $# -eq 0 ]; then
+		exec xclip -selection clipboard
+	else
+		exec xclip -selection clipboard <"$1"
+	fi
+elif command -v wl-copy >/dev/null 2>&1; then
+	if [ $# -eq 0 ]; then
+		exec wl-copy
+	else
+		exec wl-copy <"$1"
+	fi
+else
+	echo "Warning: Neither xclip nor wl-copy found, using /tmp/clipboard" >&2
+	if [ $# -eq 0 ]; then
+		cat >/tmp/clipboard
+	else
+		cat "$1" >/tmp/clipboard
+	fi
+fi

@@ -86,6 +86,7 @@
 !.config/opencode/*
 
 # Bash scripts/commands
+!.local
 !.local/bin
 !.local/bin/*
 
