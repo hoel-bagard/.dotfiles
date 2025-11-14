@@ -14,6 +14,8 @@ nvim oil-ssh://[username@]hostname[:port]/[path]
 
 ## Plugins
 
+### Motions
+
 - [flit.nvim](https://github.com/ggandor/flit.nvim)
   - For better `f`/`F`/`t`/`T` motions.
   - Add "clever repeat": using `f` or `t` repeats the previous `f`/`F` or `t`/`T`.
@@ -21,6 +23,13 @@ nvim oil-ssh://[username@]hostname[:port]/[path]
 - [leap.nvim](https://github.com/ggandor/leap.nvim)
   - Forward/backward jumps with `s`/`S`.
 - [nvim-surround](https://github.com/kylechui/nvim-surround)
+
+### LSP
+
+- [nvim-lint](https://github.com/mfussenegger/nvim-lint): Linter plugin complementary to the LSP, provides linting for languages without a LSP.
+
+### Formatting
+
 - [guess-indent](#https://github.com/NMAC427/guess-indent.nvim)
   - Automatic indentation style detection for Neovim
 
