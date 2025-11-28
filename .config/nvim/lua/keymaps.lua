@@ -225,3 +225,9 @@ wk.add({
     -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
     { "<leader>ds", function() require("dapui").toggle() end, desc = "Debug: See last session result." },
 })
+
+-- Undotree
+-- stylua: ignore
+wk.add({
+    { "<leader>tu", function() vim.cmd.UndotreeToggle() vim.cmd.UndotreeFocus() end, desc = "Open/close undotree." },
+})
