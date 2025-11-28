@@ -21,6 +21,16 @@
         "edit": false,
       },
     },
+    "build-no-ask": {
+      "description": "Implement the requested changes",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "prompt": "You are a coding agent. Implement the requested changes. The produced code should be maintainable.",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow",
+        "*": "allow",
+      },
+    },
   },
   "formatter": {
     "ruff-format": {
