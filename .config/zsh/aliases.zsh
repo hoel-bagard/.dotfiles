@@ -37,6 +37,7 @@ alias zshrc="${=EDITOR} ~/.zshrc"
 alias zsh-aliases="${=EDITOR} ~/.config/zsh/aliases.zsh"
 alias notepad="nvim ~/work/notepad.md"
 alias notes="cd ~/work/notes; nvim"
+alias nvim-config="cd ~/.config/nvim; nvim"
 alias df="df -h"
 if command_exists viu; then
     alias catimg="viu"
