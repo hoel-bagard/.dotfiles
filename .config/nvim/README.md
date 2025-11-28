@@ -14,6 +14,8 @@ nvim oil-ssh://[username@]hostname[:port]/[path]
 
 ## Plugins
 
+- [mason.nvim](https://github.com/williamboman/mason.nvim) - Portable package manager for LSP servers, formatters, linters, and debuggers.
+
 ### AI/Copilot
 
 - [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim) - AI chat, mainly used for translations.
@@ -24,7 +26,6 @@ nvim oil-ssh://[username@]hostname[:port]/[path]
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Core LSP configuration with support for multiple language servers (rust-analyzer, pyright, ruff, etc...).
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Completion engine with multiple sources including LSP, buffer, path, and snippets.
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet engine integrated with nvim-cmp.
-- [mason.nvim](https://github.com/williamboman/mason.nvim) - Portable package manager for LSP servers, formatters, linters, and debuggers.
 - [lazydev.nvim](https://github.com/folke/lazydev.nvim) - Faster LuaLS setup for Neovim plugin development.
 - [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim) - Shows function signatures with parameter hints while typing.
 - [fidget.nvim](https://github.com/j-hui/fidget.nvim) - LSP progress indicator.
