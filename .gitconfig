@@ -149,7 +149,7 @@
 	cm = commit --verbose -m
 	cs = commit --verbose --squash
 	ca = commit --verbose --amend
-	can = commit --verbose --amend --no-edit
+	can = commit --verbose --all --amend --no-edit
 
 	# network (in)
 	cl = clone
