@@ -115,8 +115,7 @@ return {
             },
         }
 
-        require("lspconfig").rust_analyzer.setup({
-            capabilities = capabilities,
+        vim.lsp.config("rust_analyzer", {
             settings = {
                 ["rust-analyzer"] = {
                     check = {
@@ -141,15 +140,10 @@ return {
                 },
             },
         })
+        vim.lsp.enable("rust_analyzer")
 
-        local pyright = {}
-        pyright.capabilities = vim.tbl_deep_extend("force", {}, capabilities, pyright.capabilities or {})
-        require("lspconfig").pyright.setup(pyright)
-
-        local ruff = {}
-        ruff.capabilities = vim.tbl_deep_extend("force", {}, capabilities, ruff.capabilities or {})
-        require("lspconfig").ruff.setup(ruff)
-
+        vim.lsp.enable("pyright")
+        vim.lsp.enable("ruff")
         vim.lsp.enable("nushell")
 
         require("lspconfig").tailwindcss.setup({
@@ -178,28 +172,27 @@ return {
             },
         })
 
-        require("lspconfig").just.setup({})
-
-        require("lspconfig.configs").ty = {
-            default_config = {
-                cmd = { "ty", "server" },
-                filetypes = { "python" },
-                root_dir = function(fname)
-                    return require("lspconfig").util.root_pattern(
-                        "ty.toml",
-                        "pyproject.toml",
-                        "setup.py",
-                        "setup.cfg",
-                        "requirements.txt",
-                        "Pipfile",
-                        ".git"
-                    )(fname)
-                end,
-            },
-        }
+        -- require("lspconfig.configs").ty = {
+        --     default_config = {
+        --         cmd = { "ty", "server" },
+        --         filetypes = { "python" },
+        --         root_dir = function(fname)
+        --             return require("lspconfig").util.root_pattern(
+        --                 "ty.toml",
+        --                 "pyproject.toml",
+        --                 "setup.py",
+        --                 "setup.cfg",
+        --                 "requirements.txt",
+        --                 "Pipfile",
+        --                 ".git"
+        --             )(fname)
+        --         end,
+        --     },
+        -- }
 
         -- require("java").setup()
-        require("lspconfig").jdtls.setup({})
+        vim.lsp.enable("just")
+        vim.lsp.enable("jdtls")
 
         -- Ensure the servers and tools above are installed
         require("mason").setup()
@@ -238,7 +231,7 @@ return {
                     -- by the server configuration above. Useful when disabling
                     -- certain features of an LSP (for example, turning off formatting for ts_ls)
                     server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-                    require("lspconfig")[server_name].setup(server)
+                    vim.lsp.config(server_name).setup(server)
                 end,
             },
         })
