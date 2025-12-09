@@ -132,6 +132,9 @@ return {
                             "-Adead_code",
                         },
                     },
+                    diagnostics = {
+                        disabled = { "inactive-code" },
+                    },
                 },
             },
         })
