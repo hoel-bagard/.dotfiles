@@ -83,7 +83,6 @@ return {
         capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
         local servers = {
-            -- Use pyright from path, since there are a lot of differences between pyright versions.
             pyright = {},
             ruff = {},
             clangd = {},
@@ -96,9 +95,7 @@ return {
                         },
                         diagnostics = {
                             globals = { "vim" },
-                            -- disable = { 'missing-fields' }
                         },
-                        -- Do not send telemetry data containing a randomized but unique identifier
                         telemetry = {
                             enable = false,
                         },
@@ -140,8 +137,9 @@ return {
                 },
             },
         })
+        -- TODO: Refactor based on this config
+        -- TODO: but capabilities back: https://neovim.io/doc/user/lsp.html
         vim.lsp.enable("rust_analyzer")
-
         vim.lsp.enable("pyright")
         vim.lsp.enable("ruff")
         vim.lsp.enable("nushell")
@@ -227,11 +225,9 @@ return {
             handlers = {
                 function(server_name)
                     local server = servers[server_name] or {}
-                    -- This handles overriding only values explicitly passed
-                    -- by the server configuration above. Useful when disabling
-                    -- certain features of an LSP (for example, turning off formatting for ts_ls)
                     server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-                    vim.lsp.config(server_name).setup(server)
+                    vim.lsp.config(server_name, { capabilities = server.capabilities })
+                    vim.lsp.enable(server_name)
                 end,
             },
         })
