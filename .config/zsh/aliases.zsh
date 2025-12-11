@@ -35,7 +35,7 @@ alias mvr="rsync --archive -hh --partial --info=stats1,progress2 --modify-window
 alias hx="helix"
 alias zshrc="${=EDITOR} ~/.zshrc"
 alias zsh-aliases="${=EDITOR} ~/.config/zsh/aliases.zsh"
-alias notepad="nvim ~/work/notepad.md"
+alias notepad="cd ~/work/notepad; nvim notepad.md"
 alias notes="cd ~/work/notes; nvim"
 alias nvim-config="cd ~/.config/nvim; nvim"
 alias df="df -h"
