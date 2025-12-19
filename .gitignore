@@ -88,7 +88,8 @@
 # Bash scripts/commands
 !.local
 !.local/bin
-!.local/bin/*
+!.local/bin/scripts
+!.local/bin/scripts/*
 
 # Other files
 !.aspell.en.pws

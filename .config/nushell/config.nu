@@ -26,6 +26,7 @@ $env.XDG_CONFIG_HOME = $env.HOME | path join ".config"
 $env.XDG_STATE_HOME = $env.HOME | path join ".local/state"
 $env.XDG_DATA_HOME = $env.HOME | path join ".local/share"
 path add ($env.HOME | path join ".local/bin")
+path add ($env.HOME | path join ".local/bin/scripts")
 path add ($env.HOME | path join ".cargo/bin")
 
 # Source XC aliases if on home PC.

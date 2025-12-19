@@ -35,8 +35,10 @@ export XMODIFIERS=@im=fcitx
 # To sign commits with git(hub)
 export GPG_TTY=$TTY
 
-# Below is used (among other things) if poetry is installed for the user only.
+# User binaries
 export PATH="$HOME/.local/bin:$PATH"
+# My utils scripts/commands.
+export PATH="$HOME/.local/bin/scripts:$PATH"
 # To be able to use binaries installed through cargo.
 export PATH="$HOME/.cargo/bin:$PATH"
 
