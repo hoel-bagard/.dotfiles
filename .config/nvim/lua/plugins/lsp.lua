@@ -155,7 +155,7 @@ return {
         require("lspconfig").tailwindcss.setup({
             capabilities = capabilities,
             filetypes = { "html", "css", "javascript", "typescript", "rust" },
-            root_dir = require("lspconfig").util.root_pattern("tailwind.css"),
+            root_dir = require("lspconfig").util.root_pattern("tailwind.css", "tailwind.config.js"),
             init_options = {
                 userLanguages = {
                     rust = "html",

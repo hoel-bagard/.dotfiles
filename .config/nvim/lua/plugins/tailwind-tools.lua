@@ -15,6 +15,7 @@ return {
                     classRegex = { 'class\\s*:\\s*"([^"]*)' },
                 },
                 includeLanguages = { rust = "html" },
+                root_dir = require("lspconfig").util.root_pattern("tailwind.css", "tailwind.config.js"),
             },
         },
         extension = {
