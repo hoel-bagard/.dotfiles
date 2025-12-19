@@ -144,10 +144,10 @@ return {
         vim.lsp.enable("ruff")
         vim.lsp.enable("nushell")
 
-        require("lspconfig").tailwindcss.setup({
+        vim.lsp.config("tailwindcss", {
             capabilities = capabilities,
             filetypes = { "html", "css", "javascript", "typescript", "rust" },
-            root_dir = require("lspconfig").util.root_pattern("tailwind.css", "tailwind.config.js"),
+            root_dir = vim.fs.root(0, { "tailwind.css", "tailwind.config.js" }),
             init_options = {
                 userLanguages = {
                     rust = "html",
