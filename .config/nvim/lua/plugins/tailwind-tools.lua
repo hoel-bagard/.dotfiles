@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
-    "luckasRanarison/tailwind-tools.nvim",
+    "hoel-bagard/tailwind-tools.nvim",
     name = "tailwind-tools",
     build = ":UpdateRemotePlugins",
     dependencies = {
@@ -15,7 +15,7 @@ return {
                     classRegex = { 'class\\s*:\\s*"([^"]*)' },
                 },
                 includeLanguages = { rust = "html" },
-                root_dir = require("lspconfig").util.root_pattern("tailwind.css", "tailwind.config.js"),
+                root_dir = vim.fs.root(0, { "tailwind.css", "tailwind.config.js" }),
             },
         },
         extension = {
