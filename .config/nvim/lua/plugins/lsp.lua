@@ -152,6 +152,32 @@ return {
 
         vim.lsp.enable("nushell")
 
+        require("lspconfig").tailwindcss.setup({
+            capabilities = capabilities,
+            filetypes = { "html", "css", "javascript", "typescript", "rust" },
+            root_dir = require("lspconfig").util.root_pattern("tailwind.css"),
+            init_options = {
+                userLanguages = {
+                    rust = "html",
+                },
+            },
+            settings = {
+                tailwindCSS = {
+                    includeLanguages = {
+                        rust = "html",
+                    },
+                    experimental = {
+                        classRegex = {
+                            [[class:\s*"([^"]*)"]],
+                            [[class:\s*'([^']*)']],
+                            [[class\s*=\s*"([^"]*)"]],
+                            [[class\s*=\s*'([^']*)']],
+                        },
+                    },
+                },
+            },
+        })
+
         require("lspconfig").just.setup({})
 
         require("lspconfig.configs").ty = {
@@ -197,6 +223,7 @@ return {
             "graphql-language-service-cli",
             -- Use Omnisharp (and not csharp-language-server or roslyn) because it can be installed using Mason. Also, no setup needed.
             "omnisharp", -- C# LSP
+            "tailwindcss-language-server",
             -- "just-lsp",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
