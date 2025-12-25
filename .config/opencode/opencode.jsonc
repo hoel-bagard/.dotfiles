@@ -21,6 +21,9 @@
         "edit": false,
       },
     },
+    "build": {
+      "disable": true,
+    },
     "build-no-ask": {
       "description": "Implement the requested changes",
       "model": "anthropic/claude-sonnet-4-5-20250929",
