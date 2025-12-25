@@ -125,6 +125,7 @@ return {
                             "-Wclippy::nursery",
                             -- "-Wclippy::unwrap_used",
                             -- "-Wclippy::expect_used",
+                            "-Aclippy::cast_precision_loss",
                             "-Adead_code",
                         },
                     },
