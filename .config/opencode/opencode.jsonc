@@ -49,9 +49,7 @@
   // "instructions": ["CONTRIBUTING.md", "docs/guidelines.md", ".cursor/rules/*.md"]
   "keybinds": {
     "leader": "ctrl+space",
-    "app_help": "<leader>h",
     "app_exit": "ctrl+q",
-    "project_init": "<leader>i",
     "session_interrupt": "esc",
     "messages_first": "ctrl+g",
     "messages_last": "ctrl+shit+g",
