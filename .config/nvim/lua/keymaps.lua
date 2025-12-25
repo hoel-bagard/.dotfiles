@@ -105,31 +105,18 @@ vim.keymap.set("v", "<leader>d", '"_d')
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 
--- [[ Unused (for now) Keymaps ]]
--- vim.keymap.set("n", "<leader>f", function()
---     require("conform").format({ async = true, lsp_fallback = true })
--- end, { desc = "[F]ormat buffer" })
-
--- CopilotChat
+-- AI
 local chat = require("CopilotChat")
-local function ai_question()
-    vim.ui.input({ prompt = "AI Question> " }, function(input)
-        if input ~= "" then
-            chat.ask(input)
-        end
-    end)
-end
+-- stylua: ignore
 wk.add({
+    -- CopilotChat
     icon = { icon = icons.bot, color = "azure" },
     { "<leader>a", group = "[A]I", mode = { "n", "v" } },
-    { "<leader>aj", group = "AI Japanese", mode = "v" },
-    { "<leader>aa", chat.toggle, desc = "AI Toggle", mode = "n" },
-    { "<leader>aa", chat.open, desc = "AI Open", mode = "v" },
+    { "<leader>at", chat.toggle, desc = "AI Toggle", mode = "n" },
     { "<leader>ax", chat.reset, desc = "AI Reset", mode = "n" },
     { "<leader>as", chat.stop, desc = "AI Stop", mode = "n" },
-    { "<leader>am", chat.select_model, desc = "AI Models", mode = "n" },
-    { "<leader>ap", chat.select_prompt, desc = "AI Prompts", mode = { "n", "v" } },
-    { "<leader>aq", ai_question, desc = "AI Question", mode = { "n", "v" } },
+    -- OpenCode
+    { "<leader>aa", function() require("opencode").ask("@this: ", { submit = true }) end, desc = "AI Ask", mode = "v"},
 })
 
 -- Git
