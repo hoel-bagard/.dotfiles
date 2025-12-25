@@ -112,11 +112,13 @@ wk.add({
     -- CopilotChat
     icon = { icon = icons.bot, color = "azure" },
     { "<leader>a", group = "[A]I", mode = { "n", "v" } },
-    { "<leader>at", chat.toggle, desc = "AI Toggle", mode = "n" },
-    { "<leader>ax", chat.reset, desc = "AI Reset", mode = "n" },
-    { "<leader>as", chat.stop, desc = "AI Stop", mode = "n" },
+    { "<leader>ac", chat.toggle, desc = "CopilotChat Toggle", mode = "n" },
+    { "<leader>ar", chat.reset, desc = "CopilotChat Reset", mode = "n" },
+    { "<leader>as", chat.stop, desc = "CopilotChat Stop", mode = "n" },
     -- OpenCode
-    { "<leader>aa", function() require("opencode").ask("@this: ", { submit = true }) end, desc = "AI Ask", mode = "v"},
+    { "<leader>aa", function() require("opencode").ask("@this: ", { submit = true }) end, desc = "OpenCode Ask", mode = {"n", "v"}},
+    { "<leader>ax", function() require("opencode").select() end, desc = "OpenCode Execute Action", mode = {"n", "v"}},
+    { "<leader>at", function() require("opencode").toggle() end, desc = "OpenCode Toggle", mode = {"n", "t"}},
 })
 
 -- Git
