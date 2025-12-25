@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "anthropic/claude-sonnet-4-20250514",
+  "model": "anthropic/claude-sonnet-4-5-202509294",
   "permission": {
     "edit": "allow",
     "bash": {
@@ -13,7 +13,7 @@
   "agent": {
     "code-reviewer": {
       "description": "Reviews code for best practices and potential issues",
-      "model": "anthropic/claude-sonnet-4-20250514",
+      "model": "anthropic/claude-sonnet-4-5-20250929",
       "prompt": "You are a code reviewer. Focus on maintainability and performance.",
       "tools": {
         // Disable file modification tools for review-only agent
@@ -23,7 +23,7 @@
     },
     "build-no-ask": {
       "description": "Implement the requested changes",
-      "model": "anthropic/claude-sonnet-4-20250514",
+      "model": "anthropic/claude-sonnet-4-5-20250929",
       "prompt": "You are a coding agent. Implement the requested changes. The produced code should be maintainable.",
       "permission": {
         "edit": "allow",
