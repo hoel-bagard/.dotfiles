@@ -51,6 +51,13 @@ return {
             formatters_by_ft = {
                 rust = { "rustfmt", "dioxus_fmt" },
             },
+            formatters = {
+                dioxus_fmt = {
+                    command = "dx",
+                    args = { "fmt", "--file", "$FILENAME" },
+                    stdin = false,
+                },
+            },
         },
     },
 }

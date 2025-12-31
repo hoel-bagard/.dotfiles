@@ -23,15 +23,5 @@ return {
             end
             return { timeout_ms = 500, lsp_format = "fallback" }
         end,
-        -- Custom formatter definitions
-        formatters = {
-            dioxus_fmt = {
-                command = "dx",
-                args = { "fmt", "--file", "$FILENAME" },
-                stdin = false,
-            },
-        },
-        -- Language-specific formatters are added via opts merging from language files
-        formatters_by_ft = {},
     },
 }

@@ -1,5 +1,4 @@
 -- C/C++ language configuration
--- LSP: clangd
 
 ---@type LazyPluginSpec[]
 return {
