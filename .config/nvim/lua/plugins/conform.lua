@@ -1,6 +1,8 @@
 -- Autoformat
+-- Core conform.nvim setup.
+-- Language-specific formatters are configured in lua/plugins/languages/*.lua
 
---- @module "conform"
+---@module "conform"
 
 ---@type LazyPluginSpec
 return {
@@ -21,31 +23,5 @@ return {
             end
             return { timeout_ms = 500, lsp_format = "fallback" }
         end,
-        formatters = {
-            dioxus_fmt = {
-                command = "dx",
-                args = { "fmt", "--file", "$FILENAME" },
-                stdin = false,
-            },
-        },
-        formatters_by_ft = {
-            lua = { "stylua" },
-            python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-            rust = { "rustfmt", "dioxus_fmt" },
-            markdown = { "prettier" }, -- TODO: Switch to mdformat
-            json = { "prettier" },
-            jsonc = { "prettier" },
-            javascript = { "prettier" },
-            graphql = { "prettier" },
-            bash = { "shfmt" },
-            sh = { "shfmt" },
-            toml = { "taplo" },
-            yaml = { "yamlfmt" },
-            just = { "just" },
-            css = { "rustywind", "prettier" },
-            java = { "google-java-format" },
-            -- nu = { "nufmt" },
-            -- ["*"] = { "typos" },
-        },
     },
 }
