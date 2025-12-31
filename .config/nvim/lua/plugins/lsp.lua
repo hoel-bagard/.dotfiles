@@ -51,36 +51,32 @@ return {
                     vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
                 end
                 --  To jump back, press <C-t>.
-                map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-                map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+                map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
+                map("gr", require("telescope.builtin").lsp_references, "Goto References")
 
                 -- Jump to the implementation of the word under the cursor.
                 --  Useful when your language has ways of declaring types without an actual implementation.
-                map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+                map("gI", require("telescope.builtin").lsp_implementations, "Goto Implementation")
 
                 -- Jump to the type of the word under the cursor.
                 --  Useful when you"re not sure what type a variable is and you want to see
                 --  the definition of its *type*, not where it was *defined*.
-                map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-
-                -- Fuzzy find all the symbols in the current workspace.
-                --  Similar to document symbols, except searches over your entire project.
-                map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+                map("<leader>gt", require("telescope.builtin").lsp_type_definitions, "Goto Type")
 
                 -- Rename the variable under the cursor.
                 --  Most Language Servers support renaming across files, etc.
-                map("<leader>r", vim.lsp.buf.rename, "[R]ename")
+                map("<leader>r", vim.lsp.buf.rename, "Rename")
 
                 -- Execute a code action, usually the cursor needs to be on top of an error
                 -- or a suggestion from your LSP for this to activate.
                 -- For example to activate the "auto-complete" import on a function/class that was typed manually.
-                map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+                map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
 
                 -- Opens a popup that displays documentation about the word under the cursor
                 map("K", vim.lsp.buf.hover, "Hover Documentation")
 
                 -- This is not Goto Definition, this is Goto Declaration. For example, in C this would take you to the header.
-                map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+                map("gD", vim.lsp.buf.declaration, "Goto Declaration")
 
                 -- The following two autocommands are used to highlight references of the
                 -- word under the cursor when the cursor rests there for a little while.
@@ -102,11 +98,7 @@ return {
             end,
         })
 
-        -- Ensure the servers and tools above are installed
-        require("mason").setup()
-
         -- Tools to install (formatters, linters, LSP servers)
-        -- LSP servers are configured and enabled by language files in lua/plugins/languages/
         local ensure_installed = {
             -- Formatters
             "stylua",
@@ -128,11 +120,8 @@ return {
             "tailwindcss-language-server",
         }
 
+        require("mason").setup()
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-
-        require("mason-lspconfig").setup({
-            ensure_installed = {},
-            automatic_installation = false,
-        })
+        require("mason-lspconfig").setup({ ensure_installed = {}, automatic_installation = false })
     end,
 }
