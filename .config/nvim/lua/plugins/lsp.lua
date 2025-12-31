@@ -4,6 +4,7 @@
 
 -- Shared capabilities (includes nvim-cmp completion capabilities)
 -- This is set up once and shared across all language server configurations
+-- _capabilities is for memoization, should be slightly faster.
 local _capabilities = nil
 local function get_capabilities()
     if _capabilities then
