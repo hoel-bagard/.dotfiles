@@ -109,6 +109,7 @@ return {
             "google-java-format",
             "rustywind",
             -- Linters
+            "actionlint",
             "hadolint",
             "jsonlint",
             "shellcheck",

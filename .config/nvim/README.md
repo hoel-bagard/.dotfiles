@@ -2,6 +2,15 @@
 
 It's still very much a work in progress.
 
+## Requirements:
+
+To get the LSP for GitHub Actions:
+
+```bash
+sudo npm install -g @actions/languageserver
+sudo pacman -S github-cli
+```
+
 ## Usage
 
 ### Remote file editing
