@@ -55,7 +55,7 @@
     "app_exit": "ctrl+q",
     "session_interrupt": "esc",
     "messages_first": "ctrl+g",
-    "messages_last": "ctrl+shit+g",
+    "messages_last": "ctrl+shift+g",
     "model_list": "<leader>m",
     "agent_list": "<leader>a",
     "agent_cycle": "tab",
