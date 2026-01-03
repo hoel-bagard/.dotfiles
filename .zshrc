@@ -15,6 +15,10 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^x^e" edit-command-line
 
+# Enable zmv
+autoload -Uz zmv
+alias zcp='zmv -C'  # Copy with patterns
+
 # Install plugins using zinit.
 source $HOME/.config/zsh/zinit.zsh
 
