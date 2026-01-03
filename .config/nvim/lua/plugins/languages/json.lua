@@ -1,5 +1,7 @@
 -- JSON language configuration
 
+---@module "conform"
+
 ---@type LazyPluginSpec[]
 return {
     {
