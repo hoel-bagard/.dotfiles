@@ -120,6 +120,7 @@ return {
             "omnisharp",
             "tailwindcss-language-server",
             "json-lsp",
+            "yaml-language-server",
         }
 
         require("mason").setup()

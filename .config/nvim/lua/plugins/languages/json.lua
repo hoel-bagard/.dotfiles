@@ -14,12 +14,12 @@ return {
         },
     },
 
-    -- A collection of JSON schema files including full API
-    { "b0o/schemastore.nvim", lazy = true },
-
     {
         "neovim/nvim-lspconfig",
-        dependencies = { "b0o/schemastore.nvim" },
+        dependencies = {
+            -- A collection of JSON schema files including full API
+            "b0o/schemastore.nvim",
+        },
         opts = function()
             --Enable (broadcasting) snippet capability for completion
             local capabilities = vim.lsp.protocol.make_client_capabilities()
