@@ -119,6 +119,7 @@ return {
             "graphql-language-service-cli",
             "omnisharp",
             "tailwindcss-language-server",
+            "json-lsp",
         }
 
         require("mason").setup()
