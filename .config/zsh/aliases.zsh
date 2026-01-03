@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+# -------------------------------------------
+# Standard Aliases
+# -------------------------------------------
+
 function command_exists() {
     # Note: (( $+commands[$1] )) is zsh specific and not supported by shfmt/bash, for bash use `command -v "$1" >/dev/null 2>&1`.
     (( $+commands[$1] ))
@@ -98,3 +102,24 @@ alias git-config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # Misc
 most-used-commands() { history | awk '{print $4}' | sort | uniq -c | sort -nr | head -10; }
+
+# -------------------------------------------
+# Suffix Aliases - Open Files by Extension
+# -------------------------------------------
+alias -s json=jless
+alias -s md='$EDITOR'
+alias -s rs='$EDITOR'
+alias -s py='$EDITOR'
+alias -s toml='$EDITOR'
+
+# -------------------------------------------
+# Global Aliases - Use Anywhere in Commands
+# -------------------------------------------
+# Redirect stderr to /dev/null
+alias -g NE='2>/dev/null'
+
+# Redirect stdout to /dev/null
+alias -g NO='>/dev/null'
+
+# Redirect both stdout and stderr to /dev/null
+alias -g NUL='>/dev/null 2>&1'
