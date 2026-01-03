@@ -10,6 +10,11 @@ source $HOME/.config/zsh/env.zsh
 # Load completions.
 autoload -Uz compinit && compinit
 
+# Edit the current command line in neovim.
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^x^e" edit-command-line
+
 # Install plugins using zinit.
 source $HOME/.config/zsh/zinit.zsh
 
