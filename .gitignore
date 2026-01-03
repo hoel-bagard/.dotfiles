@@ -84,6 +84,8 @@
 # OpenCode
 !.config/opencode
 !.config/opencode/*
+!.config/opencode/agent/
+!.config/opencode/agent/*
 
 # Bash scripts/commands
 !.local

@@ -1,40 +1,51 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "anthropic/claude-sonnet-4-5-202509294",
+  "model": "github-copilot/claude-opus-4.5",
   "permission": {
     "edit": "allow",
     "bash": {
-      "*": "ask",
+      // Only allow read-only commands
       "pwd": "allow",
-      "git status": "allow",
+      "ls*": "allow",
+      "cat *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "wc *": "allow",
+      "which *": "allow",
+      "echo *": "allow",
+      // Git read-only commands
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git show*": "allow",
+      "git branch*": "allow",
+      "git remote*": "allow",
+      // Ask for everything else
+      "*": "ask",
     },
     "webfetch": "ask",
   },
+
+  // Agents are defined in ~/.config/opencode/agent/*.md
   "agent": {
-    "code-reviewer": {
-      "description": "Reviews code for best practices and potential issues",
-      "model": "anthropic/claude-sonnet-4-5-20250929",
-      "prompt": "You are a code reviewer. Focus on maintainability and performance.",
-      "tools": {
-        // Disable file modification tools for review-only agent
-        "write": false,
-        "edit": false,
-      },
-    },
     "build": {
       "disable": true,
     },
-    "build-no-ask": {
-      "description": "Implement the requested changes",
-      "model": "anthropic/claude-sonnet-4-5-20250929",
-      "prompt": "You are a coding agent. Implement the requested changes. The produced code should be maintainable.",
-      "permission": {
-        "edit": "allow",
-        "bash": "allow",
-        "*": "allow",
-      },
+  },
+
+  "command": {
+    "review": {
+      "description": "Review changes in current branch against main",
+      "template": "Review the following changes for code quality, best practices, and potential issues:\n\n!`git diff main...HEAD`\n\nProvide constructive feedback organized by file.",
+      "agent": "code-reviewer",
+    },
+    "commit": {
+      "description": "Create a commit with a descriptive message",
+      "template": "Review the staged changes and create a commit:\n\n!`git status`\n!`git diff --cached`\n\nWrite a clear, conventional commit message that:\n- Starts with a type (feat, fix, refactor, docs, test, chore)\n- Has a concise subject line (50 chars max)\n- Optionally includes a body explaining WHY the change was made\n\nThen create the commit.",
+      "agent": "build-no-ask",
     },
   },
+
   "formatter": {
     "ruff-format": {
       "extensions": [".py"],
@@ -49,7 +60,7 @@
       "command": ["rustfmt", "$FILE"],
     },
   },
-  // "instructions": ["CONTRIBUTING.md", "docs/guidelines.md", ".cursor/rules/*.md"]
+
   "keybinds": {
     "leader": "ctrl+space",
     "app_exit": "ctrl+q",
@@ -64,6 +75,7 @@
     "input_submit": "enter",
     "input_newline": "shift+enter,ctrl+j",
   },
+
   "theme": "catppuccin",
   // If true, OpenCode will automatically download any new updates when it starts up.
   "autoupdate": false,
