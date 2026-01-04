@@ -81,9 +81,11 @@ wk.add({
     { "<leader>fr", builtin.oldfiles, desc = "Find Recent" },
     { "<leader>fp", builtin.git_files, desc = "Find Project" },
     { "<leader>fg", require("multigrep").live_multigrep, desc = "Find Grep" },
+    { "<leader>fo", function() builtin.live_grep({ grep_open_files = true, prompt_title = "Live Grep in Open Files", }) end, desc = "Find in Open Files" },
     { "<leader>fb", function() builtin.buffers({ sort_mru = true, ignore_current_buffer = true }) end, desc = "Find Buffers" },
     { "<leader>fs", vim.cmd.update, desc = "File Save" },
     -- Buffers
+    { "<leader><leader>", builtin.buffers, desc = "[ ] Find existing buffers" },
     { "<leader>b", group = "buffers", expand = function() return require("which-key.extras").expand.buf() end },
     { "<leader>bb", "<C-6>",  desc = "Previous Buffer" },
     { "<leader>bd", vim.cmd.bdelete,  desc = "Buffer Delete" },
