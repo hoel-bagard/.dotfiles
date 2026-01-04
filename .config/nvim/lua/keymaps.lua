@@ -156,6 +156,7 @@ wk.add({
     -- Hunks
     { "<leader>h", group = "Git Hunks", icon = {icon = icons.git, color="orange" } },
     -- Navigation
+    ---@diagnostic disable: param-type-mismatch
     { "<leader>]c", function() if vim.wo.diff then vim.cmd.normal({ "]c", bang = true }) else gitsigns.nav_hunk("next") end end, desc = "Jump to next git change", mode = "n" },
     { "<leader>[c", function() if vim.wo.diff then vim.cmd.normal({ "[c", bang = true }) else gitsigns.nav_hunk("prev") end end, desc = "Jump to previous git change", mode = "n" },
     -- Actions
@@ -164,7 +165,7 @@ wk.add({
     { "<leader>hs", gitsigns.stage_hunk, desc = "Git stage hunk" },
     { "<leader>hr", gitsigns.reset_hunk, desc = "Git reset hunk" },
     { "<leader>hS", gitsigns.stage_buffer, desc = "Git stage buffer" },
-    { "<leader>hu", gitsigns.undo_stage_hunk, desc = "Git undo stage hunk" },
+    { "<leader>hu", gitsigns.stage_hunk, desc = "Git undo stage hunk" },  -- Must be run with cursor on lines with staged signs
     { "<leader>hR", gitsigns.reset_buffer, desc = "Git reset buffer" },
     { "<leader>hp", gitsigns.preview_hunk, desc = "Git preview hunk" },
     { "<leader>hb", gitsigns.blame_line, desc = "Git blame line" },
