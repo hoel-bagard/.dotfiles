@@ -2,12 +2,16 @@
 return {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    init = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 300
-    end,
     dependencies = { "echasnovski/mini.icons", "nvim-tree/nvim-web-devicons" },
 
     ---@class wk.Opts
-    opts = {},
+    opts = {
+        preset = "modern",
+        keys = {
+            scroll_down = "<c-d>", -- binding to scroll down inside the popup
+            scroll_up = "<c-u>", -- binding to scroll up inside the popup
+        },
+        ---@type (string|wk.Sorter)[]
+        sort = { "local", "order", "alphanum", "mod" },
+    },
 }

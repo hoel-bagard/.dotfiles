@@ -35,8 +35,8 @@ vim.opt.signcolumn = "yes"
 -- Decrease update time
 vim.opt.updatetime = 250
 
--- Decrease mapped sequence wait time
--- Displays which-key popup sooner
+-- Enable timeout for for mapped key sequences and decrease the wait time. This is how long Neovim waits for the next key in a sequence before timing out.
+vim.o.timeout = true
 vim.opt.timeoutlen = 300
 
 -- Search
