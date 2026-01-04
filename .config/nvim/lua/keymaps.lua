@@ -59,8 +59,8 @@ local function toggle_quickfix()
     vim.cmd("copen")
 end
 wk.add({
-    { "<leader>qq", toggle_loclist },
-    { "<leader>qf", toggle_quickfix },
+    { "<leader>qq", toggle_loclist, desc = "Toggle location list" },
+    { "<leader>qf", toggle_quickfix, desc = "Toggle quickfix list" },
 })
 
 -- Move window focus.
@@ -96,20 +96,20 @@ wk.add({
     { "<space>o", require("oil").toggle_float, desc = "Open/close parent directory in floating mode" },
 
     -- Move things while in highlight mode.
-    { "J", ":m '>+1<CR>gv=gv", mode = "v" },
-    { "K", ":m '<-2<CR>gv=gv", mode = "v" },
+    { "J", ":m '>+1<CR>gv=gv", desc = "Move selection down", mode = "v" },
+    { "K", ":m '<-2<CR>gv=gv", desc = "Move selection up", mode = "v" },
 
     -- Keep cursor in place when using J.
-    { "J", "mzJ`z" },
+    { "J", "mzJ`z", desc = "Join lines" },
 
     -- Center screen when using moving
-    { "<C-d>", "<C-d>zz" },
-    { "<C-u>", "<C-u>zz" },
+    { "<C-d>", "<C-d>zz", desc = "Scroll down" },
+    { "<C-u>", "<C-u>zz", desc = "Scroll up" },
 
     -- Paste over selection without losing buffer/register content.
-    { "<leader>p", '"_dP' },
+    { "<leader>p", '"_dP', desc = "Paste without losing register", mode = "v" },
     -- Delete without replacing clipboard.
-    { "<leader>d", '"_d' },
+    { "<leader>d", '"_d', desc = "Delete without yanking", mode = { "n", "v" } },
 
     -- Other
     { "<leader>pt", ":Neotree<CR>", desc = "Project Tree" },
