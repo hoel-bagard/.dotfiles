@@ -10,7 +10,7 @@ wk.add({
     { "<leader>m", group = "Notes" },
     { "<leader>q", group = "Quickfix/Diagnostics" },
     { "<leader>r", group = "Rename" },
-    { "<leader>s", group = "Search" },
+    { "<leader>s", group = "Session" },
     { "<leader>t", group = "Toggle" },
     {
         "<leader>?",
@@ -186,8 +186,8 @@ wk.add({
 
     { "<leader>qt", "<cmd>TodoQuickFix<cr>", desc = "Add TODOs to QuickFix " },
     { "<leader>qT", "<cmd>TodoQuickFix keywords=TODO,FIX,FIXME<cr>", desc = "Add TODO/FIX to QuickFix " },
-    { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Search TODO" },
-    { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Search TODO/FIX" },
+    { "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Find TODO" },
+    { "<leader>fT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Find TODO/FIX" },
 })
 
 -- Conform
