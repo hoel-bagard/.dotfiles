@@ -1,5 +1,6 @@
 local wk = require("which-key")
 local icons = require("icons")
+local builtin = require("telescope.builtin")
 
 wk.add({
     { "<leader>c", group = "[C]ode" },
@@ -11,8 +12,6 @@ wk.add({
     { "<leader>r", group = "[R]ename" },
     { "<leader>s", group = "[S]earch" },
     { "<leader>t", group = "[T]oggle" },
-    { "<leader>w", group = "[W]orkspace" }, -- TODO: change to windows
-
     {
         "<leader>?",
         function()
@@ -20,6 +19,7 @@ wk.add({
         end,
         desc = "Buffer Local Keymaps (which-key)",
     },
+    { "<leader>w", proxy = "<c-w>", group = "windows" }, -- proxy to window mappings
 })
 
 -- Clear highlight on search when pressing <Esc> in normal mode
@@ -64,20 +64,26 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- Change file / buffer
--- stylua: ignore start
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
-vim.keymap.set("n", "<leader>fa", function() builtin.find_files({ hidden = true, no_ignore = true }) end, { desc = "[F]ind [A]ll" })
-vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "[F]ind [R]ecent" })
-vim.keymap.set("n", "<leader>fp", builtin.git_files, { desc = "[F]ind [P]roject (git) files" })
-vim.keymap.set("n", "<leader>fg", require("multigrep").live_multigrep, { desc = "[F]ind [G]rep" })
-vim.keymap.set("n", "<leader>fb", function() builtin.buffers({ sort_mru = true, ignore_current_buffer = true }) end, { desc = "[F]ind [Buffers]" })
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
-vim.keymap.set("n", "<leader>bb", "<C-6>", { desc = "Previous [B]uffer" })
-vim.keymap.set("n", "<leader>pt", ":Neotree<CR>", { desc = "[P]project [T]ree" })
-vim.keymap.set("n", "<leader>bd", vim.cmd.bdelete, { desc = "[B]uffer [D]elete" })
-vim.keymap.set("n", "<leader>fs", vim.cmd.update, { desc = "[F]ile [S]ave" })
--- stylua: ignore end
+wk.add({
+    -- stylua: ignore start
+    mode={ "n", "v" },
+    -- Files
+    { "<leader>ff", builtin.find_files, desc = "Find Files" },
+    { "<leader>fa", function() builtin.find_files({ hidden = true, no_ignore = true }) end, desc = "[F]ind [A]ll" },
+    { "<leader>fr", builtin.oldfiles, desc = "Find Recent" },
+    { "<leader>fp", builtin.git_files, desc = "Find Project" },
+    { "<leader>fg", require("multigrep").live_multigrep, desc = "Find Grep" },
+    { "<leader>fb", function() builtin.buffers({ sort_mru = true, ignore_current_buffer = true }) end, desc = "Find Buffers" },
+    { "<leader>fs", vim.cmd.update, desc = "File Save" },
+    -- Buffers
+    { "<leader>b", group = "buffers", expand = function() return require("which-key.extras").expand.buf() end },
+    { "<leader>bb", "<C-6>",  desc = "Previous Buffer" },
+    { "<leader>bd", vim.cmd.bdelete,  desc = "Buffer Delete" },
+    -- Misc: TODO: does not belong here.
+    { "<leader>pt", ":Neotree<CR>", desc = "Project Tree" },
+    { "<leader>fh", builtin.help_tags, desc = "Find Help" }
+,
+})
 
 -- Oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
