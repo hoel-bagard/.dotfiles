@@ -3,15 +3,15 @@ local icons = require("icons")
 local builtin = require("telescope.builtin")
 
 wk.add({
-    { "<leader>c", group = "[C]ode" },
-    { "<leader>d", group = "[D]ebug" },
-    { "<leader>f", group = "[F]ind" },
-    { "<leader>m", group = "[M]isc" },
-    { "<leader>m", group = "[N]otes" },
-    { "<leader>q", group = "[Q]uickfix/Diagnostics" },
-    { "<leader>r", group = "[R]ename" },
-    { "<leader>s", group = "[S]earch" },
-    { "<leader>t", group = "[T]oggle" },
+    { "<leader>c", group = "Code" },
+    { "<leader>d", group = "Debug" },
+    { "<leader>f", group = "Find" },
+    { "<leader>m", group = "Misc" },
+    { "<leader>m", group = "Notes" },
+    { "<leader>q", group = "Quickfix/Diagnostics" },
+    { "<leader>r", group = "Rename" },
+    { "<leader>s", group = "Search" },
+    { "<leader>t", group = "Toggle" },
     {
         "<leader>?",
         function()
@@ -26,15 +26,15 @@ wk.add({
     -- Clear highlight on search when pressing <Esc> in normal mode
     { "<Esc>", "<cmd>nohlsearch<CR>", desc = "Clear search highlight" },
     -- Save all unsaved buffers and then quits them all. Also mapped to ZZ by default.
-    { "<C-q>", ":xa<CR>", desc = "[Q]uit all" },
+    { "<C-q>", ":xa<CR>", desc = "Quit all" },
 })
 
 -- Diagnostic keymaps
 wk.add({
     -- stylua: ignore start
-    { "[d", function() vim.diagnostic.jump({ count = -1 }) end, desc = "Go to previous [D]iagnostic message" },
-    { "]d", function() vim.diagnostic.jump({ count = 1 }) end, desc = "Go to next [D]iagnostic message" },
-    { "<leader>e", vim.diagnostic.open_float, desc = "Show diagnostic [E]rror messages" },
+    { "[d", function() vim.diagnostic.jump({ count = -1 }) end, desc = "Go to previous diagnostic message" },
+    { "]d", function() vim.diagnostic.jump({ count = 1 }) end, desc = "Go to next diagnostic message" },
+    { "<leader>e", vim.diagnostic.open_float, desc = "Show diagnostic error messages" },
     -- Note: A location list is a window-local quickfix list.(c.f. https://neovim.io/doc/user/quickfix.html)
     { "<leader>qb", vim.diagnostic.setloclist, desc = "Add buffer diagnostics to the location list." },
 })
@@ -77,7 +77,7 @@ wk.add({
     mode={ "n", "v" },
     -- Files
     { "<leader>ff", builtin.find_files, desc = "Find Files" },
-    { "<leader>fa", function() builtin.find_files({ hidden = true, no_ignore = true }) end, desc = "[F]ind [A]ll" },
+    { "<leader>fa", function() builtin.find_files({ hidden = true, no_ignore = true }) end, desc = "Find All" },
     { "<leader>fr", builtin.oldfiles, desc = "Find Recent" },
     { "<leader>fp", builtin.git_files, desc = "Find Project" },
     { "<leader>fg", require("multigrep").live_multigrep, desc = "Find Grep" },
@@ -128,7 +128,7 @@ local chat = require("CopilotChat")
 wk.add({
     -- CopilotChat
     icon = { icon = icons.bot, color = "azure" },
-    { "<leader>a", group = "[A]I", mode = { "n", "v" } },
+    { "<leader>a", group = "AI", mode = { "n", "v" } },
     { "<leader>ac", chat.toggle, desc = "CopilotChat Toggle", mode = "n" },
     { "<leader>ar", chat.reset, desc = "CopilotChat Reset", mode = "n" },
     { "<leader>as", chat.stop, desc = "CopilotChat Stop", mode = "n" },
@@ -143,7 +143,7 @@ local snacks = require("snacks")
 local gitsigns = require("gitsigns")
 -- stylua: ignore
 wk.add({
-    { "<leader>g", group = "[G]it", icon = {icon = icons.git, color="orange" } },
+    { "<leader>g", group = "Git", icon = {icon = icons.git, color="orange" } },
     { "<leader>gD", function() vim.cmd("DiffviewOpen master..HEAD") end, desc = "Git Diff master" },
     { "<leader>gb", function() snacks.picker.git_branches() end, desc = "Git Branches" },
     { "<leader>gl", function() snacks.picker.git_log() end, desc = "Git Log" },
@@ -154,25 +154,25 @@ wk.add({
     { "<leader>gf", function() snacks.picker.git_log_file() end, desc = "Git Log File" },
     { "<leader>gB", function() snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
     -- Hunks
-    { "<leader>h", group = "Git [H]unks", icon = {icon = icons.git, color="orange" } },
+    { "<leader>h", group = "Git Hunks", icon = {icon = icons.git, color="orange" } },
     -- Navigation
-    { "<leader>]c", function() if vim.wo.diff then vim.cmd.normal({ "]c", bang = true }) else gitsigns.nav_hunk("next") end end, desc = "Jump to next git [c]hange", mode = "n" },
-    { "<leader>[c", function() if vim.wo.diff then vim.cmd.normal({ "[c", bang = true }) else gitsigns.nav_hunk("prev") end end, desc = "Jump to previous git [c]hange", mode = "n" },
+    { "<leader>]c", function() if vim.wo.diff then vim.cmd.normal({ "]c", bang = true }) else gitsigns.nav_hunk("next") end end, desc = "Jump to next git change", mode = "n" },
+    { "<leader>[c", function() if vim.wo.diff then vim.cmd.normal({ "[c", bang = true }) else gitsigns.nav_hunk("prev") end end, desc = "Jump to previous git change", mode = "n" },
     -- Actions
-    { "<leader>hs", function() gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, desc = "[S]tage git hunk", mode = "v" },
-    { "<leader>hr", function() gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, desc = "[R]eset git hunk", mode = "v" },
-    { "<leader>hs", gitsigns.stage_hunk, desc = "Git [S]tage hunk" },
-    { "<leader>hr", gitsigns.reset_hunk, desc = "Git [R]eset hunk" },
-    { "<leader>hS", gitsigns.stage_buffer, desc = "Git [S]tage buffer" },
-    { "<leader>hu", gitsigns.undo_stage_hunk, desc = "Git [U]ndo stage hunk" },
-    { "<leader>hR", gitsigns.reset_buffer, desc = "Git [R]eset buffer" },
-    { "<leader>hp", gitsigns.preview_hunk, desc = "Git [P]review hunk" },
-    { "<leader>hb", gitsigns.blame_line, desc = "Git [B]lame line" },
-    { "<leader>hd", gitsigns.diffthis, desc = "Git [D]iff against index" },
-    { "<leader>hD", function() gitsigns.diffthis("@") end, desc = "Git [D]iff against last commit" },
+    { "<leader>hs", function() gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, desc = "Stage git hunk", mode = "v" },
+    { "<leader>hr", function() gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, desc = "Reset git hunk", mode = "v" },
+    { "<leader>hs", gitsigns.stage_hunk, desc = "Git stage hunk" },
+    { "<leader>hr", gitsigns.reset_hunk, desc = "Git reset hunk" },
+    { "<leader>hS", gitsigns.stage_buffer, desc = "Git stage buffer" },
+    { "<leader>hu", gitsigns.undo_stage_hunk, desc = "Git undo stage hunk" },
+    { "<leader>hR", gitsigns.reset_buffer, desc = "Git reset buffer" },
+    { "<leader>hp", gitsigns.preview_hunk, desc = "Git preview hunk" },
+    { "<leader>hb", gitsigns.blame_line, desc = "Git blame line" },
+    { "<leader>hd", gitsigns.diffthis, desc = "Git diff against index" },
+    { "<leader>hD", function() gitsigns.diffthis("@") end, desc = "Git diff against last commit" },
     -- Toggles
-    { "<leader>tb", gitsigns.toggle_current_line_blame, desc = "[T]oggle git show [B]lame line" },
-    { "<leader>tD", gitsigns.toggle_deleted, desc = "[T]oggle git show [D]eleted" },
+    { "<leader>tb", gitsigns.toggle_current_line_blame, desc = "Toggle git show blame line" },
+    { "<leader>tD", gitsigns.toggle_deleted, desc = "Toggle git show deleted" },
 })
 
 -- TODOs
