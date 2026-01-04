@@ -22,20 +22,24 @@ wk.add({
     { "<leader>w", proxy = "<c-w>", group = "windows" }, -- proxy to window mappings
 })
 
--- Clear highlight on search when pressing <Esc> in normal mode
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
--- Save all unsaved buffers and then quits them all. Also mapped to ZZ by default.
-vim.keymap.set("n", "<C-q>", ":xa<CR>", { desc = "[Q]uit all", noremap = true, silent = true })
+wk.add({
+    -- Clear highlight on search when pressing <Esc> in normal mode
+    { "<Esc>", "<cmd>nohlsearch<CR>", desc = "Clear search highlight" },
+    -- Save all unsaved buffers and then quits them all. Also mapped to ZZ by default.
+    { "<C-q>", ":xa<CR>", desc = "[Q]uit all" },
+})
 
 -- Diagnostic keymaps
--- stylua: ignore start
-vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, { desc = "Go to next [D]iagnostic message" })
--- stylua: ignore end
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
--- Note: A location list is a window-local quickfix list.(c.f. https://neovim.io/doc/user/quickfix.html)
-vim.keymap.set("n", "<leader>qb", vim.diagnostic.setloclist, { desc = "Add buffer diagnostics to the location list." })
+wk.add({
+    -- stylua: ignore start
+    { "[d", function() vim.diagnostic.jump({ count = -1 }) end, desc = "Go to previous [D]iagnostic message" },
+    { "]d", function() vim.diagnostic.jump({ count = 1 }) end, desc = "Go to next [D]iagnostic message" },
+    { "<leader>e", vim.diagnostic.open_float, desc = "Show diagnostic [E]rror messages" },
+    -- Note: A location list is a window-local quickfix list.(c.f. https://neovim.io/doc/user/quickfix.html)
+    { "<leader>qb", vim.diagnostic.setloclist, desc = "Add buffer diagnostics to the location list." },
+})
+
+-- TODO: Learn how to use these.
 local function toggle_loclist()
     for _, win in pairs(vim.fn.getwininfo()) do
         if win.loclist == 1 then
@@ -45,7 +49,6 @@ local function toggle_loclist()
     end
     vim.cmd("lopen")
 end
-vim.keymap.set("n", "<leader>qq", toggle_loclist, { noremap = true, silent = true })
 local function toggle_quickfix()
     for _, win in pairs(vim.fn.getwininfo()) do
         if win.quickfix == 1 then
@@ -55,13 +58,18 @@ local function toggle_quickfix()
     end
     vim.cmd("copen")
 end
-vim.keymap.set("n", "<leader>qf", toggle_quickfix, { noremap = true, silent = true })
+wk.add({
+    { "<leader>qq", toggle_loclist },
+    { "<leader>qf", toggle_quickfix },
+})
 
 -- Move window focus.
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+wk.add({
+    { "<C-h>", "<C-w><C-h>", desc = "Move focus to the left window" },
+    { "<C-l>", "<C-w><C-l>", desc = "Move focus to the right window" },
+    { "<C-j>", "<C-w><C-j>", desc = "Move focus to the lower window" },
+    { "<C-k>", "<C-w><C-k>", desc = "Move focus to the upper window" },
+})
 
 -- Change file / buffer
 wk.add({
@@ -79,31 +87,34 @@ wk.add({
     { "<leader>b", group = "buffers", expand = function() return require("which-key.extras").expand.buf() end },
     { "<leader>bb", "<C-6>",  desc = "Previous Buffer" },
     { "<leader>bd", vim.cmd.bdelete,  desc = "Buffer Delete" },
-    -- Misc: TODO: does not belong here.
-    { "<leader>pt", ":Neotree<CR>", desc = "Project Tree" },
-    { "<leader>fh", builtin.help_tags, desc = "Find Help" }
-,
 })
 
--- Oil
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-vim.keymap.set("n", "<space>o", require("oil").toggle_float, { desc = "Open/close parent directory in floating mode" })
+-- Misc
+wk.add({
+    -- Oil
+    { "-", "<CMD>Oil<CR>", desc = "Open parent directory" },
+    { "<space>o", require("oil").toggle_float, desc = "Open/close parent directory in floating mode" },
 
--- Move things while in highlight mode.
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+    -- Move things while in highlight mode.
+    { "J", ":m '>+1<CR>gv=gv", mode = "v" },
+    { "K", ":m '<-2<CR>gv=gv", mode = "v" },
 
--- Keep cursor in place when using J.
-vim.keymap.set("n", "J", "mzJ`z")
+    -- Keep cursor in place when using J.
+    { "J", "mzJ`z" },
 
--- Center screen when using moving
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+    -- Center screen when using moving
+    { "<C-d>", "<C-d>zz" },
+    { "<C-u>", "<C-u>zz" },
 
--- Paste over selection without losing buffer/register content.
-vim.keymap.set("x", "<leader>p", '"_dP')
--- Delete without replacing clipboard.
-vim.keymap.set("v", "<leader>d", '"_d')
+    -- Paste over selection without losing buffer/register content.
+    { "<leader>p", '"_dP' },
+    -- Delete without replacing clipboard.
+    { "<leader>d", '"_d' },
+
+    -- Other
+    { "<leader>pt", ":Neotree<CR>", desc = "Project Tree" },
+    { "<leader>fh", builtin.help_tags, desc = "Find Help" },
+})
 
 -- TODO: Quickfix list
 -- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -224,5 +235,5 @@ wk.add({
 -- Undotree
 -- stylua: ignore
 wk.add({
-    { "<leader>tu", function() vim.cmd.UndotreeToggle() vim.cmd.UndotreeFocus() end, desc = "Open/close undotree." },
+    { "<leader>tu", function() vim.cmd.UndotreeToggle() vim.cmd.UndotreeFocus() end, desc = "Toggle undotree." },
 })
