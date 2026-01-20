@@ -27,6 +27,7 @@ local function get_github_token()
     end
     local token = handle:read("*a"):gsub("%s+", "")
     handle:close()
+
     return token ~= "" and token or nil
 end
 
@@ -86,7 +87,6 @@ end
 --- Returns nil if not in a git repo or if the remote is not GitHub.
 ---@return table[]|nil repos Array of repository context objects
 local function get_repos_config()
-    -- Get git repository root
     local handle = io.popen("git rev-parse --show-toplevel 2>/dev/null")
     if not handle then
         return nil
@@ -98,7 +98,6 @@ local function get_repos_config()
         return nil
     end
 
-    -- Get origin remote URL
     handle = io.popen("git remote get-url origin 2>/dev/null")
     if not handle then
         return nil
@@ -106,13 +105,11 @@ local function get_repos_config()
     local remote_url = handle:read("*a"):gsub("%s+", "")
     handle:close()
 
-    -- Parse GitHub owner/repo from remote
     local owner, name = parse_github_remote(remote_url)
     if not owner or not name then
         return nil
     end
 
-    -- Fetch additional repo info from GitHub API
     local info = get_repo_info(owner, name)
 
     return {
@@ -131,8 +128,7 @@ return {
     {
         "neovim/nvim-lspconfig",
         opts = function()
-            -- Register filetype for GitHub Actions workflow files
-            -- This allows separate LSP config from regular YAML files
+            -- For explanations, see: https://github.com/actions/languageservices/tree/main/languageserver#in-neovim
             vim.filetype.add({
                 pattern = {
                     [".*/%.github/workflows/.*%.ya?ml"] = "yaml.ghactions",
@@ -140,7 +136,7 @@ return {
             })
 
             local capabilities = _G.LspCapabilities and _G.LspCapabilities() or {}
-            vim.lsp.config("actions_ls", {
+            vim.lsp.config("actionsls", {
                 cmd = { "actions-languageserver", "--stdio" },
                 filetypes = { "yaml.ghactions" },
                 root_markers = { ".git" },
@@ -156,9 +152,12 @@ return {
                     --   - Which repo to query for secrets/variables
                     --   - Whether it's an org repo (access to org-level secrets)
                     repos = get_repos_config(),
+                    experimentalFeatures = {
+                        all = true,
+                    },
                 },
             })
-            vim.lsp.enable("actions_ls")
+            vim.lsp.enable("actionsls")
         end,
     },
 
