@@ -78,8 +78,10 @@ end
 ---@param repo string Repository name
 ---@return {id: number, organizationOwned: boolean}|nil
 local function get_repo_info(owner, repo)
+    -- Use gh api to get the numeric database ID and check if it's in an organization
+    -- gh repo view returns a GraphQL node ID (string), but we need the numeric ID
     local cmd = string.format(
-        "gh repo view %s/%s --json id,owner --template '{{.id}}\t{{.owner.type}}' 2>/dev/null",
+        "gh api repos/%s/%s --jq '[.id, .owner.type] | @tsv' 2>/dev/null",
         owner,
         repo
     )
