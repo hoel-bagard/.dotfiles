@@ -17,11 +17,28 @@
 --
 -- The helper functions are taken from https://github.com/actions/languageservices/tree/main/languageserver#in-neovim
 
+--- Determine the GitHub user based on the git remote URL.
+---@return string user The GitHub username to use for authentication
+local function get_github_user()
+    local handle = io.popen("git remote get-url origin 2>/dev/null")
+    if not handle then
+        return "hoel-bagard"
+    end
+    local remote_url = handle:read("*a"):gsub("%s+", "")
+    handle:close()
+
+    if remote_url:match("git@github%.com:ai%-platform%-metis/") then
+        return "hoel-bagard-hy"
+    end
+    return "hoel-bagard"
+end
+
 --- Get GitHub token from the `gh` CLI for API access.
 --- Requires: gh auth login
 ---@return string|nil token The GitHub token, or nil if unavailable
 local function get_github_token()
-    local handle = io.popen("gh auth token 2>/dev/null")
+    local user = get_github_user()
+    local handle = io.popen(string.format("gh auth token --user %s 2>/dev/null", user))
     if not handle then
         return nil
     end
