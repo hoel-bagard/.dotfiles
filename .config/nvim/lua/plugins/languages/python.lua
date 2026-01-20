@@ -1,5 +1,5 @@
 -- Python language configuration
--- LSP: pyright (type checking), ruff (linting/formatting)
+-- LSP: pyright/ty (type checking), ruff (linting/formatting)
 
 ---@type LazyPluginSpec[]
 return {
@@ -14,10 +14,12 @@ return {
         "neovim/nvim-lspconfig",
         opts = function()
             local capabilities = _G.LspCapabilities and _G.LspCapabilities() or {}
-            vim.lsp.config("pyright", { capabilities = capabilities })
+            -- vim.lsp.config("pyright", { capabilities = capabilities })
+            -- vim.lsp.enable("pyright")
             vim.lsp.config("ruff", { capabilities = capabilities })
-            vim.lsp.enable("pyright")
             vim.lsp.enable("ruff")
+            vim.lsp.config("ty", { capabilities = capabilities })
+            vim.lsp.enable("ty")
         end,
     },
 
