@@ -22,3 +22,4 @@ require("lazy").setup({
 })
 require("settings")
 require("keymaps")
+require("python-f-strings").setup()
