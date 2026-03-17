@@ -1,7 +1,7 @@
 ---
 description: Analyzes code for maintainability, clean code principles, SOLID, and design patterns
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: github-copilot/claude-sonnet-4.6
 temperature: 0.1
 tools:
   write: false
