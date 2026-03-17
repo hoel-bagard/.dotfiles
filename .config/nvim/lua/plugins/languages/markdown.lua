@@ -15,7 +15,6 @@ return {
         ---@type conform.setupOpts
         opts = {
             formatters_by_ft = {
-                -- TODO: Switch to mdformat
                 markdown = { "prettier" },
             },
         },
