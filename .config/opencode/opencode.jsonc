@@ -3,11 +3,14 @@
   // https://github.blog/changelog/2026-01-16-github-copilot-now-supports-opencode/
   "model": "github-copilot/claude-opus-4.6",
   "permission": {
-    "edit": "allow",
+    "edit": "ask",
     "bash": {
-      // Only allow read-only commands
+      // Unless specified otherwise, ask for permission.
+      // (Since the last matching rule takes precedence, put the * wildcard first and specific rules after.)
+      "*": "ask",
+      // Allow read-only commands
       "pwd": "allow",
-      "ls*": "allow",
+      "ls *": "allow",
       "cat *": "allow",
       "head *": "allow",
       "tail *": "allow",
@@ -15,14 +18,12 @@
       "which *": "allow",
       "echo *": "allow",
       // Git read-only commands
-      "git status*": "allow",
-      "git diff*": "allow",
-      "git log*": "allow",
-      "git show*": "allow",
-      "git branch*": "allow",
-      "git remote*": "allow",
-      // Ask for everything else
-      "*": "ask",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "git branch *": "allow",
+      "git remote *": "allow",
     },
     "webfetch": "ask",
   },
