@@ -1,10 +1,10 @@
 ---
-description: Create a commit with a descriptive message
-agent: commit
+description: Commit changes
+subtask: true
 model: github-copilot/claude-sonnet-4.6
 ---
 
-Review the changes, then stage and create a commit:
+Stage the changes and create a commit:
 
 !`git status`
 
