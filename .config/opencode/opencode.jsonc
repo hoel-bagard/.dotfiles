@@ -34,19 +34,6 @@
     },
   },
 
-  "command": {
-    "review": {
-      "description": "Review changes in current branch against main",
-      "template": "Review the following changes for code quality, best practices, and potential issues:\n\n!`git diff main...HEAD`\n\nProvide constructive feedback organized by file.",
-      "agent": "code-reviewer",
-    },
-    "commit": {
-      "description": "Create a commit with a descriptive message",
-      "template": "Review the staged changes and create a commit:\n\n!`git status`\n!`git diff --cached`\n\nWrite a clear, conventional commit message that:\n- Starts with a type (feat, fix, refactor, docs, test, chore)\n- Has a concise subject line (50 chars max)\n- Optionally includes a body explaining WHY the change was made\n\nThen create the commit.",
-      "agent": "build-no-ask",
-    },
-  },
-
   "formatter": {
     "ruff-format": {
       "extensions": [".py"],
