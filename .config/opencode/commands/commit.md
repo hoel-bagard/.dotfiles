@@ -4,7 +4,7 @@ agent: commit
 model: github-copilot/claude-sonnet-4.6
 ---
 
-Review the staged changes and create a commit:
+Review the changes, then stage and create a commit:
 
 !`git status`
 
