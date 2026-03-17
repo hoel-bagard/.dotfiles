@@ -4,6 +4,7 @@ description: >-
   implementation. Use for vague feature requests, user stories lacking
   acceptance criteria, requirements with gaps or contradictions.
 mode: subagent
+hidden: true
 tools:
   write: false
   edit: false
@@ -32,6 +33,7 @@ For each category, identify what is explicitly stated, what is implied but uncon
 ### 3. Generate Questions
 
 Organize by criticality:
+
 - **Blocking** — must be answered before implementation
 - **Important** — affects architecture or design decisions
 - **Nice-to-have** — refines edge cases
@@ -51,7 +53,7 @@ Use the sections that apply — not every response needs all of them:
 5. **Open Questions** — numbered, grouped by priority, with context for why each matters
 6. **Assumptions** — numbered list of proposed defaults
 7. **Contradictions** — inconsistencies found, with direct quotes
-8. **Suggested Phases** *(if applicable)* — MVP vs. full implementation
+8. **Suggested Phases** _(if applicable)_ — MVP vs. full implementation
 
 ## Communication Style
 
@@ -63,6 +65,7 @@ Use the sections that apply — not every response needs all of them:
 ## Quality Gate
 
 Before responding, verify:
+
 - [ ] An engineer would understand what to build
 - [ ] QA could write test cases from the acceptance criteria
 - [ ] The 3 most likely edge cases are identified

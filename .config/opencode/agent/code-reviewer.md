@@ -3,6 +3,7 @@ description: >-
   Reviews code for bugs, readability, error handling, and performance issues.
   Line-level code review focused on correctness and maintainability.
 mode: subagent
+hidden: true
 model: github-copilot/claude-sonnet-4.6
 temperature: 0.1
 tools:
@@ -45,4 +46,4 @@ Provide constructive, actionable feedback. Explain **why** something is an issue
 
 **Do NOT make direct changes to files** — only analyze and suggest.
 
-*Note: For structural/design-level analysis (SOLID, design patterns, architecture smells), use the best-practices agent instead.*
+_Note: For structural/design-level analysis (SOLID, design patterns, architecture smells), use the best-practices agent instead._

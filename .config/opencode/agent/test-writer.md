@@ -1,6 +1,7 @@
 ---
 description: Generates unit tests, integration tests, and test cases for code
 mode: subagent
+hidden: true
 model: github-copilot/claude-sonnet-4.5
 temperature: 0.1
 tools:
