@@ -1,6 +1,6 @@
 ---
 description: Reviews code for best practices, maintainability, and potential issues
-mode: primary
+mode: all
 model: github-copilot/claude-opus-4.5
 temperature: 0.1
 tools:
