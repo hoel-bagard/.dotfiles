@@ -32,6 +32,9 @@
     "build": {
       "disable": true,
     },
+    "plan": {
+      "disable": true,
+    },
   },
 
   "formatter": {
