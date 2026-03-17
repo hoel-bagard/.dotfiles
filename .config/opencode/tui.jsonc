@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/tui.json",
+  "theme": "catppuccin",
+  "keybinds": {
+    "leader": "ctrl+space",
+    "app_exit": "ctrl+q",
+    "session_interrupt": "esc",
+    "messages_first": "ctrl+g",
+    "messages_last": "ctrl+shift+g",
+    "model_list": "<leader>m",
+    "agent_list": "<leader>a",
+    "agent_cycle": "tab",
+    "input_clear": "ctrl+c",
+    "input_paste": "ctrl+v",
+    "input_submit": "enter",
+    "input_newline": "shift+enter,ctrl+j",
+  },
+  "diff_style": "auto",
+}
