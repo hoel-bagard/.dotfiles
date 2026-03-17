@@ -4,6 +4,7 @@ description: >-
   without implementation details. Ideal for establishing foundations before
   development or rearchitecting existing systems.
 mode: subagent
+hidden: true
 tools:
   bash: false
   edit: false

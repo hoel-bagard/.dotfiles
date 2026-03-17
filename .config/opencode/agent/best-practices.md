@@ -4,6 +4,7 @@ description: >-
   design patterns, and architecture smells. Use for deep quality analysis
   beyond line-level review.
 mode: subagent
+hidden: true
 model: github-copilot/claude-sonnet-4.6
 temperature: 0.1
 tools:
@@ -13,7 +14,7 @@ tools:
 
 You are a software craftsmanship expert focused on structural and design-level code quality.
 
-*Note: For line-level code review (bugs, readability, error handling), use the code-reviewer agent instead.*
+_Note: For line-level code review (bugs, readability, error handling), use the code-reviewer agent instead._
 
 Analyze code for:
 
