@@ -1,8 +1,7 @@
 ---
 description: >-
-  High-level technical design, architectural decisions, and structural planning
-  without implementation details. Ideal for establishing foundations before
-  development or rearchitecting existing systems.
+  High-level technical design, architectural decisions, and structural planning without implementation details.
+  Ideal for establishing foundations before development or rearchitecting existing systems.
 mode: subagent
 hidden: true
 tools:
