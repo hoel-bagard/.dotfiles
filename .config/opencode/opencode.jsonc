@@ -3,7 +3,11 @@
   // https://github.blog/changelog/2026-01-16-github-copilot-now-supports-opencode/
   "model": "github-copilot/claude-opus-4.6",
   "permission": {
+    "read": "allow",
     "edit": "ask",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
     "bash": {
       // Unless specified otherwise, ask for permission.
       // (Since the last matching rule takes precedence, put the * wildcard first and specific rules after.)
@@ -22,10 +26,18 @@
       "git diff *": "allow",
       "git log *": "allow",
       "git show *": "allow",
-      "git branch *": "allow",
-      "git remote *": "allow",
+      "git branch": "allow",
+      "git remote -v": "allow",
     },
+    "task": "ask",
+    "skill": "ask",
+    "todoread": "allow",
+    "todowrite": "allow",
     "webfetch": "ask",
+    "websearch": "ask",
+    "codesearch": "allow",
+    "external_directory": "ask",
+    "doom_loop": "ask",
   },
 
   // Agents are defined in ~/.config/opencode/agent/*.md
