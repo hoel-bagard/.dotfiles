@@ -54,13 +54,9 @@ You are the conductor, not the orchestra. Your value lies in:
 
 **Delegate to `@code-reviewer` when:**
 
-- Code needs line-level review for bugs, readability, error handling, or performance
-- You want a quick sanity check on implementation correctness
-
-**Delegate to `@best-practices` when:**
-
+- Code needs review for bugs, readability, error handling, or performance
 - Code needs structural/design-level analysis: SOLID principles, design patterns, architecture smells
-- You want a deep quality review before delivery
+- You want a quality review or sanity check before delivery
 
 **Delegate to `@tech-lead` when:**
 
