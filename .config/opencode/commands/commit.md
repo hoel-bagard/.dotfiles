@@ -8,7 +8,7 @@ Stage the changes and create a commit:
 
 !`git status`
 
-!`git diff --cached`
+!`git diff`
 
 Write a clear, conventional commit message that:
 
@@ -16,4 +16,4 @@ Write a clear, conventional commit message that:
 - Has a concise subject line (50 chars max)
 - Optionally includes a body explaining WHY the change was made
 
-Then create the commit.
+Then create the commit. Make sure to always use GPG signing, if an error occurs and you cannot sign the commit, stop and inform the user.
