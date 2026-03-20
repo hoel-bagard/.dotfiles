@@ -45,7 +45,8 @@
 
 # GitHub CI
 !.github
-!.github/*
+!.github/workflows
+!.github/workflows/*
 
 # GPG
 !.gnupg
