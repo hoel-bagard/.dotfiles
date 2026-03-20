@@ -1,0 +1,31 @@
+name: Lint TOML
+
+on:
+  workflow_dispatch:
+  push:
+    branches: master
+  pull_request:
+    paths:
+      - "**.toml"
+      - ".github/workflows/lint-toml.yaml"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  toml-lint:
+    name: Check yaml formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      # Use node instead of cargo to avoid compiling all the dependencies
+      - name: Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Run taplo
+        run: npx @taplo/cli format --check
