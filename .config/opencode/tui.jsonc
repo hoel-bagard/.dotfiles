@@ -19,13 +19,14 @@
     "model_list": "<leader>m",
     "session_child_cycle": "<leader>right",
     "session_child_cycle_reverse": "<leader>left",
-    "session_compact": "<leader>c", // Cannot be used with GitHub Copilot
+    "session_compact": "<leader>c",
     "session_interrupt": "esc",
     "session_list": "<leader>l",
     "session_parent": "<leader>up",
     "session_timeline": "<leader>t",
     "sidebar_toggle": "ctrl+s",
     "status_view": "<leader>s",
+    "display_thinking": "ctrl+t",
   },
   "diff_style": "auto",
 }
