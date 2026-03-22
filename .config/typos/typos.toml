@@ -9,4 +9,9 @@ extend-ignore-re = [
   # Allow patterns like [S]earch, used for which-key.
   "\\[[A-Za-z]\\][a-z]+",
 ]
+extend-ignore-words-re = [
+  # 2 letters "words" are likely just keymaps.
+  "^[a-zA-Z]{1,2}$",
+
+]
 extend-words = { noice = "noice" }

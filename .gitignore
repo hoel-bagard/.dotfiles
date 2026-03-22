@@ -28,6 +28,10 @@
 !.config/nvim/*/*/*
 !.config/nvim/*/*/*/*
 
+# Typos
+!.config/typos
+!.config/typos/typos.toml
+
 # Pip
 !.config/pip
 !.config/pip/pip.conf
