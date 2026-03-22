@@ -1,5 +1,5 @@
 [default]
-locale = "en-us"
+locale = "en"
 extend-ignore-re = [
   # https://github.com/crate-ci/typos/blob/master/docs/reference.md
   # Allow to disable a line by adding "# spellchecker:disable-line" at the end.
@@ -10,8 +10,10 @@ extend-ignore-re = [
   "\\[[A-Za-z]\\][a-z]+",
 ]
 extend-ignore-words-re = [
-  # 2 letters "words" are likely just keymaps.
-  "^[a-zA-Z]{1,2}$",
-
+  # <=3 letters "words" are likely just keymaps, command flags, etc...
+  "^[a-zA-Z]{1,3}$",
 ]
-extend-words = { noice = "noice" }
+
+[default.extend-words]
+noice = "noice"
+darcula = "darcula" # Helix theme
