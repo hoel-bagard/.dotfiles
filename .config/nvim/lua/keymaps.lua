@@ -240,3 +240,9 @@ wk.add({
 wk.add({
     { "<leader>tu", function() vim.cmd.UndotreeToggle() vim.cmd.UndotreeFocus() end, desc = "Toggle undotree." },
 })
+
+-- Render Markdown
+-- stylua: ignore
+wk.add({
+    { "<leader>tr", "<cmd>RenderMarkdown toggle<cr>", desc = "Toggle Markdown Renter." },
+})
