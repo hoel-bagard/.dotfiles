@@ -6,7 +6,7 @@ See [the configuration docs](https://opencode.ai/docs/config) for explanations.
 
 The configuration assumes access to GitHub Copilot, and makes use of Anthropic's Opus and Sonnet models.
 
-If the above cannot be used, then the free Big Pickle model can be used instead.
+If the above cannot be used, then the free models can be used instead (Big Pickle, Qwen3.6, etc...).
 
 ## Agents
 
