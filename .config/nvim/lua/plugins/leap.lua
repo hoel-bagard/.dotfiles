@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
-    "ggandor/leap.nvim",
+    "https://codeberg.org/andyg/leap.nvim",
     lazy = false,
     config = function()
         -- vim.keymap.set("n", "s", "<Plug>(leap-anywhere)")
