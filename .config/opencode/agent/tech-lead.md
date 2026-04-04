@@ -5,6 +5,11 @@ model: github-copilot/claude-opus-4.6
 temperature: 0.1
 permission:
   "*": allow
+  bash:
+    "*": ask
+    "git log*": allow
+    "git status*": allow
+    "git diff*": allow
   webfetch: ask
   external_directory: ask
   doom_loop: ask
