@@ -8,9 +8,16 @@ permission:
   "*": allow
   bash:
     "*": ask
-    "git log*": allow
+    "git log *": allow
     "git status*": allow
-    "git diff*": allow
+    "git diff *": allow
+    "uv run ruff *": allow
+    "uv run pyright *": allow
+    "find *": allow
+    "sort *": allow
+    "wc *": allow
+    "head *": allow
+    "grep *": allow
   webfetch: ask
   external_directory: ask
   doom_loop: ask
