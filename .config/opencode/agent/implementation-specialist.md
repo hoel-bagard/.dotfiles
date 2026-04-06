@@ -11,8 +11,11 @@ permission:
     "git log *": allow
     "git status*": allow
     "git diff *": allow
-    "uv run ruff *": allow
-    "uv run pyright *": allow
+    # uv run is a bit dangerous, might restrict it later...
+    "uv *": allow
+    "cargo *": allow
+    "ls *": allow
+    "cat *": allow
     "find *": allow
     "sort *": allow
     "wc *": allow
