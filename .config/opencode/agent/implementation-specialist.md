@@ -23,7 +23,6 @@ permission:
     "grep *": allow
     "tail *": allow
     "mkdir *": allow
-    "cat *": allow
   webfetch: ask
   external_directory: ask
   doom_loop: ask
