@@ -8,9 +8,10 @@ permission:
   "*": allow
   bash:
     "*": ask
-    "git log *": allow
+    "git log*": allow
     "git status*": allow
-    "git diff *": allow
+    "git show*": allow
+    "git diff*": allow
     # uv run is a bit dangerous, might restrict it later...
     "uv *": allow
     "cargo *": allow
@@ -21,8 +22,12 @@ permission:
     "wc *": allow
     "head *": allow
     "grep *": allow
+    "rg *": allow
     "tail *": allow
     "mkdir *": allow
+    "cp *": allow
+    "echo *": allow
+    "true *": allow
   webfetch: ask
   external_directory: ask
   doom_loop: ask
