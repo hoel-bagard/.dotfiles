@@ -1,7 +1,7 @@
 ---
 description: Japanese correction and writing
 mode: primary
-model: github-copilot/claude-sonnet-4.6
+model: github-copilot/gpt-4.1
 temperature: 0.1
 tools:
   write: false
