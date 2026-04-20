@@ -14,12 +14,12 @@ return {
         "neovim/nvim-lspconfig",
         opts = function()
             local capabilities = _G.LspCapabilities and _G.LspCapabilities() or {}
-            -- vim.lsp.config("pyright", { capabilities = capabilities })
-            -- vim.lsp.enable("pyright")
+            vim.lsp.config("pyright", { capabilities = capabilities })
+            vim.lsp.enable("pyright")
             vim.lsp.config("ruff", { capabilities = capabilities })
             vim.lsp.enable("ruff")
-            vim.lsp.config("ty", { capabilities = capabilities })
-            vim.lsp.enable("ty")
+            -- vim.lsp.config("ty", { capabilities = capabilities })
+            -- vim.lsp.enable("ty")
         end,
     },
 
