@@ -25,6 +25,7 @@ permission:
     "tail *": allow
     "mkdir *": allow
     "cp *": allow
+    "diff *": allow
     "echo *": allow
     "true *": allow
   webfetch: ask
