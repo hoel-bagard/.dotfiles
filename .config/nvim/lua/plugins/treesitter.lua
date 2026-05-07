@@ -9,18 +9,11 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    main = "nvim-treesitter.configs",
+    main = "nvim-treesitter",
     ---@type plugins.treesitter.opts
     opts = {
-        -- Base parsers (non-language-specific)
-        ensure_installed = {
-            "vim",
-            "vimdoc",
-        },
         sync_install = false,
         auto_install = true,
-
-        highlight = { enable = true },
 
         incremental_selection = {
             enable = true,
@@ -31,8 +24,6 @@ return {
                 scope_incremental = "<M-e>", -- increment to the upper scope (as defined in locals.scm)
             },
         },
-
-        indent = { enable = false },
 
         textobjects = {
             select = {
@@ -55,4 +46,31 @@ return {
             },
         },
     },
+
+    config = function(_, opts)
+        vim.api.nvim_create_autocmd("FileType", {
+            callback = function()
+                -- Enable treesitter highlighting and disable regex syntax
+                pcall(vim.treesitter.start)
+                -- Enable treesitter-based indentation
+                vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+            end,
+        })
+
+        local ensureInstalled = {
+            -- Base parsers (non-language-specific)
+            "vim",
+            "vimdoc",
+            "lua",
+            "python",
+            "rust",
+        }
+        local alreadyInstalled = require("nvim-treesitter.config").get_installed()
+        local parsersToInstall = vim.iter(ensureInstalled)
+            :filter(function(parser)
+                return not vim.tbl_contains(alreadyInstalled, parser)
+            end)
+            :totable()
+        require("nvim-treesitter").install(parsersToInstall)
+    end,
 }
