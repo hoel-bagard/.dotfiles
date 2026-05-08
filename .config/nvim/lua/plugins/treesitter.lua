@@ -58,12 +58,15 @@ return {
         })
 
         local ensureInstalled = {
-            -- Base parsers (non-language-specific)
             "vim",
             "vimdoc",
             "lua",
             "python",
             "rust",
+            "toml",
+            "yaml",
+            "json",
+            "just",
         }
         local alreadyInstalled = require("nvim-treesitter.config").get_installed()
         local parsersToInstall = vim.iter(ensureInstalled)
