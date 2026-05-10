@@ -94,6 +94,12 @@
 !.config/opencode/commands/
 !.config/opencode/commands/*
 
+# Television
+!.config/television
+!.config/television/*
+!.config/television/cable
+!.config/television/cable/*
+
 # Bash scripts/commands
 !.local
 !.local/bin
