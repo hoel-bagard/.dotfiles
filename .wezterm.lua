@@ -22,7 +22,7 @@ if is_linux then
 	-- config.term = "xterm-256color"
 end
 
-config.color_scheme = "Breeze (Gogh)"
+config.color_scheme = "Breeze (Gogh)" -- "Tokyo Night"
 config.colors = {
 	cursor_fg = "black",
 }
