@@ -100,6 +100,10 @@
 !.config/television/cable
 !.config/television/cable/*
 
+# GH-Dash
+!.config/gh-dash
+!.config/gh-dash/*
+
 # Bash scripts/commands
 !.local
 !.local/bin
