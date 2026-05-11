@@ -10,7 +10,7 @@ command = "git diff --name-only HEAD"
 command = "git diff HEAD --color=always -- '{}'"
 
 [ui]
-layout = "portrait"
+layout = "landscape"
 
 [keybindings]
 ctrl-s = "actions:stage"
