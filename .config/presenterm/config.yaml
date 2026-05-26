@@ -6,6 +6,9 @@ defaults:
   # the theme to use by default in every presentation unless overridden.
   theme: dark
 
+mermaid:
+  scale: 3
+
 options:
   # whether slides are automatically terminated when a slide title is found.
   implicit_slide_ends: false
