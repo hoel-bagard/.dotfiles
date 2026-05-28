@@ -32,7 +32,7 @@ nvim oil-ssh://[username@]hostname[:port]/[path]
 
 ### LSP/Completion
 
-- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Core LSP configuration with support for multiple language servers (rust-analyzer, pyright, ruff, etc...).
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Core LSP configuration with support for multiple language servers (rust-analyzer, basedpyright, ruff, etc...).
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Completion engine with multiple sources including LSP, buffer, path, and snippets.
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet engine integrated with nvim-cmp.
 - [lazydev.nvim](https://github.com/folke/lazydev.nvim) - Faster LuaLS setup for Neovim plugin development.
