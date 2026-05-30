@@ -23,7 +23,10 @@ elif command_exists exa; then
 else
     alias ll="ls -lah"
 fi
-alias ls='ls --color=auto'
+alias ls="ls --color=auto"
+# alias rm="rm -I --preserve-root"
+alias cp="cp -i"
+alias mv="mv -i"
 alias mkdir="mkdir -p"
 mkfile() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 mkcd() { mkdir -p "$1" && cd "$1"; }
