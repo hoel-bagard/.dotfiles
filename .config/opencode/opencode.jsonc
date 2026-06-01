@@ -68,4 +68,5 @@
 
   // If true, OpenCode will automatically download any new updates when it starts up.
   "autoupdate": false,
+  "plugin": ["@tarquinen/opencode-dcp@latest"],
 }
