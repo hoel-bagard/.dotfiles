@@ -16,6 +16,7 @@
       "pwd": "allow",
       "ls *": "allow",
       "cat *": "allow",
+      "grep *": "allow",
       "head *": "allow",
       "tail *": "allow",
       "wc *": "allow",

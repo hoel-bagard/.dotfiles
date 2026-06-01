@@ -13,6 +13,8 @@ permission:
     "git diff*": allow
     # uv run is a bit dangerous, might restrict it later...
     "uv *": allow
+    # Same as uv, a bit dangerous, but probably fine in practice.
+    "just *": allow
     "cargo *": allow
     "ls *": allow
     "cat *": allow
