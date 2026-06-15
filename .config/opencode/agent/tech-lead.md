@@ -17,6 +17,8 @@ permission:
     "just *": allow
     "cargo *": allow
     "ls *": allow
+    # Already has write permission, so adding sed does not change much in practice.
+    "sed *": allow
     "cat *": allow
     "find *": allow
     "sort *": allow
