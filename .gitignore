@@ -104,6 +104,10 @@
 !.config/gh-dash
 !.config/gh-dash/*
 
+# Ripgrep
+!.config/ripgrep
+!.config/ripgrep/*
+
 # Bash scripts/commands
 !.local
 !.local/bin

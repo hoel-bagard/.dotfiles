@@ -41,6 +41,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin/scripts:$PATH"
 # To be able to use binaries installed through cargo.
 export PATH="$HOME/.cargo/bin:$PATH"
+# rg does not look for a specific config file by default, it must be explicitly set.
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/config"
 
 # Disable zsh auto-correct for the following words / regex.
 CORRECT_IGNORE_FILE=".*"
