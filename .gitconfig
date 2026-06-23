@@ -9,6 +9,9 @@
 [includeIf "hasconfig:remote.*.url:git@github.com:ai-platform-metis/**"]
 	path = "~/.config/hitachi-dotfiles/.gitconfig"
 
+[includeIf "hasconfig:remote.*.url:git@github.com:as-genai/**"]
+	path = "~/.config/hitachi-dotfiles/.gitconfig"
+
 [includeIf "hasconfig:remote.*.url:git@github.com:hoel-bagard-hy/**"]
 	path = "~/.config/hitachi-dotfiles/.gitconfig"
 
