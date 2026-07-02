@@ -72,6 +72,7 @@ alias gcm="git commit --verbose -m"
 alias ga="git commit --amend"
 alias gp="git push"
 alias gl="git pull"
+alias gw="git worktree"
 alias gu="git add --update . && git commit --amend --no-edit && git push --force-with-lease"
 alias fix-ssh="chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519.pub && chmod 644 ~/.ssh/config"
 
