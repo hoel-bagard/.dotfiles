@@ -1,7 +1,7 @@
 ---
 description: Review changes in current branch against main
 agent: code-reviewer
-model: github-copilot/claude-sonnet-4.6
+model: github-copilot/claude-sonnet-5
 ---
 
 Review the following changes for code quality, best practices, and potential issues:

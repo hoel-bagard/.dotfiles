@@ -1,7 +1,7 @@
 ---
 description: Quick research and Q&A for programming questions
 mode: primary
-model: github-copilot/claude-sonnet-4.6
+model: github-copilot/claude-sonnet-5
 temperature: 0.1
 tools:
   write: false

@@ -1,7 +1,7 @@
 ---
 description: Commit changes
 subtask: true
-model: github-copilot/claude-sonnet-4.6
+model: github-copilot/claude-sonnet-5
 ---
 
 Stage the changes and create a commit:

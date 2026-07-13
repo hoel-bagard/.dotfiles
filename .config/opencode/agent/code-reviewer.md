@@ -4,7 +4,7 @@ description: >-
   Use for any code quality analysis.
 mode: subagent
 hidden: true
-model: github-copilot/claude-sonnet-4.6
+model: github-copilot/claude-sonnet-5
 temperature: 0.1
 tools:
   write: false
