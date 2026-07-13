@@ -23,6 +23,7 @@
       "wc *": "allow",
       "which *": "allow",
       "echo *": "allow",
+      "timeout *": "allow",
       // Git read-only commands
       "git status *": "allow",
       "git diff *": "allow",
