@@ -9,7 +9,7 @@
     "editor_open": "ctrl+e",
     "input_clear": "ctrl+c",
     "input_newline": "shift+enter,ctrl+j",
-    "input_paste": "ctrl+v",
+    "input_paste": "ctrl+shift+v",
     "input_submit": "enter",
     "leader": "ctrl+space",
     "messages_first": "ctrl+g",
@@ -27,6 +27,7 @@
     "sidebar_toggle": "ctrl+s",
     "status_view": "<leader>s",
     "display_thinking": "ctrl+t",
+    "variant_cycle": "ctrl+v",
   },
   "diff_style": "auto",
 }
