@@ -108,6 +108,7 @@ return {
             "yamlfmt",
             "google-java-format",
             "rustywind",
+            "nixfmt",
             -- Linters
             "actionlint",
             "hadolint",
@@ -121,6 +122,7 @@ return {
             "tailwindcss-language-server",
             "json-lsp",
             "yaml-language-server",
+            "nil",
         }
 
         require("mason").setup()
