@@ -1,7 +1,7 @@
 ---
 description: Implement code changes with full permissions
 mode: all
-model: github-copilot/claude-opus-4.8
+model: github-copilot/claude-sonnet-5
 temperature: 0.1
 permission:
   "*": allow
