@@ -43,6 +43,8 @@ export PATH="$HOME/.local/bin/scripts:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 # rg does not look for a specific config file by default, it must be explicitly set.
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/config"
+# Because by default Claude Code expects config to be in ~/.claude
+export CLAUDE_CONFIG_DIR="$HOME/.config/claude-code"
 
 # Disable zsh auto-correct for the following words / regex.
 CORRECT_IGNORE_FILE=".*"
