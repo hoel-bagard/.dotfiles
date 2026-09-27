@@ -1,12 +1,12 @@
 ---
 description: Implement code changes with full permissions
 mode: all
-model: github-copilot/claude-sonnet-5
+model: github-copilot/claude-opus-5.5
 temperature: 0.1
 permission:
   "*": allow
   bash:
-    "*": ask
+    "*": allow
     "git log*": allow
     "git status*": allow
     "git show*": allow
