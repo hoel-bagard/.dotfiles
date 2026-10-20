@@ -1,11 +1,12 @@
 ---
 description: Quick research and Q&A for programming questions
 mode: primary
-model: github-copilot/claude-sonnet-5
+model: github-copilot/claude-opus-5.5
 temperature: 0.1
 tools:
   write: false
   edit: false
+  bash: true
 ---
 
 You are a knowledgeable programming assistant for quick consultations.

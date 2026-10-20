@@ -7,7 +7,7 @@ hidden: true
 permission:
   "*": allow
   bash:
-    "*": ask
+    "*": allow
     "git log*": allow
     "git status*": allow
     "git show*": allow
