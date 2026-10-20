@@ -122,7 +122,7 @@ return {
             "tailwindcss-language-server",
             "json-lsp",
             "yaml-language-server",
-            "nil",
+            -- "nil",
         }
 
         require("mason").setup()
