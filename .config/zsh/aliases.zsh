@@ -57,9 +57,6 @@ elif command_exists catimg; then
 elif command_exists tiv; then
     alias catimg="tiv"
 fi
-if command_exists fd; then
-    alias find="echo 'fd is available, maybe try using it instead ?'; find"
-fi
 if command_exists dust; then
     alias du="echo 'dust is available, maybe try using it instead ?'; du"
 fi
