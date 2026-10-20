@@ -27,6 +27,17 @@ return {
 
             vim.lsp.config("jsonls", {
                 capabilities = capabilities,
+                handlers = {
+                    -- Hide the trailing comma diagnostic.
+                    ["textDocument/diagnostic"] = function(err, result, ctx)
+                        if result and result.items then
+                            result.items = vim.tbl_filter(function(d)
+                                return d.code ~= 519
+                            end, result.items)
+                        end
+                        return vim.lsp.handlers["textDocument/diagnostic"](err, result, ctx)
+                    end,
+                },
                 settings = {
                     json = {
                         schemas = require("schemastore").json.schemas(),
