@@ -58,6 +58,7 @@ return {
         })
 
         local ensureInstalled = {
+            "bash",
             "vim",
             "vimdoc",
             "lua",
