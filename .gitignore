@@ -93,6 +93,7 @@
 !.config/opencode/agent/*
 !.config/opencode/commands/
 !.config/opencode/commands/*
+.config/opencode/service.json
 
 # Television
 !.config/television
