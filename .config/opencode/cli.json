@@ -3,7 +3,39 @@
   "theme": {
     "name": "catppuccin"
   },
+  "keybinds": {
+    "agent.cycle": "tab",
+    "agent.list": "<leader>a",
+    "app.exit": "ctrl+q",
+    "prompt.editor": "ctrl+e",
+    "prompt.clear": "ctrl+c",
+    "input.newline": "shift+return,ctrl+j",
+    "prompt.paste": { "key": "ctrl+shift+v", "preventDefault": false },
+    "input.submit": "return",
+    "leader": "ctrl+space",
+    "session.first": "ctrl+g",
+    "session.last": "ctrl+shift+g",
+    "session.page.down": "pagedown,ctrl+d",
+    "session.page.up": "pageup,ctrl+u",
+    "model.list": "<leader>m",
+    "session.child.next": "<leader>right",
+    "session.child.previous": "<leader>left",
+    "session.compact": "<leader>c",
+    "session.interrupt": "escape",
+    "session.list": "<leader>l",
+    "session.parent": "<leader>up",
+    "session.timeline": "<leader>t",
+    "session.sidebar.toggle": "ctrl+s",
+    "opencode.status": "<leader>s",
+    "session.toggle.thinking": "ctrl+t",
+    "variant.cycle": "ctrl+v",
+    "terminal.toggle": "none",
+    "terminal.close": "none",
+    "pane.focus.left": "none",
+    "pane.focus.right": "none"
+  },
   "diffs": {
+    "view": "auto",
     "wrap": "word"
   },
   "session": {
