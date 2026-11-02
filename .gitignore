@@ -111,7 +111,7 @@
 
 # Ripgrep
 !.config/claude-code
-!.config/claude-code/*
+!.config/claude-code/settings.json
 
 # Bash scripts/commands
 !.local
